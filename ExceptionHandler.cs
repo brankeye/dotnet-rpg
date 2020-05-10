@@ -18,7 +18,7 @@ namespace dotnet_rpg
             this._next = next;
         }
 
-        public async Task Invoke(HttpContext context, IWebHostEnvironment env)
+        public async Task Invoke(HttpContext context, IWebHostEnvironment env) 
         {
             try
             {
@@ -41,74 +41,59 @@ namespace dotnet_rpg
 
         private static Task HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, Exception exception)
         {
-            var code = HttpStatusCode.InternalServerError;
-
-            object[] messages = { new { message = exception.Message } };
-            var errorMessage = new {
-                errors = messages
-            };
-                
-            string result = Serialize(errorMessage);
-
+            var response = CreateResponse(exception);
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
-            return context.Response.WriteAsync(result);
+            context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
+            return context.Response.WriteAsync(response);
         }
 
         private static Task HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, NotFoundException exception)
         {
-            var code = HttpStatusCode.NotFound;
-
-            object[] messages = { new { message = exception.Message } };
-            var errorMessage = new {
-                errors = messages
-            };
-                
-            string result = Serialize(errorMessage);
-
+            var response = CreateResponse(exception);
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
-            return context.Response.WriteAsync(result);
+            context.Response.StatusCode = (int) HttpStatusCode.NotFound;
+            return context.Response.WriteAsync(response);
         }
 
         private static Task HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, ValidationException exception)
         {
-            var code = HttpStatusCode.BadRequest;
-
-            var errorMessage = new {
-                errors = exception.Errors
-            };
-                
-            string result = Serialize(errorMessage);
-
+            var response = CreateResponse(exception);
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
-            return context.Response.WriteAsync(result);
+            context.Response.StatusCode = (int) HttpStatusCode.BadRequest;
+            return context.Response.WriteAsync(response);
         }
 
         private static Task HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, AuthenticationException exception)
         {
-            var code = HttpStatusCode.Unauthorized;
-
-            object[] messages = { new { message = exception.Message } };
-            var errorMessage = new {
-                errors = messages
-            };
-                
-            string result = Serialize(errorMessage);
-
+            var response = CreateResponse(exception);
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
-            return context.Response.WriteAsync(result);
+            context.Response.StatusCode = (int) HttpStatusCode.Unauthorized;
+            return context.Response.WriteAsync(response);
         }
 
-        private static string Serialize(object value) {
+        private static string Serialize(object value) 
+        {
             var options = new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             };
 
             return JsonSerializer.Serialize(value, options);
+        }
+
+        private static string CreateResponse(Exception exception) {
+            object[] messages = { new { message = exception.Message } };
+            var errorMessage = new {
+                errors = messages
+            };
+            return Serialize(errorMessage);
+        }
+
+        private static string CreateResponse(ValidationException exception) {
+            var errorMessage = new {
+                errors = exception.Errors
+            };
+            return Serialize(errorMessage);
         }
     }
 }

@@ -18,10 +18,13 @@ namespace dotnet_rpg.Controllers
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterAuthDto request) {
-            var user = new User {
-                Username = request.Username,
-            };
-            var serviceResponse = await _authService.RegisterAsync(user, request.Password);
+            var serviceResponse = await _authService.RegisterAsync(request.Username, request.Password);
+            return Ok(serviceResponse);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(RegisterAuthDto request) {
+            var serviceResponse = await _authService.LoginAsync(request.Username, request.Password);
             return Ok(serviceResponse);
         }
     }
