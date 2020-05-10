@@ -19,14 +19,16 @@ namespace dotnet_rpg.Models
             Strength = 1;
             Defense = 1;
             Intelligence = 1;
-            Class = RpgClassParser.Parse(dto.Class);
+            Class = (RpgClass) Enum.Parse(typeof(RpgClass), dto.Class);
         }
 
         public void Update(WriteCharacterDto dto) {
-            if (dto != null) {
-                this.Name = dto.Name;
-                this.Class = RpgClassParser.Parse(dto.Class);
+            if (dto == null) {
+                throw new ArgumentNullException(nameof(dto));
             }
+
+            Name = dto.Name;
+            Class = (RpgClass) Enum.Parse(typeof(RpgClass), dto.Class);
         }
 
         public Guid Id { get; set; }
@@ -36,5 +38,7 @@ namespace dotnet_rpg.Models
         public int Defense { get; set; }
         public int Intelligence { get; set; }
         public RpgClass Class { get; set; }
+
+        public User User { get; set; }
     }
 }
