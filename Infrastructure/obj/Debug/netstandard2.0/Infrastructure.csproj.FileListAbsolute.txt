@@ -1,0 +1,12 @@
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.deps.json
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.dll
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.pdb
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/bin/Debug/netstandard2.0/Domain.dll
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/bin/Debug/netstandard2.0/Domain.pdb
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csprojAssemblyReference.cache
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.AssemblyInfo.cs
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csproj.CopyComplete
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.dll
+/Users/brandon/Personal/dotnet-rpg/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.pdb

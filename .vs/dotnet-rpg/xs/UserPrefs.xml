@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{08A5FD16-B8A5-47A2-B32A-82195EF27432}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="dotnet-rpg" expanded="True" selected="True">
+            <Node name="Api" expanded="True" />
+            <Node name="Domain" expanded="True" />
+            <Node name="Infrastructure" expanded="True">
+              <Node name="UnitOfWork" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>dotnet-rpg.csproj</String>
+    <String>App/Api.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
