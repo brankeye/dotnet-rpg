@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using dotnet_rpg.Domain.Data;
+using dotnet_rpg.Data;
 using dotnet_rpg.Infrastructure.Repositories.CharacterRepository;
 using dotnet_rpg.Infrastructure.Repositories.UserRepository;
 using dotnet_rpg.Infrastructure.Repositories.WeaponRepository;
@@ -18,16 +18,16 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
         }
 
         private IUserRepository _users;
-        public IUserRepository Users => _users ?? (_users = new UserRepository(_dataContext));
+        public IUserRepository Users => _users ??= new UserRepository(_dataContext);
 
         private ICharacterRepository _characters;
-        public ICharacterRepository Characters => _characters ?? (_characters = new CharacterRepository(_dataContext));
+        public ICharacterRepository Characters => _characters ??= new CharacterRepository(_dataContext);
 
         private IWeaponRepository _weapons;
-        public IWeaponRepository Weapons => _weapons ?? (_weapons = new WeaponRepository(_dataContext));
+        public IWeaponRepository Weapons => _weapons ??= new WeaponRepository(_dataContext);
         
         private ICharacterWeaponRepository _characterWeapons;
-        public ICharacterWeaponRepository CharacterWeapons => _characterWeapons ?? (_characterWeapons = new CharacterWeaponRepository(_dataContext));
+        public ICharacterWeaponRepository CharacterWeapons => _characterWeapons ??= new CharacterWeaponRepository(_dataContext);
 
         public void Commit()
         {

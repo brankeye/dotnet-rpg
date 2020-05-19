@@ -9,42 +9,14 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Context" t="Include">
-          <e p="ApplicationContext.cs" t="Include" />
-          <e p="IApplicationContext.cs" t="Include" />
-        </e>
         <e p="Controllers" t="Include">
           <e p="AuthController.cs" t="Include" />
           <e p="CharactersController.cs" t="Include" />
           <e p="WeaponsController.cs" t="Include" />
         </e>
-        <e p="Dtos" t="Include">
-          <e p="Auth" t="Include">
-            <e p="CredentialsDto.cs" t="Include" />
-            <e p="LoginDto.cs" t="Include" />
-            <e p="RegisterDto.cs" t="Include" />
-          </e>
-          <e p="Character" t="Include">
-            <e p="CharacterDto.cs" t="Include" />
-            <e p="CreateCharacterDto.cs" t="Include" />
-            <e p="EquipWeaponDto.cs" t="Include" />
-            <e p="UpdateCharacterDto.cs" t="Include" />
-          </e>
-          <e p="Weapon" t="Include">
-            <e p="CreateWeaponDto.cs" t="Include" />
-            <e p="UpdateWeaponDto.cs" t="Include" />
-            <e p="WeaponDto.cs" t="Include" />
-          </e>
-        </e>
         <e p="Middleware" t="Include">
           <e p="EgressHandler.cs" t="Include" />
         </e>
-        <e p="Migrations" t="Include">
-          <e p="20200518214405_Initial.cs" t="Include" />
-          <e p="20200518214405_Initial.Designer.cs" t="Include" />
-          <e p="DataContextModelSnapshot.cs" t="Include" />
-        </e>
-        <e p="mono_crash.4e2fd09fb.0.json" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -57,43 +29,76 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Services" t="Include">
-          <e p="AuthService" t="Include">
+          <e p="Auth" t="Include">
             <e p="AuthService.cs" t="Include" />
+            <e p="Dtos" t="Include">
+              <e p="CredentialsDto.cs" t="Include" />
+              <e p="LoginDto.cs" t="Include" />
+              <e p="RegisterDto.cs" t="Include" />
+            </e>
             <e p="IAuthService.cs" t="Include" />
+            <e p="Validator" t="Include">
+              <e p="AuthValidator.cs" t="Include" />
+              <e p="IAuthValidator.cs" t="Include" />
+            </e>
           </e>
-          <e p="CharacterService" t="Include">
+          <e p="Character" t="Include">
             <e p="CharacterService.cs" t="Include" />
+            <e p="Dtos" t="Include">
+              <e p="CharacterDto.cs" t="Include" />
+              <e p="CreateCharacterDto.cs" t="Include" />
+              <e p="EquipWeaponDto.cs" t="Include" />
+              <e p="UpdateCharacterDto.cs" t="Include" />
+            </e>
             <e p="ICharacterService.cs" t="Include" />
+            <e p="Validator" t="Include">
+              <e p="CharacterValidator.cs" t="Include" />
+              <e p="ICharacterValidator.cs" t="Include" />
+            </e>
           </e>
-          <e p="WeaponService" t="Include">
+          <e p="IServiceContext.cs" t="Include" />
+          <e p="ServiceContext.cs" t="Include" />
+          <e p="Weapon" t="Include">
+            <e p="Dtos" t="Include">
+              <e p="CreateWeaponDto.cs" t="Include" />
+              <e p="UpdateWeaponDto.cs" t="Include" />
+              <e p="WeaponDto.cs" t="Include" />
+            </e>
             <e p="IWeaponService.cs" t="Include" />
+            <e p="Validator" t="Include">
+              <e p="IWeaponValidator.cs" t="Include" />
+              <e p="WeaponValidator.cs" t="Include" />
+            </e>
             <e p="WeaponService.cs" t="Include" />
           </e>
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="Validators" t="Include">
-          <e p="AuthValidator" t="Include">
-            <e p="AuthValidator.cs" t="Include" />
-            <e p="IAuthValidator.cs" t="Include" />
-          </e>
-          <e p="CharacterValidator" t="Include">
-            <e p="CharacterValidator.cs" t="Include" />
-            <e p="ICharacterValidator.cs" t="Include" />
-          </e>
+        <e p="Validation" t="Include">
           <e p="IValidator.cs" t="Include" />
           <e p="ValidationException.cs" t="Include" />
           <e p="Validator.cs" t="Include" />
-          <e p="WeaponValidator" t="Include">
-            <e p="IWeaponValidator.cs" t="Include" />
-            <e p="WeaponValidator.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Data" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Data.csproj" t="IncludeRecursive" />
+        <e p="DataContext.cs" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20200519224315_Initial.cs" t="Include" />
+          <e p="20200519224315_Initial.Designer.cs" t="Include" />
+          <e p="DataContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Data.AssemblyInfo.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>
       <e p="Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Data" t="Include">
-          <e p="DataContext.cs" t="Include" />
-        </e>
+        <e p="Data" t="Include" />
         <e p="Domain.csproj" t="IncludeRecursive" />
         <e p="Enums" t="Include">
           <e p="RpgClass.cs" t="Include" />
@@ -106,7 +111,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -121,7 +126,7 @@
         <e p="Infrastructure.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="Infrastructure.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -151,6 +156,17 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Service" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Service.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Service.csproj" t="IncludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

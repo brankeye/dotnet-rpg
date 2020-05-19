@@ -1,9 +1,7 @@
 using System.Text;
-using dotnet_rpg.Api.Context;
-using dotnet_rpg.Domain.Data;
 using dotnet_rpg.Infrastructure.UnitOfWork;
-using dotnet_rpg.Api.Services.AuthService;
-using dotnet_rpg.Api.Services.CharacterService;
+using dotnet_rpg.Api.Services.Auth;
+using dotnet_rpg.Api.Services.Character;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,9 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using dotnet_rpg.Api.Middleware;
-using dotnet_rpg.Api.Services.WeaponService;
+using dotnet_rpg.Api.Services;
+using dotnet_rpg.Api.Services.Weapon;
+using dotnet_rpg.Data;
 
-namespace dotnet_rpg
+namespace dotnet_rpg.Api
 {
     public class Startup
     {
@@ -33,9 +33,9 @@ namespace dotnet_rpg
             {
                 options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection"),
-                    options => 
+                    npgsqlOptions => 
                     {
-                        options.MigrationsAssembly("Api");
+                        npgsqlOptions.MigrationsAssembly("Data");
                     });
             });
 
@@ -57,7 +57,7 @@ namespace dotnet_rpg
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddScoped<IApplicationContext, ApplicationContext>();
+            services.AddScoped<IServiceContext, ServiceContext>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ICharacterService, CharacterService>();
             services.AddScoped<IWeaponService, WeaponService>();

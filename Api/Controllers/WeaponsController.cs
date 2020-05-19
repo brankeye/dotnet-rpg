@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System;
 using Microsoft.AspNetCore.Authorization;
-using dotnet_rpg.Api.Services.WeaponService;
-using dotnet_rpg.Api.Dtos.Weapon;
+using dotnet_rpg.Api.Services.Weapon;
+using dotnet_rpg.Api.Services.Weapon.Dtos;
 
 namespace dotnet_rpg.Api.Controllers
 {

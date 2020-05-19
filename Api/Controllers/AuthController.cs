@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using dotnet_rpg.Api.Dtos.Auth;
-using dotnet_rpg.Api.Services.AuthService;
+using dotnet_rpg.Api.Services.Auth;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_rpg.Api.Controllers

@@ -7,7 +7,7 @@ using dotnet_rpg.Infrastructure.Exceptions;
 using System.Text.Json;
 using System.Security.Authentication;
 using System.IO;
-using dotnet_rpg.Api.Validators;
+using dotnet_rpg.Api.Validation;
 
 namespace dotnet_rpg.Api.Middleware
 {

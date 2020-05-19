@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "gMYe331pQ9U8gks/7jqucgLpUta1PNlSRtLotgITSEBewh5YsbVD+dJHskVa9/kPaXwevZ3c+K5mRhxYFY8GqA==",
+  "dgSpecHash": "uwDi3tu7ssiqVw88BgrzcjJfm05zN7F/8YCrwmk3Oz60QONJszCk3mKtN7Hc6NvdRlsp5KnEInDCc7OhkHxRag==",
   "success": true,
   "projectFilePath": "/Users/brandon/Personal/dotnet-rpg/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/brandon/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
+    "/Users/brandon/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.entityframeworkcore/3.1.3/microsoft.entityframeworkcore.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.entityframeworkcore.abstractions/3.1.3/microsoft.entityframeworkcore.abstractions.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.entityframeworkcore.analyzers/3.1.3/microsoft.entityframeworkcore.analyzers.3.1.3.nupkg.sha512",
+    "/Users/brandon/.nuget/packages/microsoft.entityframeworkcore.design/3.1.3/microsoft.entityframeworkcore.design.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.3/microsoft.entityframeworkcore.relational.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.3/microsoft.extensions.caching.abstractions.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.extensions.caching.memory/3.1.3/microsoft.extensions.caching.memory.3.1.3.nupkg.sha512",
@@ -21,8 +23,6 @@
     "/Users/brandon/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.3/microsoft.extensions.logging.abstractions.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.extensions.options/3.1.3/microsoft.extensions.options.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.extensions.primitives/3.1.3/microsoft.extensions.primitives.3.1.3.nupkg.sha512",
-    "/Users/brandon/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/Users/brandon/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/npgsql/4.1.3/npgsql.4.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/npgsql.entityframeworkcore.postgresql/3.1.3/npgsql.entityframeworkcore.postgresql.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
@@ -34,8 +34,7 @@
     "/Users/brandon/.nuget/packages/system.runtime.compilerservices.unsafe/4.7.1/system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
     "/Users/brandon/.nuget/packages/system.text.encodings.web/4.6.0/system.text.encodings.web.4.6.0.nupkg.sha512",
     "/Users/brandon/.nuget/packages/system.text.json/4.6.0/system.text.json.4.6.0.nupkg.sha512",
-    "/Users/brandon/.nuget/packages/system.threading.tasks.extensions/4.5.3/system.threading.tasks.extensions.4.5.3.nupkg.sha512",
-    "/Users/brandon/.nuget/packages/system.valuetuple/4.5.0/system.valuetuple.4.5.0.nupkg.sha512"
+    "/Users/brandon/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512"
   ],
   "logs": []
 }

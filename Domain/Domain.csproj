@@ -1,20 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
         <RootNamespace>dotnet_rpg.Domain</RootNamespace>
+        <LangVersion>8</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Data" />
     <Folder Include="Models\" />
     <Folder Include="Enums\" />
     <Folder Include="Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.3">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
   </ItemGroup>
 </Project>
