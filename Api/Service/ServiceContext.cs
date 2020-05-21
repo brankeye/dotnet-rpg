@@ -15,5 +15,7 @@ namespace dotnet_rpg.Api.Service
         }
 
         public Guid UserId => Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+        
+        public string Username => _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
     }
 }

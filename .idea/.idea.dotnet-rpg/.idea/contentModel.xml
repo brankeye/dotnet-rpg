@@ -28,6 +28,12 @@
               <e p="UpdateCharacterRequest.cs" t="Include" />
             </e>
           </e>
+          <e p="User" t="Include">
+            <e p="Dtos" t="Include">
+              <e p="UserResponse.cs" t="Include" />
+            </e>
+            <e p="UserController.cs" t="Include" />
+          </e>
           <e p="Weapon" t="Include">
             <e p="Dtos" t="Include">
               <e p="CreateWeaponRequest.cs" t="Include" />
@@ -168,6 +174,13 @@
             </e>
           </e>
           <e p="IServiceContext.cs" t="Include" />
+          <e p="User" t="Include">
+            <e p="Dtos" t="Include">
+              <e p="UserDto.cs" t="Include" />
+            </e>
+            <e p="IUserService.cs" t="Include" />
+            <e p="UserService.cs" t="Include" />
+          </e>
           <e p="Weapon" t="Include">
             <e p="Dtos" t="Include">
               <e p="CreateWeaponDto.cs" t="Include" />

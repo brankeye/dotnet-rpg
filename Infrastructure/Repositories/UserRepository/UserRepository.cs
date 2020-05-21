@@ -16,6 +16,18 @@ namespace dotnet_rpg.Infrastructure.Repositories.UserRepository
             _dataContext = dataContext;
         }
 
+        public async Task<User> GetByIdAsync(Guid id)
+        {
+            var user = await _dataContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (user == null)
+            {
+                throw new NotFoundException(typeof(User), id);
+            }
+
+            return user;
+        }
+
         public async Task<User> GetByUsernameAsync(string username)
         {
             var user = await _dataContext.Users.FirstOrDefaultAsync(x => x.Username.ToLower().Equals(username.ToLower()));

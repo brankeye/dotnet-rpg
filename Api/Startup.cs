@@ -14,6 +14,7 @@ using dotnet_rpg.Data;
 using dotnet_rpg.Service.Core;
 using dotnet_rpg.Service.Core.Auth;
 using dotnet_rpg.Service.Core.Character;
+using dotnet_rpg.Service.Core.User;
 using dotnet_rpg.Service.Core.Weapon;
 
 namespace dotnet_rpg.Api
@@ -60,6 +61,7 @@ namespace dotnet_rpg.Api
 
             services.AddScoped<IServiceContext, ServiceContext>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICharacterService, CharacterService>();
             services.AddScoped<IWeaponService, WeaponService>();
         }
