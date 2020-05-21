@@ -1,17 +1,37 @@
 using System;
+using System.Reflection;
+using dotnet_rpg.Infrastructure.Enums;
 
 namespace dotnet_rpg.Infrastructure.Exceptions
 {
-    public class NotFoundException : Exception
+    public class NotFoundException : RepositoryException
     {
         public NotFoundException() 
-            : base("Record not found") 
+            : this("Record not found")
+        {
+            Status = DbStatusCode.NotFound;
+        }
+        
+        public NotFoundException(string message) 
+            : base(message)
+        {
+            Status = DbStatusCode.NotFound;
+        }
+        
+        public NotFoundException(MemberInfo type)
+            : this($"{type.Name} not found")
         {
            
         }
         
-        public NotFoundException(Guid id) 
-            : base($"Record with id \'{id}\' could not be found") 
+        public NotFoundException(MemberInfo type, Guid id)
+            : this($"{type.Name} with id \'{id}\' not found")
+        {
+           
+        }
+        
+        public NotFoundException(Guid id)
+            : this($"Query for record with id \'{id}\' failed")
         {
            
         }

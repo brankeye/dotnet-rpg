@@ -11,22 +11,22 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DataContext _dataContext;
+        private IUserRepository _users;
+        private ICharacterRepository _characters;
+        private IWeaponRepository _weapons;
+        private ICharacterWeaponRepository _characterWeapons;
 
         public UnitOfWork(DataContext dataContext) 
         {
             _dataContext = dataContext;
         }
-
-        private IUserRepository _users;
+        
         public IUserRepository Users => _users ??= new UserRepository(_dataContext);
 
-        private ICharacterRepository _characters;
         public ICharacterRepository Characters => _characters ??= new CharacterRepository(_dataContext);
 
-        private IWeaponRepository _weapons;
         public IWeaponRepository Weapons => _weapons ??= new WeaponRepository(_dataContext);
-        
-        private ICharacterWeaponRepository _characterWeapons;
+
         public ICharacterWeaponRepository CharacterWeapons => _characterWeapons ??= new CharacterWeaponRepository(_dataContext);
 
         public void Commit()

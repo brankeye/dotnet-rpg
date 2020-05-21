@@ -1,0 +1,16 @@
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.csprojAssemblyReference.cache
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.csproj.CoreCompileInputs.cache
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.AssemblyInfoInputs.cache
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.AssemblyInfo.cs
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Service.deps.json
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Service.dll
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Service.pdb
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Data.dll
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Domain.dll
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Infrastructure.dll
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Infrastructure.pdb
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Data.pdb
+/Users/brandon/Personal/dotnet-rpg/Service/bin/Debug/netstandard2.1/Domain.pdb
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.csproj.CopyComplete
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.dll
+/Users/brandon/Personal/dotnet-rpg/Service/obj/Debug/netstandard2.1/Service.pdb

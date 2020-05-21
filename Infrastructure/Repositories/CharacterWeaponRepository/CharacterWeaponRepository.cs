@@ -23,11 +23,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository
 
             if (characterWeapon == null)
             {
-                throw new NotFoundException(
-                    nameof(CharacterWeapon.CharacterId), 
-                    characterId,
-                    nameof(CharacterWeapon.WeaponId),
-                    weaponId);
+                throw new NotFoundException(typeof(CharacterWeapon));
             }
 
             return characterWeapon;
@@ -40,7 +36,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository
 
             if (characterWeapon == null)
             {
-                throw new NotFoundException(nameof(CharacterWeapon.CharacterId), characterId);
+                throw new NotFoundException(typeof(CharacterWeapon));
             }
 
             return characterWeapon;
@@ -53,7 +49,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository
 
             if (characterWeapon == null)
             {
-                throw new NotFoundException(nameof(CharacterWeapon.WeaponId), weaponId);
+                throw new NotFoundException(typeof(CharacterWeapon));
             }
 
             return characterWeapon;
@@ -83,11 +79,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository
 
             if (dbCharacterWeapon == null)
             {
-                throw new NotFoundException(
-                    nameof(CharacterWeapon.CharacterId), 
-                    newCharacterWeapon.CharacterId,
-                    nameof(CharacterWeapon.WeaponId), 
-                    newCharacterWeapon.WeaponId);
+                throw new NotFoundException(typeof(CharacterWeapon));
             }
 
             dbCharacterWeapon.CharacterId = newCharacterWeapon.CharacterId;
@@ -105,7 +97,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository
 
             if (characterWeapon == null) 
             {
-                throw new NotFoundException();
+                throw new NotFoundException(typeof(CharacterWeapon));
             }
 
             _dataContext.CharacterWeapons.Remove(characterWeapon);

@@ -7,7 +7,9 @@ using dotnet_rpg.Infrastructure.Exceptions;
 using System.Text.Json;
 using System.Security.Authentication;
 using System.IO;
-using dotnet_rpg.Api.Validation;
+using dotnet_rpg.Infrastructure.Enums;
+using dotnet_rpg.Service.Exceptions;
+using dotnet_rpg.Service.Validation;
 
 namespace dotnet_rpg.Api.Middleware
 {
@@ -31,7 +33,7 @@ namespace dotnet_rpg.Api.Middleware
             {
                 await _next(context);
             }
-            catch (NotFoundException ex) {
+            catch (RepositoryException ex) {
                 response = HandleExceptionAsync(context, env, ex);
             }
             catch (ValidationException ex) {
@@ -52,10 +54,10 @@ namespace dotnet_rpg.Api.Middleware
             var streamResult = await streamReader.ReadToEndAsync();
             
             if (context.Response.StatusCode >= 300) {
-                response = response ?? CreateErrorResponse(Deserialize(streamResult));
+                response ??= CreateErrorResponse(Deserialize(streamResult));
                 await context.Response.WriteAsync(response);
             } else {
-                response = response ?? CreateServerResponse(Deserialize(streamResult));
+                response ??= CreateServerResponse(Deserialize(streamResult));
                 await context.Response.WriteAsync(response);
             }
         }
@@ -68,11 +70,20 @@ namespace dotnet_rpg.Api.Middleware
             return response;
         }
 
-        private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, NotFoundException exception) 
+        private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, RepositoryException exception) 
         {
             var response = CreateErrorResponse(exception);
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) HttpStatusCode.NotFound;
+
+            if (exception.Status == DbStatusCode.NotFound)
+            {
+                context.Response.StatusCode = (int) HttpStatusCode.NotFound;
+            }
+            else
+            {
+                context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
+            }
+
             return response;
         }
 

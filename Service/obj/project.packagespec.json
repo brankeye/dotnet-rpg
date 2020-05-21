@@ -14,7 +14,11 @@
     },
     "frameworks": {
       "netstandard2.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "/Users/brandon/Personal/dotnet-rpg/Infrastructure/Infrastructure.csproj": {
+            "projectPath": "/Users/brandon/Personal/dotnet-rpg/Infrastructure/Infrastructure.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -25,6 +29,16 @@
   },
   "frameworks": {
     "netstandard2.1": {
+      "dependencies": {
+        "Microsoft.IdentityModel.Tokens": {
+          "target": "Package",
+          "version": "[6.5.1, )"
+        },
+        "System.IdentityModel.Tokens.Jwt": {
+          "target": "Package",
+          "version": "[6.5.1, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",

@@ -20,87 +20,107 @@ namespace dotnet_rpg.Infrastructure.Repositories.CharacterRepository
 
         public async Task<IList<Domain.Models.Character>> GetAllAsync(Guid userId)
         {
-            var characters = await _dataContext.Characters
-                .Where(x => x.UserId == userId)
-                .Include(x => x.CharacterWeapon)
-                .ThenInclude(x => x.Weapon)
-                .ToListAsync();
-            return characters;
+            try
+            {
+                var characters = await _dataContext.Characters
+                    .Where(x => x.UserId == userId)
+                    .Include(x => x.CharacterWeapon)
+                    .ThenInclude(x => x.Weapon)
+                    .ToListAsync();
+                return characters;
+            }
+            catch (Exception ex) when (!(ex is RepositoryException))
+            {
+                throw new RepositoryException("Failed to get characters", ex);
+            }
         }
 
         public async Task<Domain.Models.Character> GetByIdAsync(Guid userId, Guid id)
         {
-            var character = await _dataContext.Characters
-                .Include(x => x.CharacterWeapon)
-                .ThenInclude(x => x.Weapon)
-                .SingleOrDefaultAsync(x => x.UserId == userId && x.Id == id);
-
-            if (character == null)
+            try
             {
-                throw new NotFoundException(id);
-            }
+                var character = await _dataContext.Characters
+                    .Include(x => x.CharacterWeapon)
+                    .ThenInclude(x => x.Weapon)
+                    .SingleOrDefaultAsync(x => x.UserId == userId && x.Id == id);
 
-            return character;
+                if (character == null)
+                {
+                    throw new NotFoundException(typeof(Character), id);
+                }
+
+                return character;
+            }
+            catch (Exception ex) when (!(ex is RepositoryException))
+            {
+                throw new RepositoryException("Failed to get character", ex);
+            }
         }
 
         public async Task<Domain.Models.Character> CreateAsync(Guid userId, Domain.Models.Character newCharacter)
         {
-            if (newCharacter == null)
+            try
             {
-                throw new ArgumentNullException(nameof(newCharacter));
+                newCharacter.Id = Guid.NewGuid();
+                newCharacter.UserId = userId;
+
+                var entry = await _dataContext.Characters.AddAsync(newCharacter);
+
+                return entry.Entity;
             }
-
-            newCharacter.Id = Guid.NewGuid();
-            newCharacter.UserId = userId;
-
-            await _dataContext.Characters.AddAsync(newCharacter);
-
-            var character = await _dataContext.Characters
-                .Include(x => x.CharacterWeapon)
-                .ThenInclude(x => x.Weapon)
-                .SingleOrDefaultAsync(x => x.UserId == userId && x.Id == newCharacter.Id);
-
-            return character;
+            catch (Exception ex) when (!(ex is RepositoryException))
+            {
+                throw new RepositoryException("Failed to create character", ex);
+            }
         }
 
         public async Task<Domain.Models.Character> UpdateAsync(Guid userId, Guid id, Domain.Models.Character newCharacter) 
         {
-            if (newCharacter == null)
+            try
             {
-                throw new ArgumentNullException(nameof(newCharacter));
-            }
+                var character = await _dataContext.Characters
+                    .Include(x => x.CharacterWeapon)
+                    .ThenInclude(x => x.Weapon)
+                    .FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
 
-            var character = await _dataContext.Characters
-                .Include(x => x.CharacterWeapon)
-                .ThenInclude(x => x.Weapon)
-                .FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
-
-            if (character == null)
-            {
-                throw new NotFoundException(id);
-            }
+                if (character == null)
+                {
+                    throw new NotFoundException(id);
+                }
             
-            Update(character, newCharacter);
-            _dataContext.Characters.Update(character);
+                Update(character, newCharacter);
+                var entry = _dataContext.Characters.Update(character);
 
-            return character;
+                return entry.Entity;
+            }
+            catch (Exception ex) when (!(ex is RepositoryException))
+            {
+                throw new RepositoryException("Failed to update character", ex);
+            }
         }
 
         public async Task<Domain.Models.Character> DeleteAsync(Guid userId, Guid id) 
         {
-            var character = await _dataContext.Characters
-                .Include(x => x.CharacterWeapon)
-                .ThenInclude(x => x.Weapon)
-                .FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
-
-            if (character == null) 
+            try
             {
-                throw new NotFoundException(id);
+                var character = await _dataContext.Characters
+                    .Include(x => x.CharacterWeapon)
+                    .ThenInclude(x => x.Weapon)
+                    .FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
+
+                if (character == null)
+                {
+                    throw new NotFoundException(typeof(Character), id);
+                }
+
+                var entry = _dataContext.Characters.Remove(character);
+
+                return entry.Entity;
             }
-
-            _dataContext.Characters.Remove(character);
-
-            return character;
+            catch (Exception ex) when (!(ex is RepositoryException))
+            {
+                throw new RepositoryException("Failed to delete character", ex);
+            }
         }
 
         private static void Update(Character dbCharacter, Character newCharacter)

@@ -1,7 +1,5 @@
 using System.Text;
 using dotnet_rpg.Infrastructure.UnitOfWork;
-using dotnet_rpg.Api.Services.Auth;
-using dotnet_rpg.Api.Services.Character;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,9 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using dotnet_rpg.Api.Middleware;
-using dotnet_rpg.Api.Services;
-using dotnet_rpg.Api.Services.Weapon;
+using dotnet_rpg.Api.Service;
 using dotnet_rpg.Data;
+using dotnet_rpg.Service.Core;
+using dotnet_rpg.Service.Core.Auth;
+using dotnet_rpg.Service.Core.Character;
+using dotnet_rpg.Service.Core.Weapon;
 
 namespace dotnet_rpg.Api
 {

@@ -48,7 +48,8 @@
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-/Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/mono_crash.4e2fd09fb.0.json
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Data.dll
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Data.pdb
+/Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Service.dll
+/Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Service.pdb

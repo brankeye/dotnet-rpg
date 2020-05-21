@@ -16,8 +16,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Middleware\" />
-    <Folder Include="Services\" />
-    <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
@@ -26,5 +24,6 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 </Project>

@@ -14,53 +14,45 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Context/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/ServiceContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Context/IApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/IServiceContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/CharactersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/CharactersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/WeaponsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/WeaponsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Auth/CredentialsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/Dtos/CredentialsDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Auth/LoginDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/Dtos/LoginDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Auth/RegisterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/Dtos/RegisterDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Character/CharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/Dtos/CharacterDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Character/CreateCharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/Dtos/CreateCharacterDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Character/EquipWeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/Dtos/EquipWeaponDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Character/UpdateCharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/Dtos/UpdateCharacterDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Weapon/CreateWeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/Dtos/CreateWeaponDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Weapon/UpdateWeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/Dtos/UpdateWeaponDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Dtos/Weapon/WeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/Dtos/WeaponDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/CharactersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/WeaponsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Migrations/20200518214405_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Migrations/20200518214405_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Services/AuthService/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Services/AuthService/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/IAuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Services/CharacterService/CharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/CharacterService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Services/CharacterService/ICharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/ICharacterService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Services/WeaponService/IWeaponService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/IWeaponService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Services/WeaponService/WeaponService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/WeaponService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/Dtos/CredentialsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/Dtos/CredentialsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/Dtos/LoginDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/Dtos/LoginDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/Dtos/RegisterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/Dtos/RegisterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/Validator/AuthValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/Validator/AuthValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Auth/Validator/IAuthValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/Validator/IAuthValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/CharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/Dtos/CharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/Dtos/CreateCharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/CreateCharacterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/Dtos/EquipWeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/EquipWeaponDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/Dtos/UpdateCharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/UpdateCharacterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/ICharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/Validator/CharacterValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Validator/CharacterValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Character/Validator/ICharacterValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/IServiceContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/IServiceContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/ServiceContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Service/ServiceContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/Dtos/CreateWeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Dtos/CreateWeaponDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/Dtos/UpdateWeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Dtos/UpdateWeaponDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/Dtos/WeaponDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Dtos/WeaponDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/IWeaponService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/IWeaponService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/Validator/IWeaponValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/Validator/WeaponValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Services/Weapon/WeaponService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/WeaponService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/AuthValidator/AuthValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/Validator/AuthValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/AuthValidator/IAuthValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Auth/Validator/IAuthValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/CharacterValidator/CharacterValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/Validator/CharacterValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/CharacterValidator/ICharacterValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Character/Validator/ICharacterValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/IValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Validation/IValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/ValidationException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Validation/ValidationException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/Validator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Validation/Validator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/WeaponValidator/IWeaponValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/Validator/IWeaponValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Validators/WeaponValidator/WeaponValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Services/Weapon/Validator/WeaponValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Validation/IValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Validation/IValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Validation/ValidationException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Validation/Validator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Validation/Validator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/mono_crash.4e2fd09fb.0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/mono_crash.4e2fd09fb.0.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache" afterDir="false" />
@@ -68,39 +60,26 @@
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/RpgClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Enums/RpgClass.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Exceptions/NotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Exceptions/NotFoundException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/CharacterRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/CharacterRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/ICharacterRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/ICharacterRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/CharacterWeaponRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/CharacterWeaponRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repositories/UserRepository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repositories/UserRepository/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/IWeaponRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/IWeaponRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/WeaponRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/WeaponRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-rpg.sln" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-rpg.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-rpg.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-rpg.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Service.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Service.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Service.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,48 +91,70 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/Validator/ICharacterValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Auth/Dtos/LoginRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Auth/Dtos/LoginResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/Dtos/CreateWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/Dtos/UpdateWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/Dtos/WeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/Dtos/CreateCharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/Dtos/EquipWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/Dtos/UpdateCharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/Dtos/CharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Auth/Validator/AuthValidator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Auth/Validator/IAuthValidator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/Validator/WeaponValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Auth/Dtos/RegisterResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Character/Dtos/CharacterResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Dtos/LoginDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Character/Dtos/CreateCharacterRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Dtos/RegisterDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Character/Dtos/EquipWeaponRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Dtos/CredentialsDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Dtos/CreateWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Character/Dtos/UpdateCharacterRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Dtos/UpdateWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Dtos/WeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/CreateWeaponRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/CreateCharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/UpdateWeaponRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/EquipWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/WeaponResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/UpdateCharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Auth/Dtos/RegisterRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Validator/AuthValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Validator/IAuthValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78CE2EBE-3791-4669-8262-2E8E200ED262/06/d21328ac/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/Validator/IWeaponValidator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Validation/ValidationException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Validation/IValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5AED14D4-8F76-4E4F-80EB-584643057B28/25/Exception.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Validation/IValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Models/CharacterWeapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Validation/Validator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Auth/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Controllers/WeaponsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Auth/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Exceptions/ServiceException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Validation/Validator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Validation/ValidationError.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/DataContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/ICharacterWeaponRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Controllers/CharactersController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/CharacterWeaponRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Models/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/WeaponService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/WeaponService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Migrations/20200519224315_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Models/Character.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Weapon/IWeaponService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/CharacterService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/ICharacterService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/ServiceContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/IServiceContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/IWeaponService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AAB685B-C95F-4F30-9F58-DED38D306735/1a/b1921a49/IQueryable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Service/ServiceContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/IServiceContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Exceptions/RepositoryException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Enums/DbStatusCode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Exceptions/NotFoundException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/UserRepository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/UserRepository/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/IWeaponRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Services/Character/Validator/CharacterValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Core/Character/Validator/CharacterValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/WeaponRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/CharacterRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/ICharacterRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -161,57 +162,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Api/Dtos/Weapon/WeaponDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Dtos/Character/EquipWeaponDto.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Exceptions/NotFoundException.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/ICharacterWeaponRepository.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/CharacterService/ICharacterService.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/CharacterService/CharacterService.cs" />
-        <option value="$PROJECT_DIR$/Api/Validators/CharacterValidator/CharacterValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Validators/CharacterValidator/ICharacterValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Program.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Auth/IAuthService.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/AuthController.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Auth/AuthService.cs" />
-        <option value="$PROJECT_DIR$/Api/Validator/ValidationException.cs" />
-        <option value="$PROJECT_DIR$/Api/Validator/Validator.cs" />
-        <option value="$PROJECT_DIR$/Api/Validation/IValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Validation/ValidationException.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Auth/Validator/IAuthValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Auth/Validator/AuthValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/Dtos/CreateCharacterDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/Dtos/EquipWeaponDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/Dtos/UpdateCharacterDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/Validator/CharacterValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Validation/Validator.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/Validator/ICharacterValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/ICharacterService.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/CharactersController.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/Dtos/CreateWeaponDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/Dtos/UpdateWeaponDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/Dtos/WeaponDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/IWeaponService.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/Validator/IWeaponValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/Validator/WeaponValidator.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/Dtos/CharacterDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/WeaponsController.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/IServiceContext.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/ServiceContext.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Weapon/WeaponService.cs" />
-        <option value="$PROJECT_DIR$/Api/Services/Character/CharacterService.cs" />
-        <option value="$PROJECT_DIR$/Data/Class1.cs" />
-        <option value="$PROJECT_DIR$/Data/DataContext.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repositories/UserRepository/UserRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/CharacterRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/WeaponRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/CharacterWeaponRepository.cs" />
-        <option value="$PROJECT_DIR$/Data/Migrations/20200518214405_Initial.Designer.cs" />
-        <option value="$PROJECT_DIR$/Data/Migrations/20200518214405_Initial.cs" />
-        <option value="$PROJECT_DIR$/Data/Migrations/DataContextModelSnapshot.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/Dtos/CredentialsDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/Dtos/LoginDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/Dtos/RegisterDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Dtos/CreateCharacterDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Dtos/EquipWeaponDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/Dtos/CreateWeaponDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/Dtos/UpdateWeaponDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/Dtos/WeaponDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Api.csproj" />
+        <option value="$PROJECT_DIR$/Api/Service/ServiceContext.cs" />
         <option value="$PROJECT_DIR$/Api/Startup.cs" />
-        <option value="$PROJECT_DIR$/Service/Class1.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/IAuthService.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/AuthService.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/Validator/IAuthValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/WeaponService.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/IWeaponService.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/WeaponResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/UpdateWeaponRequest.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/CreateWeaponRequest.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Character/Dtos/CharacterResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Character/Dtos/CreateCharacterRequest.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Character/Dtos/EquipWeaponRequest.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Character/Dtos/UpdateCharacterRequest.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/ICharacterRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Status.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Enums/FailureStatus.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Enums/DbStatusCode.cs" />
+        <option value="$PROJECT_DIR$/Service/Validation/ValidationException.cs" />
+        <option value="$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" />
+        <option value="$PROJECT_DIR$/Service/Exceptions/ServiceException.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Auth/Validator/AuthValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Validator/CharacterValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" />
+        <option value="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/Repository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Exceptions/RepositoryException.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Exceptions/NotFoundException.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/CharacterWeaponRepository/CharacterWeaponRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/UserRepository/UserRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/WeaponRepository/WeaponRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/IRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/CharacterRepository/CharacterRepository.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" />
       </list>
     </option>
   </component>
@@ -226,11 +227,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35018316" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3003663" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager">
     <configuration name="Api: dotnet_rpg.Api" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -263,7 +266,11 @@
       <workItem from="1589850720509" duration="2006000" />
       <workItem from="1589899020650" duration="6000" />
       <workItem from="1589909552790" duration="154000" />
-      <workItem from="1589925363724" duration="3042000" />
+      <workItem from="1589925363724" duration="11957000" />
+      <workItem from="1589981756289" duration="383000" />
+      <workItem from="1589982967724" duration="1714000" />
+      <workItem from="1590004999171" duration="1516000" />
+      <workItem from="1590013592817" duration="4934000" />
     </task>
     <servers />
   </component>
@@ -287,30 +294,106 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="184" y="123" width="1093" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1589833947274" />
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1589840790359">
+    <state width="486" height="464" key="DebuggerActiveHint" timestamp="1590022221850">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1589840790359" />
-    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1589840790358">
+    <state width="486" height="464" key="DebuggerActiveHint/0.23.1440.877@0.23.1440.877" timestamp="1590022221850" />
+    <state width="1396" height="230" key="GridCell.Tab.0.bottom" timestamp="1590023146520">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1589840790358" />
-    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1589840790358">
+    <state width="1396" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590023146520" />
+    <state width="1396" height="230" key="GridCell.Tab.0.center" timestamp="1590023146519">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1589840790358" />
-    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1589840790359">
+    <state width="1396" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1590023146519" />
+    <state width="1396" height="230" key="GridCell.Tab.0.left" timestamp="1590023146519">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1589840790359" />
+    <state width="1396" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1590023146519" />
+    <state width="1396" height="230" key="GridCell.Tab.0.right" timestamp="1590023146520">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1590023146520" />
+    <state width="1396" height="312" key="GridCell.Tab.1.bottom" timestamp="1590022440037">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590022440037" />
+    <state width="1396" height="312" key="GridCell.Tab.1.center" timestamp="1590022440036">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1590022440036" />
+    <state width="1396" height="312" key="GridCell.Tab.1.left" timestamp="1590022440036">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1590022440036" />
+    <state width="1396" height="312" key="GridCell.Tab.1.right" timestamp="1590022440036">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1590022440036" />
+    <state width="1396" height="312" key="GridCell.Tab.2.bottom" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.2.center" timestamp="1590022440037">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1590022440037" />
+    <state width="1396" height="312" key="GridCell.Tab.2.left" timestamp="1590022440037">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1590022440037" />
+    <state width="1396" height="312" key="GridCell.Tab.2.right" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.3.bottom" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.3.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.3.center" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.3.center/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.3.left" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.3.left/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.3.right" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.4.bottom" timestamp="1590022440039">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.4.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590022440039" />
+    <state width="1396" height="312" key="GridCell.Tab.4.center" timestamp="1590022440039">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.4.center/0.23.1440.877@0.23.1440.877" timestamp="1590022440039" />
+    <state width="1396" height="312" key="GridCell.Tab.4.left" timestamp="1590022440038">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.4.left/0.23.1440.877@0.23.1440.877" timestamp="1590022440038" />
+    <state width="1396" height="312" key="GridCell.Tab.4.right" timestamp="1590022440039">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1396" height="312" key="GridCell.Tab.4.right/0.23.1440.877@0.23.1440.877" timestamp="1590022440039" />
     <state x="320" y="200" key="Rider.ProjectTemplateDialog.Size" timestamp="1589928661551">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="200" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877@0.23.1440.877" timestamp="1589928661551" />
-    <state x="251" y="100" key="SettingsEditor" timestamp="1589852214496">
+    <state x="451" y="158" key="RiderGenerateDialog" timestamp="1589948160888">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="251" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1589852214496" />
+    <state x="451" y="158" key="RiderGenerateDialog/0.23.1440.877@0.23.1440.877" timestamp="1589948160888" />
+    <state x="251" y="100" key="SettingsEditor" timestamp="1589983728415">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="251" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1589983728415" />
+    <state x="100" y="123" width="1240" height="677" key="VCS.FileHistoryDialog" timestamp="1589947418773">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="123" width="1240" height="677" key="VCS.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1589947418773" />
     <state x="338" y="73" width="763" height="777" key="find.popup" timestamp="1589851082734">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

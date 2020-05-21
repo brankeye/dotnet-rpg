@@ -33,7 +33,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.WeaponRepository
 
             if (weapon == null)
             {
-                throw new NotFoundException(id);
+                throw new NotFoundException(typeof(CharacterWeapon), id);
             }
 
             return weapon;
@@ -62,18 +62,18 @@ namespace dotnet_rpg.Infrastructure.Repositories.WeaponRepository
                 throw new ArgumentNullException(nameof(newWeapon));
             }
 
-            var dbWeapon = await _dataContext.Weapons
+            var weapon = await _dataContext.Weapons
                 .FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
 
-            if (dbWeapon == null)
+            if (weapon == null)
             {
-                throw new NotFoundException(id);
+                throw new NotFoundException(typeof(CharacterWeapon), id);
             }
 
-            Update(dbWeapon, newWeapon);
-            _dataContext.Weapons.Update(dbWeapon);
+            Update(weapon, newWeapon);
+            _dataContext.Weapons.Update(weapon);
 
-            return dbWeapon;
+            return weapon;
         }
 
         public async Task<Weapon> DeleteAsync(Guid userId, Guid id)
@@ -83,7 +83,7 @@ namespace dotnet_rpg.Infrastructure.Repositories.WeaponRepository
 
             if (weapon == null)
             {
-                throw new NotFoundException(id);
+                throw new NotFoundException(typeof(Weapon), id);
             }
 
             _dataContext.Weapons.Remove(weapon);
