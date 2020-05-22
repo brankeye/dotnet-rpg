@@ -28,7 +28,7 @@ namespace dotnet_rpg.Service.Core.Auth
         public async Task<LoginDto> LoginAsync(CredentialsDto dto) {
             _authValidator.Validate(dto);
 
-            var user = await _unitOfWork.Users.GetByUsernameAsync(dto.Username);
+            var user = await _unitOfWork.Users.GetAsync(x => x.Username == dto.Username);
 
             if (user == null) {
                 throw new AuthenticationException("User not found.");
@@ -48,7 +48,8 @@ namespace dotnet_rpg.Service.Core.Auth
         public async Task<RegisterDto> RegisterAsync(CredentialsDto dto) {
             _authValidator.Validate(dto);
 
-            if (await UserExistsAsync(dto.Username))
+            var userExists = await _unitOfWork.Users.ExistsAsync(x => x.Username == dto.Username);
+            if (userExists)
             {
                 throw new AuthenticationException("User already exists.");
             }
@@ -61,7 +62,7 @@ namespace dotnet_rpg.Service.Core.Auth
                 PasswordSalt = passwordSalt
             };
 
-            var userRecord = await _unitOfWork.Users.CreateAsync(user);
+            var userRecord = _unitOfWork.Users.Create(user);
             await _unitOfWork.CommitAsync();
 
             var response = new RegisterDto {
@@ -70,10 +71,6 @@ namespace dotnet_rpg.Service.Core.Auth
             };
 
             return response;
-        }
-
-        public async Task<bool> UserExistsAsync(string username) {
-            return await _unitOfWork.Users.ExistsAsync(username);
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt) {

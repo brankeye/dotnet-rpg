@@ -67,7 +67,7 @@ namespace dotnet_rpg.Api.Controllers.Character
             return Ok(response);
         }
 
-        [HttpPost("{id}/weapon")]
+        [HttpPut("{id}/weapon/{weaponId}")]
         public async Task<IActionResult> EquipWeapon(Guid id, Guid weaponId)
         {
             var response = await _characterService.EquipWeaponAsync(id, weaponId);

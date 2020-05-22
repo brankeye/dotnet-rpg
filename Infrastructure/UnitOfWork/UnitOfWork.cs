@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using dotnet_rpg.Data;
+using dotnet_rpg.Infrastructure.Extensions;
 using dotnet_rpg.Infrastructure.Repositories.CharacterRepository;
 using dotnet_rpg.Infrastructure.Repositories.UserRepository;
 using dotnet_rpg.Infrastructure.Repositories.WeaponRepository;
@@ -31,12 +32,26 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
 
         public void Commit()
         {
-            _dataContext.SaveChanges();
+            try
+            {
+                _dataContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex.ToRepositoryException("Failed to commit changes");
+            }
         }
 
         public async Task CommitAsync()
         {
-            await _dataContext.SaveChangesAsync();
+            try
+            {
+                await _dataContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex.ToRepositoryException("Failed to commit changes");
+            }
         }
 
         public void Dispose()

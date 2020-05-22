@@ -10,6 +10,7 @@ using System.IO;
 using dotnet_rpg.Infrastructure.Enums;
 using dotnet_rpg.Service.Exceptions;
 using dotnet_rpg.Service.Validation;
+using Microsoft.Extensions.Hosting;
 
 namespace dotnet_rpg.Api.Middleware
 {
@@ -72,7 +73,7 @@ namespace dotnet_rpg.Api.Middleware
 
         private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, RepositoryException exception) 
         {
-            var response = CreateErrorResponse(exception);
+            var response = CreateErrorResponse(exception, env.IsDevelopment());
             context.Response.ContentType = "application/json";
 
             if (exception.Status == DbStatusCode.NotFound)
@@ -128,7 +129,7 @@ namespace dotnet_rpg.Api.Middleware
         private string CreateErrorResponse(string message) 
         {
             var payload = new {
-                message = message == null ? "Something went wrong." : message
+                message
             };
             object[] messages = { payload };
             var errorMessage = new {
@@ -137,9 +138,29 @@ namespace dotnet_rpg.Api.Middleware
             return Serialize(errorMessage);
         }
 
-        private string CreateErrorResponse(Exception exception) 
+        private string CreateErrorResponse(Exception exception, bool isDevelopment = false)
         {
-            return CreateErrorResponse(exception.Message);
+            object payload = null;
+
+            if (isDevelopment)
+            {
+                payload = new {
+                    message = exception.Message,
+                    stackTrace = exception.StackTrace
+                };
+            }
+            else
+            {
+                payload = new {
+                    message = exception.Message
+                };
+            }
+            
+            object[] messages = { payload };
+            var errorMessage = new {
+                errors = messages
+            };
+            return Serialize(errorMessage);
         }
 
         private string CreateErrorResponse(ValidationException exception) 

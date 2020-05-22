@@ -27,7 +27,7 @@ namespace dotnet_rpg.Service.Core.User
 
         public async Task<UserDto> GetAsync()
         {
-            var user = await _unitOfWork.Users.GetByIdAsync(_serviceContext.UserId);
+            var user = await _unitOfWork.Users.GetAsync(x => x.Id == _serviceContext.UserId);
 
             return new UserDto
             {

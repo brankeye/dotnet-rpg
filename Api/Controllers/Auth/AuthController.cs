@@ -25,7 +25,10 @@ namespace dotnet_rpg.Api.Controllers.Auth
                 Username = request.Username,
                 Password = request.Password
             });
-            return Ok(response);
+            
+            return Ok(new LoginResponse {
+                Token = response.Token
+            });
         }
 
         [HttpPost("register")]
@@ -37,7 +40,11 @@ namespace dotnet_rpg.Api.Controllers.Auth
                 Password = request.Password
             });
             
-            return Ok(response);
+            return Ok(new RegisterResponse
+            {
+                Id = response.Id,
+                Username = response.Username
+            });
         }
     }
 }

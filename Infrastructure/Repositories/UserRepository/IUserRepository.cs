@@ -4,11 +4,8 @@ using dotnet_rpg.Domain.Models;
 
 namespace dotnet_rpg.Infrastructure.Repositories.UserRepository
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
-        Task<User> GetByIdAsync(Guid id);
-        Task<User> GetByUsernameAsync(string username);
-        Task<User> CreateAsync(User entity);
-        Task<bool> ExistsAsync(string username);
+        
     }
 }

@@ -27,23 +27,25 @@ namespace dotnet_rpg.Service.Core.Character
             _characterValidator = new CharacterValidator();
         }
 
-        public async Task<IList<CharacterDto>> GetAllAsync() 
+        public async Task<IList<CharacterDto>> GetAllAsync()
         {
-            var characters = await _unitOfWork.Characters.GetAllAsync(_serviceContext.UserId);
+            var characters = await _unitOfWork.Characters
+                .GetAllAsync(x => x.UserId == _serviceContext.UserId);
             var dtos = characters.Select(ToDto).ToList();
             return dtos;
         }
 
-        public async Task<CharacterDto> GetByIdAsync(Guid id) 
+        public async Task<CharacterDto> GetByIdAsync(Guid id)
         {
-            var character = await _unitOfWork.Characters.GetByIdAsync(_serviceContext.UserId, id);
+            var character = await _unitOfWork.Characters
+                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
             return ToDto(character);
         }
 
         public async Task<CharacterDto> CreateAsync(CreateCharacterDto dto) 
         {
             _characterValidator.Validate(dto);
-            var character = await _unitOfWork.Characters.CreateAsync(_serviceContext.UserId, ToModel(dto));
+            var character = _unitOfWork.Characters.Create(ToModel(_serviceContext.UserId, dto));
             await _unitOfWork.CommitAsync();
             return ToDto(character);
         }
@@ -51,29 +53,34 @@ namespace dotnet_rpg.Service.Core.Character
         public async Task<CharacterDto> UpdateAsync(Guid id, UpdateCharacterDto dto) 
         {
             _characterValidator.Validate(dto);
-            var character = await _unitOfWork.Characters.UpdateAsync(_serviceContext.UserId, id, ToModel(dto));
+            var character = _unitOfWork.Characters.Update(ToModel(_serviceContext.UserId, dto));
             await _unitOfWork.CommitAsync();
             return ToDto(character);
         }
 
-        public async Task<CharacterDto> DeleteAsync(Guid id) 
+        public async Task<CharacterDto> DeleteAsync(Guid id)
         {
-            var character = await _unitOfWork.Characters.DeleteAsync(_serviceContext.UserId, id);
+            var existingCharacter = await _unitOfWork.Characters
+                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
+            var character = _unitOfWork.Characters.Delete(existingCharacter);
             await _unitOfWork.CommitAsync();
             return ToDto(character);
         }
 
         public async Task<CharacterDto> EquipWeaponAsync(Guid id, Guid weaponId)
         {
-            var character = await _unitOfWork.Characters.GetByIdAsync(_serviceContext.UserId, id);
-            var weapon = await _unitOfWork.Weapons.GetByIdAsync(_serviceContext.UserId, weaponId);
+            var character = await _unitOfWork.Characters
+                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
+            var weapon = await _unitOfWork.Weapons
+                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == weaponId);
 
             CharacterWeapon currentCharacterWeapon = null;
             try
             {
-                currentCharacterWeapon = await _unitOfWork.CharacterWeapons.GetByWeaponIdAsync(weapon.Id);
+                currentCharacterWeapon = await _unitOfWork.CharacterWeapons.GetAsync(
+                    x => x.WeaponId == weapon.Id);
             }
-            catch (Exception)
+            catch (NotFoundException)
             {
                 // ignored
             }
@@ -82,14 +89,14 @@ namespace dotnet_rpg.Service.Core.Character
             {
                 if (currentCharacterWeapon.CharacterId != character.Id)
                 {
-                    throw new ValidationException("Weapon already equipped on another character");
+                    throw new ServiceException("Weapon already equipped on another character");
                 } else if (currentCharacterWeapon.WeaponId == weapon.Id)
                 {
-                    throw new ValidationException("Weapon already equipped on this character");
+                    throw new ServiceException("Weapon already equipped on this character");
                 }
 
                 currentCharacterWeapon.WeaponId = weapon.Id;
-                await _unitOfWork.CharacterWeapons.UpdateAsync(currentCharacterWeapon);
+                _unitOfWork.CharacterWeapons.Update(currentCharacterWeapon);
             }
             else
             {
@@ -99,7 +106,7 @@ namespace dotnet_rpg.Service.Core.Character
                     WeaponId = weapon.Id
                 };
 
-                await _unitOfWork.CharacterWeapons.CreateAsync(newCharacterWeapon);
+                _unitOfWork.CharacterWeapons.Create(newCharacterWeapon);
             }
             
             await _unitOfWork.CommitAsync();
@@ -109,15 +116,17 @@ namespace dotnet_rpg.Service.Core.Character
         
         public async Task<CharacterDto> UnequipWeaponAsync(Guid id)
         {
-            var character = await _unitOfWork.Characters.GetByIdAsync(_serviceContext.UserId, id);
-
+            var character = await _unitOfWork.Characters
+                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
+            var characterWeapon = await _unitOfWork.CharacterWeapons.GetAsync(x => x.CharacterId == id);
+            
             try
             {
-                await _unitOfWork.CharacterWeapons.DeleteByCharacterIdAsync(character.Id);
+                _unitOfWork.CharacterWeapons.Delete(characterWeapon);
             }
             catch (NotFoundException)
             {
-                throw new ValidationException("Character has not equipped a weapon");
+                throw new ServiceException("Character has not equipped a weapon");
             }
             
             await _unitOfWork.CommitAsync();
@@ -126,7 +135,7 @@ namespace dotnet_rpg.Service.Core.Character
             return ToDto(character);
         }
 
-        private static Domain.Models.Character ToModel(CreateCharacterDto dto)
+        private static Domain.Models.Character ToModel(Guid userId, CreateCharacterDto dto)
         {
             if (dto == null)
             {
@@ -135,6 +144,7 @@ namespace dotnet_rpg.Service.Core.Character
 
             return new Domain.Models.Character
             {
+                UserId = userId,
                 Name = dto.Name,
                 HitPoints = 100,
                 Strength = 1,
@@ -144,7 +154,7 @@ namespace dotnet_rpg.Service.Core.Character
             };
         }
 
-        private static Domain.Models.Character ToModel(UpdateCharacterDto dto)
+        private static Domain.Models.Character ToModel(Guid userId, UpdateCharacterDto dto)
         {
             if (dto == null)
             {
@@ -153,6 +163,7 @@ namespace dotnet_rpg.Service.Core.Character
 
             return new Domain.Models.Character
             {
+                UserId = userId,
                 Name = dto.Name,
                 HitPoints = 100,
                 Strength = 1,
