@@ -20,11 +20,15 @@ namespace dotnet_rpg.Service.Core.Character
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICharacterValidator _characterValidator;
 
-        public CharacterService(IServiceContext serviceContext, IUnitOfWork unitOfWork) 
+        public CharacterService(
+            IServiceContext serviceContext,
+            ICharacterValidator characterValidator,
+            IUnitOfWork unitOfWork) 
         {
             _serviceContext = serviceContext;
+            _characterValidator = characterValidator;
             _unitOfWork = unitOfWork;
-            _characterValidator = new CharacterValidator();
+            
         }
 
         public async Task<IList<CharacterDto>> GetAllAsync()

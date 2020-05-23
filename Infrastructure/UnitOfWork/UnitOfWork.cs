@@ -2,39 +2,39 @@ using System;
 using System.Threading.Tasks;
 using dotnet_rpg.Data;
 using dotnet_rpg.Infrastructure.Extensions;
-using dotnet_rpg.Infrastructure.Repositories.CharacterRepository;
-using dotnet_rpg.Infrastructure.Repositories.UserRepository;
-using dotnet_rpg.Infrastructure.Repositories.WeaponRepository;
-using dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository;
+using dotnet_rpg.Infrastructure.Repository.Core.Character;
+using dotnet_rpg.Infrastructure.Repository.Core.CharacterWeapon;
+using dotnet_rpg.Infrastructure.Repository.Core.User;
+using dotnet_rpg.Infrastructure.Repository.Core.Weapon;
+using dotnet_rpg.Infrastructure.Repository.Factory;
+using dotnet_rpg.Infrastructure.Repository.Persister;
 
 namespace dotnet_rpg.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DataContext _dataContext;
-        private IUserRepository _users;
-        private ICharacterRepository _characters;
-        private IWeaponRepository _weapons;
-        private ICharacterWeaponRepository _characterWeapons;
+        private readonly IRepositoryFactory _repositoryFactory;
+        private readonly IRepositoryPersister _repositoryPersister;
 
-        public UnitOfWork(DataContext dataContext) 
+        public UnitOfWork(IRepositoryFactory repositoryFactory, IRepositoryPersister repositoryPersister)
         {
-            _dataContext = dataContext;
+            _repositoryFactory = repositoryFactory;
+            _repositoryPersister = repositoryPersister;
         }
-        
-        public IUserRepository Users => _users ??= new UserRepository(_dataContext);
 
-        public ICharacterRepository Characters => _characters ??= new CharacterRepository(_dataContext);
+        public IUserRepository Users => _repositoryFactory.GetUserRepository();
 
-        public IWeaponRepository Weapons => _weapons ??= new WeaponRepository(_dataContext);
+        public ICharacterRepository Characters => _repositoryFactory.GetCharacterRepository();
 
-        public ICharacterWeaponRepository CharacterWeapons => _characterWeapons ??= new CharacterWeaponRepository(_dataContext);
+        public IWeaponRepository Weapons => _repositoryFactory.GetWeaponRepository();
+
+        public ICharacterWeaponRepository CharacterWeapons => _repositoryFactory.GetCharacterWeaponRepository();
 
         public void Commit()
         {
             try
             {
-                _dataContext.SaveChanges();
+                _repositoryPersister.Commit();
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
         {
             try
             {
-                await _dataContext.SaveChangesAsync();
+                await _repositoryPersister.CommitAsync();
             }
             catch (Exception ex)
             {
@@ -54,9 +54,23 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
             }
         }
 
+        private bool _disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _repositoryPersister.Dispose();
+                }
+            }
+            _disposed = true;
+        }
+
         public void Dispose()
         {
-            _dataContext.Dispose();
+            Dispose(true);
             GC.SuppressFinalize(this);
         }
     }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using dotnet_rpg.Data;
 using dotnet_rpg.Domain.Models;
 using dotnet_rpg.Infrastructure.Exceptions;
 using dotnet_rpg.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
-namespace dotnet_rpg.Infrastructure.Repositories
+namespace dotnet_rpg.Infrastructure.Repository
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
@@ -18,6 +18,11 @@ namespace dotnet_rpg.Infrastructure.Repositories
         protected Repository(DbSet<T> dbSet)
         {
             _dbSet = dbSet;
+        }
+
+        protected virtual IQueryable<T> ModifyQuery(IQueryable<T> queryable)
+        {
+            return queryable;
         }
         
         public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate)
@@ -37,7 +42,7 @@ namespace dotnet_rpg.Infrastructure.Repositories
         {
             try
             {
-                var list = await _dbSet.Where(predicate).ToListAsync();
+                var list = await ModifyQuery(_dbSet).Where(predicate).ToListAsync();
                 return list;
             }
             catch (Exception ex)
@@ -50,7 +55,7 @@ namespace dotnet_rpg.Infrastructure.Repositories
         {
             try
             {
-                var characterWeapon = await _dbSet
+                var characterWeapon = await ModifyQuery(_dbSet)
                     .SingleOrDefaultAsync(predicate);
 
                 if (characterWeapon == null)

@@ -1,4 +1,5 @@
 using System.Text;
+using dotnet_rpg.Api.Controllers.Auth.Mapper;
 using dotnet_rpg.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -11,11 +12,16 @@ using Microsoft.IdentityModel.Tokens;
 using dotnet_rpg.Api.Middleware;
 using dotnet_rpg.Api.Service;
 using dotnet_rpg.Data;
+using dotnet_rpg.Infrastructure.Repository.Factory;
+using dotnet_rpg.Infrastructure.Repository.Persister;
 using dotnet_rpg.Service.Core;
 using dotnet_rpg.Service.Core.Auth;
+using dotnet_rpg.Service.Core.Auth.Validator;
 using dotnet_rpg.Service.Core.Character;
+using dotnet_rpg.Service.Core.Character.Validator;
 using dotnet_rpg.Service.Core.User;
 using dotnet_rpg.Service.Core.Weapon;
+using dotnet_rpg.Service.Core.Weapon.Validator;
 
 namespace dotnet_rpg.Api
 {
@@ -57,8 +63,14 @@ namespace dotnet_rpg.Api
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            services.AddScoped<IRepositoryFactory, RepositoryFactory>();
+            services.AddScoped<IRepositoryPersister, RepositoryPersister>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            services.AddScoped<IAuthValidator, AuthValidator>();
+            services.AddScoped<ICharacterValidator, CharacterValidator>();
+            services.AddScoped<IWeaponValidator, WeaponValidator>();
+            
             services.AddScoped<IServiceContext, ServiceContext>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();

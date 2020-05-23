@@ -14,11 +14,14 @@ namespace dotnet_rpg.Service.Core.Weapon
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWeaponValidator _weaponValidator;
 
-        public WeaponService(IServiceContext serviceContext, IUnitOfWork unitOfWork) 
+        public WeaponService(
+            IServiceContext serviceContext, 
+            IWeaponValidator weaponValidator, 
+            IUnitOfWork unitOfWork) 
         {
             _serviceContext = serviceContext;
+            _weaponValidator = weaponValidator;
             _unitOfWork = unitOfWork;
-            _weaponValidator = new WeaponValidator();
         }
 
         public async Task<IList<WeaponDto>> GetAllAsync() 

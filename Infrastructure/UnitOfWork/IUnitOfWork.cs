@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using dotnet_rpg.Infrastructure.Repositories.CharacterRepository;
-using dotnet_rpg.Infrastructure.Repositories.CharacterWeaponRepository;
-using dotnet_rpg.Infrastructure.Repositories.UserRepository;
-using dotnet_rpg.Infrastructure.Repositories.WeaponRepository;
+using dotnet_rpg.Infrastructure.Repository.Core.Character;
+using dotnet_rpg.Infrastructure.Repository.Core.CharacterWeapon;
+using dotnet_rpg.Infrastructure.Repository.Core.User;
+using dotnet_rpg.Infrastructure.Repository.Core.Weapon;
 
 namespace dotnet_rpg.Infrastructure.UnitOfWork
 {

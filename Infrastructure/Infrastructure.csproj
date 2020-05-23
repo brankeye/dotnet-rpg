@@ -8,9 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Exceptions\" />
+    <Folder Include="Repository\Core" />
     <Folder Include="UnitOfWork\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\UserRepository\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />

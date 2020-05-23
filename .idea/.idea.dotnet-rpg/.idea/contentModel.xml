@@ -18,19 +18,30 @@
               <e p="RegisterRequest.cs" t="Include" />
               <e p="RegisterResponse.cs" t="Include" />
             </e>
+            <e p="Mapper" t="Include">
+              <e p="AuthMapper.cs" t="Include" />
+              <e p="IAuthMapper.cs" t="Include" />
+            </e>
           </e>
           <e p="Character" t="Include">
             <e p="CharactersController.cs" t="Include" />
             <e p="Dtos" t="Include">
               <e p="CharacterResponse.cs" t="Include" />
               <e p="CreateCharacterRequest.cs" t="Include" />
-              <e p="EquipWeaponRequest.cs" t="Include" />
               <e p="UpdateCharacterRequest.cs" t="Include" />
+            </e>
+            <e p="Mapper" t="Include">
+              <e p="CharacterMapper.cs" t="Include" />
+              <e p="ICharacterMapper.cs" t="Include" />
             </e>
           </e>
           <e p="User" t="Include">
             <e p="Dtos" t="Include">
               <e p="UserResponse.cs" t="Include" />
+            </e>
+            <e p="Mapper" t="Include">
+              <e p="IUserMapper.cs" t="Include" />
+              <e p="UserMapper.cs" t="Include" />
             </e>
             <e p="UserController.cs" t="Include" />
           </e>
@@ -40,8 +51,15 @@
               <e p="UpdateWeaponRequest.cs" t="Include" />
               <e p="WeaponResponse.cs" t="Include" />
             </e>
+            <e p="Mapper" t="Include">
+              <e p="IWeaponMapper.cs" t="Include" />
+              <e p="WeaponMapper.cs" t="Include" />
+            </e>
             <e p="WeaponsController.cs" t="Include" />
           </e>
+        </e>
+        <e p="Mapper" t="Include">
+          <e p="IMapper.cs" t="Include" />
         </e>
         <e p="Middleware" t="Include">
           <e p="EgressHandler.cs" t="Include" />
@@ -121,25 +139,35 @@
             </e>
           </e>
         </e>
-        <e p="Repositories" t="Include">
-          <e p="CharacterRepository" t="Include">
-            <e p="CharacterRepository.cs" t="Include" />
-            <e p="ICharacterRepository.cs" t="Include" />
+        <e p="Repository" t="Include">
+          <e p="Core" t="Include">
+            <e p="Character" t="Include">
+              <e p="CharacterRepository.cs" t="Include" />
+              <e p="ICharacterRepository.cs" t="Include" />
+            </e>
+            <e p="CharacterWeapon" t="Include">
+              <e p="CharacterWeaponRepository.cs" t="Include" />
+              <e p="ICharacterWeaponRepository.cs" t="Include" />
+            </e>
+            <e p="User" t="Include">
+              <e p="IUserRepository.cs" t="Include" />
+              <e p="UserRepository.cs" t="Include" />
+            </e>
+            <e p="Weapon" t="Include">
+              <e p="IWeaponRepository.cs" t="Include" />
+              <e p="WeaponRepository.cs" t="Include" />
+            </e>
           </e>
-          <e p="CharacterWeaponRepository" t="Include">
-            <e p="CharacterWeaponRepository.cs" t="Include" />
-            <e p="ICharacterWeaponRepository.cs" t="Include" />
+          <e p="Factory" t="Include">
+            <e p="IRepositoryFactory.cs" t="Include" />
+            <e p="RepositoryFactory.cs" t="Include" />
           </e>
           <e p="IRepository.cs" t="Include" />
+          <e p="Persister" t="Include">
+            <e p="IRepositoryPersister.cs" t="Include" />
+            <e p="RepositoryPersister.cs" t="Include" />
+          </e>
           <e p="Repository.cs" t="Include" />
-          <e p="UserRepository" t="Include">
-            <e p="IUserRepository.cs" t="Include" />
-            <e p="UserRepository.cs" t="Include" />
-          </e>
-          <e p="WeaponRepository" t="Include">
-            <e p="IWeaponRepository.cs" t="Include" />
-            <e p="WeaponRepository.cs" t="Include" />
-          </e>
         </e>
         <e p="UnitOfWork" t="Include">
           <e p="IUnitOfWork.cs" t="Include" />

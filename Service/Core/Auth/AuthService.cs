@@ -15,14 +15,18 @@ namespace dotnet_rpg.Service.Core.Auth
 {
     public class AuthService : IAuthService
     {
+        private readonly IAuthValidator _authValidator;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
-        private readonly IAuthValidator _authValidator;
 
-        public AuthService(IUnitOfWork unitOfWork, IConfiguration configuration) {
+        public AuthService(
+            IAuthValidator authValidator, 
+            IUnitOfWork unitOfWork, 
+            IConfiguration configuration) 
+        {
+            _authValidator = authValidator;
             _unitOfWork = unitOfWork;
             _configuration = configuration;
-            _authValidator = new AuthValidator();
         }
 
         public async Task<LoginDto> LoginAsync(CredentialsDto dto) {
