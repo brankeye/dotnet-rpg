@@ -63,9 +63,8 @@ namespace dotnet_rpg.Api.Controllers.Weapon
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id) 
         {
-            var result = await _weaponService.DeleteAsync(id);
-            var response = _weaponMapper.Map(result);
-            return Ok(response);
+            await _weaponService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

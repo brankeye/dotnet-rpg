@@ -16,7 +16,7 @@ namespace dotnet_rpg.Service.Core.Character
         
         Task<CharacterDto> UpdateAsync(Guid id, UpdateCharacterDto dto);
         
-        Task<CharacterDto> DeleteAsync(Guid id);
+        Task DeleteAsync(Guid id);
         
         Task<CharacterDto> EquipWeaponAsync(Guid id, Guid weaponId);
         

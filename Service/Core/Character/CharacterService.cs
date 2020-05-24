@@ -62,13 +62,12 @@ namespace dotnet_rpg.Service.Core.Character
             return ToDto(character);
         }
 
-        public async Task<CharacterDto> DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
             var existingCharacter = await _unitOfWork.Characters
                 .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
-            var character = _unitOfWork.Characters.Delete(existingCharacter);
+            _unitOfWork.Characters.Delete(existingCharacter);
             await _unitOfWork.CommitAsync();
-            return ToDto(character);
         }
 
         public async Task<CharacterDto> EquipWeaponAsync(Guid id, Guid weaponId)

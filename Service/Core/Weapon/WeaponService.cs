@@ -62,7 +62,7 @@ namespace dotnet_rpg.Service.Core.Weapon
             return ToDto(weapon);
         }
 
-        public async Task<WeaponDto> DeleteAsync(Guid id) 
+        public async Task DeleteAsync(Guid id) 
         {
             var existingWeapon = await _unitOfWork.Weapons
                 .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
@@ -70,8 +70,6 @@ namespace dotnet_rpg.Service.Core.Weapon
             _unitOfWork.Weapons.Delete(existingWeapon);
             
             await _unitOfWork.CommitAsync();
-            
-            return ToDto(existingWeapon);
         }
 
         private static Domain.Models.Weapon ToModel(CreateWeaponDto dto)

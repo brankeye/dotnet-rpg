@@ -15,6 +15,6 @@ namespace dotnet_rpg.Service.Core.Weapon
         
         Task<WeaponDto> UpdateAsync(Guid id, UpdateWeaponDto dto);
         
-        Task<WeaponDto> DeleteAsync(Guid id);
+        Task DeleteAsync(Guid id);
     }
 }
