@@ -10,7 +10,7 @@ using dotnet_rpg.Data;
 namespace dotnet_rpg.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200519224315_Initial")]
+    [Migration("20200526222704_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,29 +49,16 @@ namespace dotnet_rpg.Data.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("WeaponId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Characters");
-                });
-
-            modelBuilder.Entity("dotnet_rpg.Domain.Models.CharacterWeapon", b =>
-                {
-                    b.Property<Guid>("CharacterId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("WeaponId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("CharacterId", "WeaponId");
-
-                    b.HasIndex("CharacterId")
-                        .IsUnique();
-
                     b.HasIndex("WeaponId");
 
-                    b.ToTable("CharacterWeapons");
+                    b.ToTable("Characters");
                 });
 
             modelBuilder.Entity("dotnet_rpg.Domain.Models.User", b =>
@@ -123,21 +110,10 @@ namespace dotnet_rpg.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("dotnet_rpg.Domain.Models.CharacterWeapon", b =>
-                {
-                    b.HasOne("dotnet_rpg.Domain.Models.Character", "Character")
-                        .WithOne("CharacterWeapon")
-                        .HasForeignKey("dotnet_rpg.Domain.Models.CharacterWeapon", "CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.HasOne("dotnet_rpg.Domain.Models.Weapon", "Weapon")
                         .WithMany()
-                        .HasForeignKey("WeaponId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("WeaponId");
                 });
 
             modelBuilder.Entity("dotnet_rpg.Domain.Models.Weapon", b =>

@@ -22,30 +22,6 @@ namespace dotnet_rpg.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Characters",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    HitPoints = table.Column<int>(nullable: false),
-                    Strength = table.Column<int>(nullable: false),
-                    Defense = table.Column<int>(nullable: false),
-                    Intelligence = table.Column<int>(nullable: false),
-                    Class = table.Column<string>(nullable: false),
-                    UserId = table.Column<Guid>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Characters", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Characters_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Weapons",
                 columns: table => new
                 {
@@ -66,27 +42,34 @@ namespace dotnet_rpg.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CharacterWeapons",
+                name: "Characters",
                 columns: table => new
                 {
-                    CharacterId = table.Column<Guid>(nullable: false),
-                    WeaponId = table.Column<Guid>(nullable: false)
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    HitPoints = table.Column<int>(nullable: false),
+                    Strength = table.Column<int>(nullable: false),
+                    Defense = table.Column<int>(nullable: false),
+                    Intelligence = table.Column<int>(nullable: false),
+                    Class = table.Column<string>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
+                    WeaponId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CharacterWeapons", x => new { x.CharacterId, x.WeaponId });
+                    table.PrimaryKey("PK_Characters", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CharacterWeapons_Characters_CharacterId",
-                        column: x => x.CharacterId,
-                        principalTable: "Characters",
+                        name: "FK_Characters_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CharacterWeapons_Weapons_WeaponId",
+                        name: "FK_Characters_Weapons_WeaponId",
                         column: x => x.WeaponId,
                         principalTable: "Weapons",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -95,14 +78,8 @@ namespace dotnet_rpg.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CharacterWeapons_CharacterId",
-                table: "CharacterWeapons",
-                column: "CharacterId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CharacterWeapons_WeaponId",
-                table: "CharacterWeapons",
+                name: "IX_Characters_WeaponId",
+                table: "Characters",
                 column: "WeaponId");
 
             migrationBuilder.CreateIndex(
@@ -113,9 +90,6 @@ namespace dotnet_rpg.Data.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "CharacterWeapons");
-
             migrationBuilder.DropTable(
                 name: "Characters");
 

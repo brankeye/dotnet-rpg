@@ -17,9 +17,6 @@ namespace dotnet_rpg.Data
                 .Entity<Character>()
                 .Property(x => x.Class)
                 .HasConversion(converter);
-            
-            modelBuilder.Entity<CharacterWeapon>()
-                .HasKey(x => new { x.CharacterId, x.WeaponId });
         }
 
         public DbSet<User> Users { get; set; }
@@ -27,7 +24,5 @@ namespace dotnet_rpg.Data
         public DbSet<Character> Characters { get; set; }
 
         public DbSet<Weapon> Weapons { get; set; }
-        
-        public DbSet<CharacterWeapon> CharacterWeapons { get; set; }
     }
 }
