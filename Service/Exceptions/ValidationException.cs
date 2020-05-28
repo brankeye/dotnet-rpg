@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using dotnet_rpg.Service.Validation;
 
 namespace dotnet_rpg.Service.Exceptions

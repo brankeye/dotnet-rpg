@@ -2,16 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using dotnet_rpg.Infrastructure.Repository.Query;
 
 namespace dotnet_rpg.Infrastructure.Repository
 {
     public interface IRepository<T> where T : class
     {
-        Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate);
-        
-        Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate);
-        
-        Task<T> GetAsync(Expression<Func<T, bool>> predicate);
+        IRepositoryQuery<T> Query { get; }
 
         T Create(T entity);
         

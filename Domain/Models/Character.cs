@@ -23,6 +23,8 @@ namespace dotnet_rpg.Domain.Models
 
         public User User { get; set; }
 
-        public CharacterWeapon CharacterWeapon { get; set; }
+        public Guid? WeaponId { get; set; }
+        
+        public Weapon Weapon { get; set; }
     }
 }

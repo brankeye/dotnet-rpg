@@ -1,10 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dotnet_rpg.Api.Controllers.Weapon.Dtos;
 using dotnet_rpg.Api.Controllers.Weapon.Mapper;
 using dotnet_rpg.Service.Core.Weapon;
-using dotnet_rpg.Service.Core.Weapon.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,45 +26,45 @@ namespace dotnet_rpg.Api.Controllers.Weapon
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ApiResponse<IEnumerable<WeaponResponse>>> GetAll()
         {
             var result = await _weaponService.GetAllAsync();
-            var response = result.Select(_weaponMapper.Map);
-            return Ok(response);
+            var data = result.Select(_weaponMapper.Map);
+            return ApiResponse.Ok(data);
         }
 
         [HttpGet("{id}", Name = GetByIdRouteName)]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<ApiResponse<WeaponResponse>> GetById(Guid id)
         {
             var result = await _weaponService.GetByIdAsync(id);
-            var response = _weaponMapper.Map(result);
-            return Ok(response);
+            var data = _weaponMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateWeaponRequest request) 
+        public async Task<ApiResponse<WeaponResponse>> Create(CreateWeaponRequest request) 
         {
             var dto = _weaponMapper.Map(request);
             var result = await _weaponService.CreateAsync(dto);
             var location = Url.Link(GetByIdRouteName, new { id = result.Id });
-            var response = _weaponMapper.Map(result);
-            return Created(location, response);
+            var data = _weaponMapper.Map(result);
+            return ApiResponse.Created(location, data);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, UpdateWeaponRequest request)
+        public async Task<ApiResponse<WeaponResponse>> Update(Guid id, UpdateWeaponRequest request)
         {
             var dto = _weaponMapper.Map(request);
             var result = await _weaponService.UpdateAsync(id, dto);
-            var response = _weaponMapper.Map(result);
-            return Ok(response);
+            var data = _weaponMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id) 
+        public async Task<ApiResponse> Delete(Guid id) 
         {
             await _weaponService.DeleteAsync(id);
-            return Ok();
+            return ApiResponse.Ok();
         }
     }
 }

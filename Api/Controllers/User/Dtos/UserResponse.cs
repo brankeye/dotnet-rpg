@@ -1,5 +1,4 @@
 using System;
-using dotnet_rpg.Api.Controllers.Weapon.Dtos;
 
 namespace dotnet_rpg.Api.Controllers.User.Dtos
 {

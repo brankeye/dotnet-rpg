@@ -4402,9 +4402,7 @@
       "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.3",
-      "Microsoft.IdentityModel.Tokens >= 6.5.1",
-      "Service >= 1.0.0",
-      "System.IdentityModel.Tokens.Jwt >= 6.5.1"
+      "Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4455,14 +4453,6 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[3.1.3, )"
-          },
-          "Microsoft.IdentityModel.Tokens": {
-            "target": "Package",
-            "version": "[6.5.1, )"
-          },
-          "System.IdentityModel.Tokens.Jwt": {
-            "target": "Package",
-            "version": "[6.5.1, )"
           }
         },
         "imports": [

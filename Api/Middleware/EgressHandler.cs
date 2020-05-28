@@ -9,7 +9,6 @@ using System.Security.Authentication;
 using System.IO;
 using dotnet_rpg.Infrastructure.Enums;
 using dotnet_rpg.Service.Exceptions;
-using dotnet_rpg.Service.Validation;
 using Microsoft.Extensions.Hosting;
 
 namespace dotnet_rpg.Api.Middleware
@@ -146,7 +145,7 @@ namespace dotnet_rpg.Api.Middleware
             {
                 payload = new {
                     message = exception.Message,
-                    stackTrace = exception.StackTrace
+                    stackTrace = exception.ToString()
                 };
             }
             else

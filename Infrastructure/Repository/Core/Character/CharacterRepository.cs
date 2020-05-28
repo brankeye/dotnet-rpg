@@ -1,6 +1,5 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 
 namespace dotnet_rpg.Infrastructure.Repository.Core.Character
 {
@@ -13,9 +12,7 @@ namespace dotnet_rpg.Infrastructure.Repository.Core.Character
 
         protected override IQueryable<Domain.Models.Character> ModifyQuery(IQueryable<Domain.Models.Character> queryable)
         {
-            return queryable
-                .Include(x => x.CharacterWeapon)
-                .ThenInclude(x => x.Weapon);
+            return queryable.Include(x => x.Weapon);
         }
     }
 }

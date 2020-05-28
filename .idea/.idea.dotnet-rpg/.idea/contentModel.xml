@@ -10,6 +10,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="ApiResponse.cs" t="Include" />
           <e p="Auth" t="Include">
             <e p="AuthController.cs" t="Include" />
             <e p="Dtos" t="Include">
@@ -85,8 +86,8 @@
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="DataContext.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200519224315_Initial.cs" t="Include" />
-          <e p="20200519224315_Initial.Designer.cs" t="Include" />
+          <e p="20200526222704_Initial.cs" t="Include" />
+          <e p="20200526222704_Initial.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -99,14 +100,12 @@
       </e>
       <e p="Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Data" t="Include" />
         <e p="Domain.csproj" t="IncludeRecursive" />
         <e p="Enums" t="Include">
           <e p="RpgClass.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Character.cs" t="Include" />
-          <e p="CharacterWeapon.cs" t="Include" />
           <e p="User.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
@@ -145,10 +144,6 @@
               <e p="CharacterRepository.cs" t="Include" />
               <e p="ICharacterRepository.cs" t="Include" />
             </e>
-            <e p="CharacterWeapon" t="Include">
-              <e p="CharacterWeaponRepository.cs" t="Include" />
-              <e p="ICharacterWeaponRepository.cs" t="Include" />
-            </e>
             <e p="User" t="Include">
               <e p="IUserRepository.cs" t="Include" />
               <e p="UserRepository.cs" t="Include" />
@@ -166,6 +161,10 @@
           <e p="Persister" t="Include">
             <e p="IRepositoryPersister.cs" t="Include" />
             <e p="RepositoryPersister.cs" t="Include" />
+          </e>
+          <e p="Query" t="Include">
+            <e p="IRepositoryQuery.cs" t="Include" />
+            <e p="RepositoryQuery.cs" t="Include" />
           </e>
           <e p="Repository.cs" t="Include" />
         </e>

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using dotnet_rpg.Domain.Models;
 using dotnet_rpg.Infrastructure.Exceptions;
 using dotnet_rpg.Infrastructure.Extensions;
+using dotnet_rpg.Infrastructure.Repository.Query;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 
 namespace dotnet_rpg.Infrastructure.Repository
 {
@@ -25,51 +25,7 @@ namespace dotnet_rpg.Infrastructure.Repository
             return queryable;
         }
         
-        public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate)
-        {
-            try
-            {
-                var exists = await _dbSet.AnyAsync(predicate);
-                return exists;
-            }
-            catch (Exception ex)
-            {
-                throw ex.ToRepositoryException($"Failed to find entity of type {typeof(T).Name}");
-            }
-        }
-        
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate)
-        {
-            try
-            {
-                var list = await ModifyQuery(_dbSet).Where(predicate).ToListAsync();
-                return list;
-            }
-            catch (Exception ex)
-            {
-                throw ex.ToRepositoryException($"Failed to get entities of type {typeof(T).Name}");
-            }
-        }
-
-        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)
-        {
-            try
-            {
-                var characterWeapon = await ModifyQuery(_dbSet)
-                    .SingleOrDefaultAsync(predicate);
-
-                if (characterWeapon == null)
-                {
-                    throw new NotFoundException(typeof(CharacterWeapon));
-                }
-
-                return characterWeapon;
-            }
-            catch (Exception ex)
-            {
-                throw ex.ToRepositoryException($"Failed to get entity of type {typeof(T).Name}");
-            }
-        }
+        public IRepositoryQuery<T> Query => new RepositoryQuery<T>(ModifyQuery(_dbSet));
 
         public T Create(T entity)
         {

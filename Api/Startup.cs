@@ -1,5 +1,4 @@
 using System.Text;
-using dotnet_rpg.Api.Controllers.Auth.Mapper;
 using dotnet_rpg.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;

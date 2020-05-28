@@ -1,11 +1,6 @@
-using System;
 using System.Threading.Tasks;
-using dotnet_rpg.Api.Controllers.Character.Dtos;
 using dotnet_rpg.Api.Controllers.User.Dtos;
 using dotnet_rpg.Api.Controllers.User.Mapper;
-using dotnet_rpg.Api.Services.Character.Dtos;
-using dotnet_rpg.Service.Core.Character;
-using dotnet_rpg.Service.Core.Character.Dtos;
 using dotnet_rpg.Service.Core.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,11 +22,11 @@ namespace dotnet_rpg.Api.Controllers.User
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ApiResponse<UserResponse>> Get()
         {
             var result = await _userService.GetAsync();
-            var response = _userMapper.Map(result);
-            return Ok(response);
+            var data = _userMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
     }
 }

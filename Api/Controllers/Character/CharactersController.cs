@@ -1,11 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using dotnet_rpg.Api.Controllers.Character.Dtos;
 using dotnet_rpg.Api.Controllers.Character.Mapper;
-using dotnet_rpg.Api.Services.Character.Dtos;
 using dotnet_rpg.Service.Core.Character;
-using dotnet_rpg.Service.Core.Character.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,63 +27,61 @@ namespace dotnet_rpg.Api.Controllers.Character
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ApiResponse<IEnumerable<CharacterResponse>>> GetAll()
         {
             var result = await _characterService.GetAllAsync();
-
-            var response = result.Select(_characterMapper.Map);
-            
-            return Ok(response);
+            var data = result.Select(_characterMapper.Map);
+            return ApiResponse.Ok(data);
         }
 
         [HttpGet("{id}", Name = GetByIdRouteName)]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<ApiResponse<CharacterResponse>> GetById(Guid id)
         {
             var result = await _characterService.GetByIdAsync(id);
-            var response = _characterMapper.Map(result);
-            return Ok(response);
+            var data = _characterMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateCharacterRequest request)
+        public async Task<ApiResponse<CharacterResponse>> Create(CreateCharacterRequest request)
         {
             var dto = _characterMapper.Map(request);
             var result = await _characterService.CreateAsync(dto);
             var location = Url.Link(GetByIdRouteName, new { id = result.Id });
-            var response = _characterMapper.Map(result);
-            return Created(location, response);
+            var data = _characterMapper.Map(result);
+            return ApiResponse.Created(location, data);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, UpdateCharacterRequest request)
+        public async Task<ApiResponse<CharacterResponse>> Update(Guid id, UpdateCharacterRequest request)
         {
             var dto = _characterMapper.Map(request);
             var result = await _characterService.UpdateAsync(id, dto);
-            var response = _characterMapper.Map(result);
-            return Ok(response);
+            var data = _characterMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id) 
+        public async Task<ApiResponse> Delete(Guid id) 
         {
             await _characterService.DeleteAsync(id);
-            return Ok();
+            return ApiResponse.Ok();
         }
 
         [HttpPut("{id}/weapon/{weaponId}")]
-        public async Task<IActionResult> EquipWeapon(Guid id, Guid weaponId)
+        public async Task<ApiResponse<CharacterResponse>> EquipWeapon(Guid id, Guid weaponId)
         {
             var result = await _characterService.EquipWeaponAsync(id, weaponId);
-            var response = _characterMapper.Map(result);
-            return Ok(response);
+            var data = _characterMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
 
         [HttpDelete("{id}/weapon")]
-        public async Task<IActionResult> UnequipWeapon(Guid id)
+        public async Task<ApiResponse<CharacterResponse>> UnequipWeapon(Guid id)
         {
             var result = await _characterService.UnequipWeaponAsync(id);
-            var response = _characterMapper.Map(result);
-            return Ok(response);
+            var data = _characterMapper.Map(result);
+            return ApiResponse.Ok(data);
         }
     }
 }

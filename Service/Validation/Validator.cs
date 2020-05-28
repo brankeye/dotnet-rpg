@@ -13,7 +13,7 @@ namespace dotnet_rpg.Service.Validation
 
         protected bool IsValid => _errors.Count == 0;
 
-        protected IList<ValidationError> Errors => _errors;
+        protected IEnumerable<ValidationError> Errors => _errors;
 
         protected void AddError(string message)
         {

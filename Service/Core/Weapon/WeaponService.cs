@@ -26,23 +26,26 @@ namespace dotnet_rpg.Service.Core.Weapon
 
         public async Task<IList<WeaponDto>> GetAllAsync() 
         {
-            var weapons = await _unitOfWork.Weapons
-                .GetAllAsync(x => x.UserId ==_serviceContext.UserId);
+            var weapons = await _unitOfWork.Weapons.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .ToListAsync();
             var dtos = weapons.Select(ToDto).ToList();
             return dtos;
         }
 
         public async Task<WeaponDto> GetByIdAsync(Guid id)
         {
-            var weapon = await _unitOfWork.Weapons
-                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
+            var weapon = await _unitOfWork.Weapons.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.Id == id)
+                .SingleAsync();
             return ToDto(weapon);
         }
 
         public async Task<WeaponDto> CreateAsync(CreateWeaponDto dto) 
         {
             _weaponValidator.Validate(dto);
-            var weapon = _unitOfWork.Weapons.Create(ToModel(dto));
+            var weapon = _unitOfWork.Weapons.Create(ToModel(_serviceContext.UserId, dto));
             await _unitOfWork.CommitAsync();
             return ToDto(weapon);
         }
@@ -51,42 +54,42 @@ namespace dotnet_rpg.Service.Core.Weapon
         {
             _weaponValidator.Validate(dto);
             
-            var existingWeapon = await _unitOfWork.Weapons
-                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
+            var weapon = await _unitOfWork.Weapons.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.Id == id)
+                .SingleAsync();
 
-            existingWeapon.Name = dto.Name;
-            existingWeapon.Damage = dto.Damage;
-            
-            var weapon = _unitOfWork.Weapons.Update(existingWeapon);
+            UpdateModel(weapon, dto);
+            _unitOfWork.Weapons.Update(weapon);
             await _unitOfWork.CommitAsync();
+            
             return ToDto(weapon);
         }
 
         public async Task DeleteAsync(Guid id) 
         {
-            var existingWeapon = await _unitOfWork.Weapons
-                .GetAsync(x => x.UserId == _serviceContext.UserId && x.Id == id);
+            var weapon = await _unitOfWork.Weapons.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.Id == id)
+                .SingleAsync();
             
-            _unitOfWork.Weapons.Delete(existingWeapon);
+            _unitOfWork.Weapons.Delete(weapon);
             
             await _unitOfWork.CommitAsync();
         }
-
-        private static Domain.Models.Weapon ToModel(CreateWeaponDto dto)
+        
+        private static void UpdateModel(Domain.Models.Weapon weapon, UpdateWeaponDto dto)
         {
             if (dto == null)
             {
                 throw new ArgumentNullException(nameof(dto));
             }
 
-            return new Domain.Models.Weapon
-            {
-                Name = dto.Name,
-                Damage = dto.Damage
-            };
+            weapon.Name = dto.Name;
+            weapon.Damage = dto.Damage;
         }
 
-        private static Domain.Models.Weapon ToModel(Guid userId, UpdateWeaponDto dto)
+        private static Domain.Models.Weapon ToModel(Guid userId, CreateWeaponDto dto)
         {
             if (dto == null)
             {

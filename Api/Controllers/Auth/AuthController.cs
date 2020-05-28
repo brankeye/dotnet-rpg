@@ -21,7 +21,7 @@ namespace dotnet_rpg.Api.Controllers.Auth
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<ApiResponse<LoginResponse>> Login(LoginRequest request)
         {
             var result = await _authService.LoginAsync(new CredentialsDto
             {
@@ -29,13 +29,13 @@ namespace dotnet_rpg.Api.Controllers.Auth
                 Password = request.Password
             });
 
-            var response = _authMapper.Map(result);
-
-            return Ok(response);
+            var data = _authMapper.Map(result);
+            
+            return ApiResponse.Ok(data);
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterRequest request)
+        public async Task<ApiResponse<RegisterResponse>> Register(RegisterRequest request)
         {
             var result = await _authService.RegisterAsync(new CredentialsDto
             {
@@ -43,9 +43,9 @@ namespace dotnet_rpg.Api.Controllers.Auth
                 Password = request.Password
             });
             
-            var response = _authMapper.Map(result);
-            
-            return Ok(response);
+            var data = _authMapper.Map(result);
+
+            return ApiResponse.Ok(data);
         }
     }
 }

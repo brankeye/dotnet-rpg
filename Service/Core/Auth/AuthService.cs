@@ -32,7 +32,9 @@ namespace dotnet_rpg.Service.Core.Auth
         public async Task<LoginDto> LoginAsync(CredentialsDto dto) {
             _authValidator.Validate(dto);
 
-            var user = await _unitOfWork.Users.GetAsync(x => x.Username == dto.Username);
+            var user = await _unitOfWork.Users.Query
+                .Where(x => x.Username == dto.Username)
+                .SingleAsync();
 
             if (user == null) {
                 throw new AuthenticationException("User not found.");
@@ -52,7 +54,9 @@ namespace dotnet_rpg.Service.Core.Auth
         public async Task<RegisterDto> RegisterAsync(CredentialsDto dto) {
             _authValidator.Validate(dto);
 
-            var userExists = await _unitOfWork.Users.ExistsAsync(x => x.Username == dto.Username);
+            var userExists = await _unitOfWork.Users.Query
+                .Where(x => x.Username == dto.Username)
+                .ExistsAsync();
             if (userExists)
             {
                 throw new AuthenticationException("User already exists.");
