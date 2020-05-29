@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rrxw/0UOvtf1hKHzhyLnd2HqduEXvObvQYolvV2qIgcbr0fIII2mL/Nl2C2UNFyFQiAovDP2hRTyITLr8VjT5g==",
+  "dgSpecHash": "tmmptsmNt/pV6LC+ZK+oLGWY1JG0bKnpelF/B+w4K5k5GHVflx1AqLBYEtr7PVNxi7tj3QSxcvOtrcS58WC4ZQ==",
   "success": true,
   "projectFilePath": "/Users/brandon/Personal/dotnet-rpg/Api/Api.csproj",
   "expectedPackageFiles": [
+    "/Users/brandon/.nuget/packages/fluentvalidation/8.6.2/fluentvalidation.8.6.2.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.3/microsoft.aspnetcore.authentication.jwtbearer.3.1.3.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

@@ -2,65 +2,59 @@ using System;
 using dotnet_rpg.Api.Services.Character.Dtos;
 using dotnet_rpg.Domain.Enums;
 using dotnet_rpg.Service.Core.Character.Dtos;
-using dotnet_rpg.Service.Exceptions;
+using FluentValidation;
 
 namespace dotnet_rpg.Service.Core.Character.Validator
 {
-    public class CharacterValidator : Validation.Validator, ICharacterValidator
+    public class CharacterValidator : ICharacterValidator
     {
-        public void Validate(CreateCharacterDto dto)
+        private readonly Validation.IValidator<CreateCharacterDto> _createCharacterDtoValidator;
+        private readonly Validation.IValidator<UpdateCharacterDto> _updateCharacterDtoValidator;
+
+        public CharacterValidator()
         {
-            if (dto == null) 
-            {
-                throw new ArgumentNullException(nameof(dto));
-            }
-                    
-            if (dto.Name == null) 
-            {
-                AddError("Character name is invalid");
-            }
-
-            try 
-            {
-                var _ = (RpgClass) Enum.Parse(typeof(RpgClass), dto.Class);
-            } catch (Exception) 
-            {
-                var names = string.Join(", ", Enum.GetNames(typeof(RpgClass)));
-                AddError($"Character class is invalid. Valid options are {names}");
-            }
-
-            if (!IsValid)
-            {
-                throw new ValidationException(Errors);
-            }
+            _createCharacterDtoValidator = new CreateCharacterDtoValidator();
+            _updateCharacterDtoValidator = new UpdateCharacterDtoValidator();
+        }
+        
+        public void ValidateAndThrow(CreateCharacterDto dto)
+        {
+            _createCharacterDtoValidator.ValidateAndThrow(dto);
         }
 
-        public void Validate(UpdateCharacterDto dto)
+        public void ValidateAndThrow(UpdateCharacterDto dto)
         {
-            if (dto == null)
-            {
-                throw new ArgumentNullException(nameof(dto));
-            }
+            _updateCharacterDtoValidator.ValidateAndThrow(dto);
+        }
+    }
 
-            if (dto.Name == null)
-            {
-                AddError("Character name is invalid");
-            }
-
-            try
-            {
-                var _ = (RpgClass)Enum.Parse(typeof(RpgClass), dto.Class);
-            }
-            catch (Exception)
-            {
-                var names = string.Join(", ", Enum.GetNames(typeof(RpgClass)));
-                AddError($"Character class is invalid. Valid options are {names}");
-            }
-
-            if (!IsValid)
-            {
-                throw new ValidationException(Errors);
-            }
+    public class CreateCharacterDtoValidator : Validation.Validator<CreateCharacterDto>
+    {
+        public CreateCharacterDtoValidator()
+        {
+            var rpgClassList = string.Join(", ", Enum.GetNames(typeof(RpgClass)));
+            
+            RuleFor(x => x.Name)
+                .NotNull()
+                .WithMessage("Character name is invalid");
+            RuleFor(x => x.Class)
+                .IsEnumName(typeof(RpgClass))
+                .WithMessage($"Character class is invalid. Valid options are {rpgClassList}");
+        }
+    }
+    
+    public class UpdateCharacterDtoValidator : Validation.Validator<UpdateCharacterDto>
+    {
+        public UpdateCharacterDtoValidator()
+        {
+            var rpgClassList = string.Join(", ", Enum.GetNames(typeof(RpgClass)));
+            
+            RuleFor(x => x.Name)
+                .NotNull()
+                .WithMessage("Character name is invalid");
+            RuleFor(x => x.Class)
+                .IsEnumName(typeof(RpgClass))
+                .WithMessage($"Character class is invalid. Valid options are {rpgClassList}");
         }
     }
 }

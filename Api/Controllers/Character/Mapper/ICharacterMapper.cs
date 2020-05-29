@@ -1,15 +1,15 @@
 using dotnet_rpg.Api.Controllers.Character.Dtos;
-using dotnet_rpg.Api.Mapper;
 using dotnet_rpg.Api.Services.Character.Dtos;
 using dotnet_rpg.Service.Core.Character.Dtos;
 
 namespace dotnet_rpg.Api.Controllers.Character.Mapper
 {
-    public interface ICharacterMapper : 
-        IMapper<CharacterDto, CharacterResponse>,
-        IMapper<CreateCharacterRequest, CreateCharacterDto>,
-        IMapper<UpdateCharacterRequest, UpdateCharacterDto>
+    public interface ICharacterMapper
     {
+        CharacterResponse Map(CharacterDto dto);
         
+        CreateCharacterDto Map(CreateCharacterRequest request);
+        
+        UpdateCharacterDto Map(UpdateCharacterRequest request);
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace dotnet_rpg.Service.Validation
 {
-    public interface IValidator<T>
+    public interface IValidator<in T>
     {
-        void Validate(T entity);
+        void ValidateAndThrow(T entity);
     }
 }

@@ -1,55 +1,53 @@
-using System;
 using dotnet_rpg.Service.Core.Weapon.Dtos;
-using dotnet_rpg.Service.Exceptions;
+using FluentValidation;
 
 namespace dotnet_rpg.Service.Core.Weapon.Validator
 {
-    public class WeaponValidator : Validation.Validator, IWeaponValidator
+    public class WeaponValidator : IWeaponValidator
     {
-        public void Validate(CreateWeaponDto dto)
+        private readonly Validation.IValidator<CreateWeaponDto> _createValidator;
+        private readonly Validation.IValidator<UpdateWeaponDto> _updateValidator;
+        
+        public WeaponValidator()
         {
-            if (dto == null) 
-            {
-                throw new ArgumentNullException(nameof(dto));
-            }
-                    
-            if (dto.Name == null) 
-            {
-                AddError("Weapon name is invalid");
-            }
-
-            if (dto.Damage <= 0) 
-            {
-                AddError("Weapon must do some damage");
-            }
-
-            if (!IsValid) 
-            {
-                throw new ValidationException(Errors);
-            }
+            _createValidator = new CreateWeaponDtoValidator();
+            _updateValidator = new UpdateWeaponDtoValidator();
         }
 
-        public void Validate(UpdateWeaponDto dto)
+        public void ValidateAndThrow(CreateWeaponDto entity)
         {
-            if (dto == null)
-            {
-                throw new ArgumentNullException(nameof(dto));
-            }
+            _createValidator.ValidateAndThrow(entity);
+        }
 
-            if (dto.Name == null)
-            {
-                AddError("Weapon name is invalid");
-            }
-
-            if (dto.Damage <= 0)
-            {
-                AddError("Weapon must do some damage");
-            }
-
-            if (!IsValid)
-            {
-                throw new ValidationException(Errors);
-            }
+        public void ValidateAndThrow(UpdateWeaponDto entity)
+        {
+            _updateValidator.ValidateAndThrow(entity);
+        }
+    }
+    
+    public class CreateWeaponDtoValidator : Validation.Validator<CreateWeaponDto>
+    {
+        public CreateWeaponDtoValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotNull()
+                .WithMessage("A name must be given");
+            RuleFor(x => x.Damage)
+                .GreaterThan(0)
+                .WithMessage("Damage must be greater than 0");
+        }
+    }
+    
+    public class UpdateWeaponDtoValidator : Validation.Validator<UpdateWeaponDto>
+    {
+        public UpdateWeaponDtoValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotNull()
+                .WithMessage("A name must be given");
+            RuleFor(x => x.Damage)
+                .GreaterThan(0)
+                .WithMessage("Damage must be greater than 0");
         }
     }
 }

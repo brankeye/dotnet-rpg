@@ -5,14 +5,6 @@ namespace dotnet_rpg.Service.Exceptions
 {
     public class ValidationException : ServiceException
     {
-        public ValidationException(string message)
-        {
-            Errors = new List<ValidationError>
-            {
-                new ValidationError(message)
-            };
-        }
-
         public ValidationException(IEnumerable<ValidationError> errors)
         {
             Errors = errors;

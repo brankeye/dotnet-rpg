@@ -59,9 +59,6 @@
             <e p="WeaponsController.cs" t="Include" />
           </e>
         </e>
-        <e p="Mapper" t="Include">
-          <e p="IMapper.cs" t="Include" />
-        </e>
         <e p="Middleware" t="Include">
           <e p="EgressHandler.cs" t="Include" />
         </e>
@@ -185,6 +182,10 @@
               <e p="RegisterDto.cs" t="Include" />
             </e>
             <e p="IAuthService.cs" t="Include" />
+            <e p="Mapper" t="Include">
+              <e p="AuthMapper.cs" t="Include" />
+              <e p="IAuthMapper.cs" t="Include" />
+            </e>
             <e p="Validator" t="Include">
               <e p="AuthValidator.cs" t="Include" />
               <e p="IAuthValidator.cs" t="Include" />
@@ -199,6 +200,10 @@
               <e p="UpdateCharacterDto.cs" t="Include" />
             </e>
             <e p="ICharacterService.cs" t="Include" />
+            <e p="Mapper" t="Include">
+              <e p="CharacterMapper.cs" t="Include" />
+              <e p="ICharacterMapper.cs" t="Include" />
+            </e>
             <e p="Validator" t="Include">
               <e p="CharacterValidator.cs" t="Include" />
               <e p="ICharacterValidator.cs" t="Include" />
@@ -210,6 +215,10 @@
               <e p="UserDto.cs" t="Include" />
             </e>
             <e p="IUserService.cs" t="Include" />
+            <e p="Mapper" t="Include">
+              <e p="IUserMapper.cs" t="Include" />
+              <e p="UserMapper.cs" t="Include" />
+            </e>
             <e p="UserService.cs" t="Include" />
           </e>
           <e p="Weapon" t="Include">
@@ -219,6 +228,10 @@
               <e p="WeaponDto.cs" t="Include" />
             </e>
             <e p="IWeaponService.cs" t="Include" />
+            <e p="Mapper" t="Include">
+              <e p="IWeaponMapper.cs" t="Include" />
+              <e p="WeaponMapper.cs" t="Include" />
+            </e>
             <e p="Validator" t="Include">
               <e p="IWeaponValidator.cs" t="Include" />
               <e p="WeaponValidator.cs" t="Include" />

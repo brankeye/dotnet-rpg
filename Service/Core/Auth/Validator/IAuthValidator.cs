@@ -5,5 +5,6 @@ namespace dotnet_rpg.Service.Core.Auth.Validator
 {
     public interface IAuthValidator : IValidator<CredentialsDto>
     {
+        
     }
 }

@@ -8,7 +8,7 @@ namespace dotnet_rpg.Service.Core.Character
 {
     public interface ICharacterService
     {
-        Task<IList<CharacterDto>> GetAllAsync();
+        Task<IEnumerable<CharacterDto>> GetAllAsync();
         
         Task<CharacterDto> GetByIdAsync(Guid id);
         

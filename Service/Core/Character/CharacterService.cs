@@ -5,11 +5,9 @@ using System;
 using dotnet_rpg.Infrastructure.UnitOfWork;
 using dotnet_rpg.Domain.Enums;
 using dotnet_rpg.Api.Services.Character.Dtos;
-using dotnet_rpg.Infrastructure.Exceptions;
-using dotnet_rpg.Domain.Models;
 using dotnet_rpg.Service.Core.Character.Dtos;
+using dotnet_rpg.Service.Core.Character.Mapper;
 using dotnet_rpg.Service.Core.Character.Validator;
-using dotnet_rpg.Service.Core.Weapon.Dtos;
 using dotnet_rpg.Service.Exceptions;
 
 namespace dotnet_rpg.Service.Core.Character
@@ -19,24 +17,25 @@ namespace dotnet_rpg.Service.Core.Character
         private readonly IServiceContext _serviceContext;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICharacterValidator _characterValidator;
+        private readonly ICharacterMapper _characterMapper;
 
         public CharacterService(
             IServiceContext serviceContext,
-            ICharacterValidator characterValidator,
-            IUnitOfWork unitOfWork) 
+            IUnitOfWork unitOfWork,
+            ICharacterValidator characterValidator) 
         {
             _serviceContext = serviceContext;
-            _characterValidator = characterValidator;
             _unitOfWork = unitOfWork;
+            _characterValidator = characterValidator;
+            _characterMapper = new CharacterMapper();
         }
 
-        public async Task<IList<CharacterDto>> GetAllAsync()
+        public async Task<IEnumerable<CharacterDto>> GetAllAsync()
         {
             var characters = await _unitOfWork.Characters.Query
                 .Where(x => x.UserId == _serviceContext.UserId)
                 .ToListAsync();
-            var dtos = characters.Select(ToDto).ToList();
-            return dtos;
+            return characters.Select(_characterMapper.Map);
         }
 
         public async Task<CharacterDto> GetByIdAsync(Guid id)
@@ -45,20 +44,21 @@ namespace dotnet_rpg.Service.Core.Character
                 .Where(x => x.UserId == _serviceContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
-            return ToDto(character);
+            return _characterMapper.Map(character);
         }
 
         public async Task<CharacterDto> CreateAsync(CreateCharacterDto dto) 
         {
-            _characterValidator.Validate(dto);
-            var character = _unitOfWork.Characters.Create(ToModel(_serviceContext.UserId, dto));
+            _characterValidator.ValidateAndThrow(dto);
+            var newCharacter = _characterMapper.Map(dto, _serviceContext.UserId);
+            var character = _unitOfWork.Characters.Create(newCharacter);
             await _unitOfWork.CommitAsync();
-            return ToDto(character);
+            return _characterMapper.Map(character);
         }
 
         public async Task<CharacterDto> UpdateAsync(Guid id, UpdateCharacterDto dto) 
         {
-            _characterValidator.Validate(dto);
+            _characterValidator.ValidateAndThrow(dto);
             var character = await _unitOfWork.Characters.Query
                 .Where(x => x.UserId == _serviceContext.UserId)
                 .Where(x => x.Id == id)
@@ -66,7 +66,7 @@ namespace dotnet_rpg.Service.Core.Character
             UpdateModel(character, dto);
             _unitOfWork.Characters.Update(character);
             await _unitOfWork.CommitAsync();
-            return ToDto(character);
+            return _characterMapper.Map(character);
         }
 
         public async Task DeleteAsync(Guid id)
@@ -95,7 +95,7 @@ namespace dotnet_rpg.Service.Core.Character
             _unitOfWork.Characters.Update(character);
             await _unitOfWork.CommitAsync();
 
-            return ToDto(character);
+            return _characterMapper.Map(character);
         }
         
         public async Task<CharacterDto> UnequipWeaponAsync(Guid id)
@@ -115,26 +115,7 @@ namespace dotnet_rpg.Service.Core.Character
             _unitOfWork.Characters.Update(character);
             await _unitOfWork.CommitAsync();
             
-            return ToDto(character);
-        }
-
-        private static Domain.Models.Character ToModel(Guid userId, CreateCharacterDto dto)
-        {
-            if (dto == null)
-            {
-                throw new ArgumentNullException(nameof(dto));
-            }
-
-            return new Domain.Models.Character
-            {
-                UserId = userId,
-                Name = dto.Name,
-                HitPoints = 100,
-                Strength = 1,
-                Defense = 1,
-                Intelligence = 1,
-                Class = (RpgClass)Enum.Parse(typeof(RpgClass), dto.Class)
-            };
+            return _characterMapper.Map(character);
         }
 
         private static void UpdateModel(Domain.Models.Character character, UpdateCharacterDto dto)
@@ -146,31 +127,6 @@ namespace dotnet_rpg.Service.Core.Character
 
             character.Name = dto.Name;
             character.Class = (RpgClass) Enum.Parse(typeof(RpgClass), dto.Class);
-        }
-
-        private static CharacterDto ToDto(Domain.Models.Character character)
-        {
-            if (character == null)
-            {
-                throw new ArgumentNullException(nameof(character));
-            }
-
-            return new CharacterDto
-            {
-                Id = character.Id,
-                Name = character.Name,
-                HitPoints = character.HitPoints,
-                Strength = character.Strength,
-                Defense = character.Defense,
-                Intelligence = character.Intelligence,
-                Class = character.Class.ToString(),
-                Weapon = character.Weapon == null ? null : new WeaponDto
-                {
-                    Id = character.Weapon.Id,
-                    Name = character.Weapon.Name,
-                    Damage = character.Weapon.Damage,
-                }
-            };
         }
     }
 }

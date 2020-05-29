@@ -53,3 +53,4 @@
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Data.pdb
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Service.dll
 /Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/Service.pdb
+/Users/brandon/Personal/dotnet-rpg/Api/bin/Debug/netcoreapp3.1/FluentValidation.dll

@@ -7,7 +7,7 @@ namespace dotnet_rpg.Service.Core.Weapon
 {
     public interface IWeaponService
     {
-        Task<IList<WeaponDto>> GetAllAsync();
+        Task<IEnumerable<WeaponDto>> GetAllAsync();
         
         Task<WeaponDto> GetByIdAsync(Guid id);
         

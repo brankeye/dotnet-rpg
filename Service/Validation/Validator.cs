@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using FluentValidation;
+using ValidationException = dotnet_rpg.Service.Exceptions.ValidationException;
 
 namespace dotnet_rpg.Service.Validation
 {
-    public abstract class Validator
+    public abstract class Validator<T> : AbstractValidator<T>, IValidator<T>
     {
         private readonly IList<ValidationError> _errors;
 
@@ -13,11 +15,28 @@ namespace dotnet_rpg.Service.Validation
 
         protected bool IsValid => _errors.Count == 0;
 
-        protected IEnumerable<ValidationError> Errors => _errors;
+        private IEnumerable<ValidationError> Errors => _errors;
 
-        protected void AddError(string message)
+        private void AddError(string message)
         {
             _errors.Add(new ValidationError(message));
+        }
+
+        public void ValidateAndThrow(T entity)
+        {
+            var results = Validate(entity);
+
+            if (results.IsValid)
+            {
+                return;
+            }
+            
+            foreach (var error in results.Errors)
+            {
+                AddError(error.ErrorMessage);
+            }
+            
+            throw new ValidationException(Errors);
         }
     }
 }

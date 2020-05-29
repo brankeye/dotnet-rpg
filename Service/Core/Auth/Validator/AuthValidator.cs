@@ -1,32 +1,33 @@
-﻿using System;
-using dotnet_rpg.Service.Core.Auth.Dtos;
-using dotnet_rpg.Service.Exceptions;
+﻿using dotnet_rpg.Service.Core.Auth.Dtos;
+using FluentValidation;
 
 namespace dotnet_rpg.Service.Core.Auth.Validator
 {
-    public class AuthValidator : Validation.Validator, IAuthValidator
+    public class AuthValidator : IAuthValidator
     {
-        public void Validate(CredentialsDto dto)
+        private readonly Validation.IValidator<CredentialsDto> _credentialsValidator;
+
+        public AuthValidator()
         {
-            if (dto == null)
-            {
-                throw new ArgumentNullException(nameof(dto));
-            }
+            _credentialsValidator = new CredentialsDtoValidator();
+        }
+        
+        public void ValidateAndThrow(CredentialsDto dto)
+        {
+            _credentialsValidator.ValidateAndThrow(dto);
+        }
+    }
 
-            if (dto.Username == null)
-            {
-                AddError("A username must be given");
-            }
-
-            if (dto.Password == null)
-            {
-                AddError("A password must be given");
-            }
-
-            if (!IsValid)
-            {
-                throw new ValidationException(Errors);
-            }
+    public class CredentialsDtoValidator : Validation.Validator<CredentialsDto>
+    {
+        public CredentialsDtoValidator()
+        {
+            RuleFor(x => x.Username)
+                .NotNull()
+                .WithMessage("A username must be given");
+            RuleFor(x => x.Password)
+                .NotNull()
+                .WithMessage("A password must be given");
         }
     }
 }

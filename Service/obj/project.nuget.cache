@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SIDeon01VUCkZ2pQbJ5Q6aOEWS5JPUe3einWA18scyrizj59xQhpRgH/D1I9LdFLl/UUzMPWfyT4J31/s4KMIg==",
+  "dgSpecHash": "qWG1GJhN3fjC4ppTsEsQPnW3WZ8TAtt4rbdQsmfdb/722/PZDFGj4nuqaDswqGtv5xM8jcVXCxqslVOuVVY+3A==",
   "success": true,
   "projectFilePath": "/Users/brandon/Personal/dotnet-rpg/Service/Service.csproj",
   "expectedPackageFiles": [
+    "/Users/brandon/.nuget/packages/fluentvalidation/8.6.2/fluentvalidation.8.6.2.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "/Users/brandon/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
