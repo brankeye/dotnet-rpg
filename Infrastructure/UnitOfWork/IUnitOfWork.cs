@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using dotnet_rpg.Infrastructure.Repository.Core.Character;
+using dotnet_rpg.Infrastructure.Repository.Core.CharacterSkill;
 using dotnet_rpg.Infrastructure.Repository.Core.Skill;
 using dotnet_rpg.Infrastructure.Repository.Core.User;
 using dotnet_rpg.Infrastructure.Repository.Core.Weapon;
@@ -16,6 +17,8 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
         IWeaponRepository Weapons { get; }
         
         ISkillRepository Skills { get; }
+        
+        ICharacterSkillRepository CharacterSkills { get; }
 
         void Commit();
 

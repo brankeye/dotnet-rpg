@@ -120,6 +120,10 @@
               <e p="CharacterRepository.cs" t="Include" />
               <e p="ICharacterRepository.cs" t="Include" />
             </e>
+            <e p="CharacterSkill" t="Include">
+              <e p="CharacterSkillRepository.cs" t="Include" />
+              <e p="ICharacterSkillRepository.cs" t="Include" />
+            </e>
             <e p="Skill" t="Include">
               <e p="ISkillRepository.cs" t="Include" />
               <e p="SkillRepository.cs" t="Include" />

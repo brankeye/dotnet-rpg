@@ -21,5 +21,9 @@ namespace dotnet_rpg.Service.Core.Character
         Task<CharacterDto> EquipWeaponAsync(Guid id, Guid weaponId);
         
         Task<CharacterDto> UnequipWeaponAsync(Guid id);
+
+        Task<CharacterDto> LearnSkillAsync(Guid id, Guid skillId);
+        
+        Task<CharacterDto> UnlearnSkillAsync(Guid id, Guid skillId);
     }
 }

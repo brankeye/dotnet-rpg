@@ -5,6 +5,7 @@ using System;
 using dotnet_rpg.Infrastructure.UnitOfWork;
 using dotnet_rpg.Domain.Enums;
 using dotnet_rpg.Api.Services.Character.Dtos;
+using dotnet_rpg.Domain.Models;
 using dotnet_rpg.Service.Core.Character.Dtos;
 using dotnet_rpg.Service.Core.Character.Mapper;
 using dotnet_rpg.Service.Core.Character.Validator;
@@ -115,6 +116,72 @@ namespace dotnet_rpg.Service.Core.Character
             _unitOfWork.Characters.Update(character);
             await _unitOfWork.CommitAsync();
             
+            return _characterMapper.Map(character);
+        }
+
+        public async Task<CharacterDto> LearnSkillAsync(Guid id, Guid skillId)
+        {
+            var character = await _unitOfWork.Characters.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.Id == id)
+                .SingleAsync();
+
+            if (character.CharacterSkills.Count >= 3)
+            {
+                throw new ServiceException("Character must unlearn a skill before learning another");
+            }
+
+            if (character.CharacterSkills.Any(x => x.SkillId == skillId))
+            {
+                throw new ServiceException("Character has already learned this skill");
+            }
+            
+            var skill = await _unitOfWork.Skills.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.Id == skillId)
+                .SingleAsync();
+
+            var characterSkill = new CharacterSkill
+            {
+                CharacterId = character.Id,
+                Character = character,
+                SkillId = skill.Id,
+                Skill = skill
+            };
+            _unitOfWork.CharacterSkills.Create(characterSkill);
+
+            await _unitOfWork.CommitAsync();
+
+            return _characterMapper.Map(character);
+        }
+
+        public async Task<CharacterDto> UnlearnSkillAsync(Guid id, Guid skillId)
+        {
+            var character = await _unitOfWork.Characters.Query
+                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.Id == id)
+                .SingleAsync();
+
+            if (character.CharacterSkills.Count == 0)
+            {
+                throw new ServiceException("Character has no skills");
+            }
+
+            if (character.CharacterSkills.All(x => x.SkillId != skillId))
+            {
+                throw new ServiceException("Character has not learned this skill");
+            }
+            
+            var characterSkill = await _unitOfWork.CharacterSkills.Query
+                .Where(x => x.CharacterId == id)
+                .Where(x => x.SkillId == skillId)
+                .SingleAsync();
+
+            _unitOfWork.Characters.Update(character);
+            _unitOfWork.CharacterSkills.Delete(characterSkill);
+
+            await _unitOfWork.CommitAsync();
+
             return _characterMapper.Map(character);
         }
 

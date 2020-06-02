@@ -1,4 +1,5 @@
 using dotnet_rpg.Infrastructure.Repository.Core.Character;
+using dotnet_rpg.Infrastructure.Repository.Core.CharacterSkill;
 using dotnet_rpg.Infrastructure.Repository.Core.Skill;
 using dotnet_rpg.Infrastructure.Repository.Core.User;
 using dotnet_rpg.Infrastructure.Repository.Core.Weapon;
@@ -14,6 +15,8 @@ namespace dotnet_rpg.Infrastructure.Repository.Factory
         IWeaponRepository GetWeaponRepository();
 
         ISkillRepository GetSkillRepository();
+
+        ICharacterSkillRepository GetCharacterSkillRepository();
     }
     
     public interface IRepositoryFactory<out T> where T : class

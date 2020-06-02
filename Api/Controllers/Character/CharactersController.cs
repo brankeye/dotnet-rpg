@@ -58,7 +58,7 @@ namespace dotnet_rpg.Api.Controllers.Character
             return ApiResponse.Ok();
         }
 
-        [HttpPut("{id}/weapon/{weaponId}")]
+        [HttpPost("{id}/weapon/{weaponId}")]
         public async Task<ApiResponse<CharacterDto>> EquipWeapon(Guid id, Guid weaponId)
         {
             var data = await _characterService.EquipWeaponAsync(id, weaponId);
@@ -69,6 +69,20 @@ namespace dotnet_rpg.Api.Controllers.Character
         public async Task<ApiResponse<CharacterDto>> UnequipWeapon(Guid id)
         {
             var data = await _characterService.UnequipWeaponAsync(id);
+            return ApiResponse.Ok(data);
+        }
+        
+        [HttpPost("{id}/skill/{skillId}")]
+        public async Task<ApiResponse<CharacterDto>> LearnSkill(Guid id, Guid skillId)
+        {
+            var data = await _characterService.LearnSkillAsync(id, skillId);
+            return ApiResponse.Ok(data);
+        }
+        
+        [HttpDelete("{id}/skill/{skillId}")]
+        public async Task<ApiResponse<CharacterDto>> UnlearnSkill(Guid id, Guid skillId)
+        {
+            var data = await _characterService.UnlearnSkillAsync(id, skillId);
             return ApiResponse.Ok(data);
         }
     }

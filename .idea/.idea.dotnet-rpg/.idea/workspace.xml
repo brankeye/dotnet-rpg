@@ -11,102 +11,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a99d663b-5745-47cb-b78f-c69d528b7a0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Service.TestOOOOOLD/Service.TestOOOOOLD.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Service.TestOOOOOLD/bin/Debug/netstandard2.1/Service.TestOOOOOLD.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Service.TestOOOOOLD/bin/Debug/netstandard2.1/Service.TestOOOOOLD.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/Dtos/LoginRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/Dtos/LoginResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/Dtos/RegisterRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/Dtos/RegisterResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/Mapper/AuthMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/Mapper/IAuthMapper.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/Dtos/CharacterResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/Dtos/CreateCharacterRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/Dtos/UpdateCharacterRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/Mapper/CharacterMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/Mapper/ICharacterMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/User/Dtos/UserResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/User/Mapper/IUserMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/User/Mapper/UserMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/User/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/User/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/CreateWeaponRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/UpdateWeaponRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Weapon/Dtos/WeaponResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Weapon/Mapper/IWeaponMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Weapon/Mapper/WeaponMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Service/ServiceContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Context/ServiceContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Data/bin/Debug/netstandard2.1/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Models/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Models/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/netstandard2.1/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Mapper/AuthMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Auth/Mapper/AuthMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/Core/User/Mapper/UserMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/User/Mapper/UserMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/Core/Weapon/Mapper/WeaponMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Mapper/WeaponMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-rpg.sln" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-rpg.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-rpg.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-rpg.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,8 +133,10 @@
     <setting file="file://$PROJECT_DIR$/Domain/Models/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/IWeaponService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Persister/IRepositoryPersister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/ICharacterSkillRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/CharacterSkillRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Mapper/ICharacterMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Persister/RepositoryPersister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" root0="FORCE_HIGHLIGHTING" />
@@ -223,12 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Service/Core/Auth/Validator/IAuthValidator.cs" />
-        <option value="$PROJECT_DIR$/Service/Validation/IValidator.cs" />
-        <option value="$PROJECT_DIR$/Service/Validation/Validator.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Auth/Validator/AuthValidator.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Character/Validator/CharacterValidator.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" />
         <option value="$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" />
         <option value="$PROJECT_DIR$/Service/Validation/ValidationError.cs" />
         <option value="$PROJECT_DIR$/Service.Test/Class1.cs" />
@@ -241,7 +181,6 @@
         <option value="$PROJECT_DIR$/Service.Test/Auth/AuthMapperTests.cs" />
         <option value="$PROJECT_DIR$/Service.Test/User/UserMapperTests.cs" />
         <option value="$PROJECT_DIR$/Service.Test/MapperTestHelper.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" />
         <option value="$PROJECT_DIR$/Service.Test/Character/CharacterMapperTests.cs" />
         <option value="$PROJECT_DIR$/Service/Core/Weapon/Mapper/WeaponMapper.cs" />
         <option value="$PROJECT_DIR$/Service.Test/Weapon/WeaponMapperTests.cs" />
@@ -250,10 +189,6 @@
         <option value="$PROJECT_DIR$/Domain/Models/Skill.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/Skill/ISkillRepository.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/Skill/SkillRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" />
         <option value="$PROJECT_DIR$/Service/Core/Skill/IWeaponService.cs" />
         <option value="$PROJECT_DIR$/Service/Core/Skill/Dtos/CreateSkillDto.cs" />
         <option value="$PROJECT_DIR$/Service/Core/Skill/Dtos/SkillDto.cs" />
@@ -273,7 +208,18 @@
         <option value="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" />
         <option value="$PROJECT_DIR$/Api/Controllers/User/UserController.cs" />
         <option value="$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/ICharacterSkillRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/CharacterSkillRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" />
         <option value="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" />
       </list>
     </option>
   </component>
@@ -344,7 +290,7 @@
       <workItem from="1590808725382" duration="1110000" />
       <workItem from="1590809877881" duration="556000" />
       <workItem from="1590859054552" duration="1070000" />
-      <workItem from="1591035088606" duration="10724000" />
+      <workItem from="1591035088606" duration="12905000" />
     </task>
     <servers />
   </component>
@@ -372,22 +318,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="516" height="464" key="DebuggerActiveHint/0.23.1440.877@0.23.1440.877" timestamp="1590680077450" />
-    <state width="1396" height="230" key="GridCell.Tab.0.bottom" timestamp="1591133674866">
+    <state width="1396" height="230" key="GridCell.Tab.0.bottom" timestamp="1591136100051">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591133674866" />
-    <state width="1396" height="230" key="GridCell.Tab.0.center" timestamp="1591133674865">
+    <state width="1396" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591136100051" />
+    <state width="1396" height="230" key="GridCell.Tab.0.center" timestamp="1591136100050">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1591133674865" />
-    <state width="1396" height="230" key="GridCell.Tab.0.left" timestamp="1591133674865">
+    <state width="1396" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1591136100050" />
+    <state width="1396" height="230" key="GridCell.Tab.0.left" timestamp="1591136100050">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1591133674865" />
-    <state width="1396" height="230" key="GridCell.Tab.0.right" timestamp="1591133674866">
+    <state width="1396" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1591136100050" />
+    <state width="1396" height="230" key="GridCell.Tab.0.right" timestamp="1591136100050">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1591133674866" />
+    <state width="1396" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1591136100050" />
     <state width="1396" height="312" key="GridCell.Tab.1.bottom" timestamp="1590708678386">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -456,10 +402,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="200" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877@0.23.1440.877" timestamp="1590806441663" />
-    <state x="451" y="158" key="RiderGenerateDialog" timestamp="1591129572005">
+    <state x="451" y="158" key="RiderGenerateDialog" timestamp="1591134355769">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="451" y="158" key="RiderGenerateDialog/0.23.1440.877@0.23.1440.877" timestamp="1591129572005" />
+    <state x="451" y="158" key="RiderGenerateDialog/0.23.1440.877@0.23.1440.877" timestamp="1591134355769" />
     <state x="251" y="100" key="SettingsEditor" timestamp="1590254509741">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

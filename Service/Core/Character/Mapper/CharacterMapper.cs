@@ -1,6 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using dotnet_rpg.Domain.Enums;
 using dotnet_rpg.Service.Core.Character.Dtos;
+using dotnet_rpg.Service.Core.Skill.Dtos;
+using dotnet_rpg.Service.Core.Skill.Mapper;
+using dotnet_rpg.Service.Core.Weapon.Dtos;
 using dotnet_rpg.Service.Core.Weapon.Mapper;
 
 namespace dotnet_rpg.Service.Core.Character.Mapper
@@ -8,10 +13,12 @@ namespace dotnet_rpg.Service.Core.Character.Mapper
     public class CharacterMapper : ICharacterMapper
     {
         private readonly IWeaponMapper _weaponMapper;
+        private readonly ISkillMapper _skillMapper;
         
         public CharacterMapper()
         {
             _weaponMapper = new WeaponMapper();
+            _skillMapper = new SkillMapper();
         }
 
         public CharacterDto Map(Domain.Models.Character source)
@@ -20,6 +27,12 @@ namespace dotnet_rpg.Service.Core.Character.Mapper
             {
                 throw new ArgumentNullException(nameof(source));
             }
+
+            var weapon = source.Weapon != null ? _weaponMapper.Map(source.Weapon) : null;
+
+            var skills = source.CharacterSkills
+                .Select(characterSkill => _skillMapper.Map(characterSkill.Skill))
+                .ToList();
 
             return new CharacterDto
             {
@@ -30,7 +43,8 @@ namespace dotnet_rpg.Service.Core.Character.Mapper
                 Defense = source.Defense,
                 Intelligence = source.Intelligence,
                 Class = source.Class.ToString(),
-                Weapon = source.Weapon != null ? _weaponMapper.Map(source.Weapon) : null,
+                Weapon = weapon,
+                Skills = skills
             };
         }
 

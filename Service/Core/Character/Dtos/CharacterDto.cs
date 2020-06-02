@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using dotnet_rpg.Service.Core.Skill.Dtos;
 using dotnet_rpg.Service.Core.Weapon.Dtos;
 
 namespace dotnet_rpg.Service.Core.Character.Dtos
@@ -20,5 +22,7 @@ namespace dotnet_rpg.Service.Core.Character.Dtos
         public string Class { get; set; }
 
         public WeaponDto Weapon { get; set; }
+        
+        public IEnumerable<SkillDto> Skills { get; set; }
     }
 }
