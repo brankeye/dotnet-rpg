@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/16.4.0/build/netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/nunit.engine.api.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/nunit.engine.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/NUnit3.TestAdapter.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/NUnit3.TestAdapter.pdb" t="Include" />
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_dotnet-rpg.-398644461.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
@@ -9,53 +16,24 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Context" t="Include">
+          <e p="ServiceContext.cs" t="Include" />
+        </e>
         <e p="Controllers" t="Include">
           <e p="ApiResponse.cs" t="Include" />
           <e p="Auth" t="Include">
             <e p="AuthController.cs" t="Include" />
-            <e p="Dtos" t="Include">
-              <e p="LoginRequest.cs" t="Include" />
-              <e p="LoginResponse.cs" t="Include" />
-              <e p="RegisterRequest.cs" t="Include" />
-              <e p="RegisterResponse.cs" t="Include" />
-            </e>
-            <e p="Mapper" t="Include">
-              <e p="AuthMapper.cs" t="Include" />
-              <e p="IAuthMapper.cs" t="Include" />
-            </e>
           </e>
           <e p="Character" t="Include">
             <e p="CharactersController.cs" t="Include" />
-            <e p="Dtos" t="Include">
-              <e p="CharacterResponse.cs" t="Include" />
-              <e p="CreateCharacterRequest.cs" t="Include" />
-              <e p="UpdateCharacterRequest.cs" t="Include" />
-            </e>
-            <e p="Mapper" t="Include">
-              <e p="CharacterMapper.cs" t="Include" />
-              <e p="ICharacterMapper.cs" t="Include" />
-            </e>
+          </e>
+          <e p="Skill" t="Include">
+            <e p="WeaponsController.cs" t="Include" />
           </e>
           <e p="User" t="Include">
-            <e p="Dtos" t="Include">
-              <e p="UserResponse.cs" t="Include" />
-            </e>
-            <e p="Mapper" t="Include">
-              <e p="IUserMapper.cs" t="Include" />
-              <e p="UserMapper.cs" t="Include" />
-            </e>
             <e p="UserController.cs" t="Include" />
           </e>
           <e p="Weapon" t="Include">
-            <e p="Dtos" t="Include">
-              <e p="CreateWeaponRequest.cs" t="Include" />
-              <e p="UpdateWeaponRequest.cs" t="Include" />
-              <e p="WeaponResponse.cs" t="Include" />
-            </e>
-            <e p="Mapper" t="Include">
-              <e p="IWeaponMapper.cs" t="Include" />
-              <e p="WeaponMapper.cs" t="Include" />
-            </e>
             <e p="WeaponsController.cs" t="Include" />
           </e>
         </e>
@@ -73,9 +51,6 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="Service" t="Include">
-          <e p="ServiceContext.cs" t="Include" />
-        </e>
         <e p="Startup.cs" t="Include" />
       </e>
       <e p="Data" t="IncludeRecursive">
@@ -85,6 +60,8 @@
         <e p="Migrations" t="Include">
           <e p="20200526222704_Initial.cs" t="Include" />
           <e p="20200526222704_Initial.Designer.cs" t="Include" />
+          <e p="20200602204422_Skills.cs" t="Include" />
+          <e p="20200602204422_Skills.Designer.cs" t="Include" />
           <e p="DataContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -103,6 +80,8 @@
         </e>
         <e p="Models" t="Include">
           <e p="Character.cs" t="Include" />
+          <e p="CharacterSkill.cs" t="Include" />
+          <e p="Skill.cs" t="Include" />
           <e p="User.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
@@ -140,6 +119,10 @@
             <e p="Character" t="Include">
               <e p="CharacterRepository.cs" t="Include" />
               <e p="ICharacterRepository.cs" t="Include" />
+            </e>
+            <e p="Skill" t="Include">
+              <e p="ISkillRepository.cs" t="Include" />
+              <e p="SkillRepository.cs" t="Include" />
             </e>
             <e p="User" t="Include">
               <e p="IUserRepository.cs" t="Include" />
@@ -210,6 +193,23 @@
             </e>
           </e>
           <e p="IServiceContext.cs" t="Include" />
+          <e p="Skill" t="Include">
+            <e p="Dtos" t="Include">
+              <e p="CreateSkillDto.cs" t="Include" />
+              <e p="SkillDto.cs" t="Include" />
+              <e p="UpdateSkillDto.cs" t="Include" />
+            </e>
+            <e p="ISkillService.cs" t="Include" />
+            <e p="Mapper" t="Include">
+              <e p="ISkillMapper.cs" t="Include" />
+              <e p="SkillMapper.cs" t="Include" />
+            </e>
+            <e p="SkillService.cs" t="Include" />
+            <e p="Validator" t="Include">
+              <e p="ISkillValidator.cs" t="Include" />
+              <e p="SkillValidator.cs" t="Include" />
+            </e>
+          </e>
           <e p="User" t="Include">
             <e p="Dtos" t="Include">
               <e p="UserDto.cs" t="Include" />
@@ -255,6 +255,29 @@
           <e p="IValidator.cs" t="Include" />
           <e p="ValidationError.cs" t="Include" />
           <e p="Validator.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Service.Test" t="IncludeRecursive">
+        <e p="Auth" t="Include">
+          <e p="AuthMapperTests.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Character" t="Include">
+          <e p="CharacterMapperTests.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Service.Test.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Service.Test.csproj" t="IncludeRecursive" />
+        <e p="User" t="Include">
+          <e p="UserMapperTests.cs" t="Include" />
+        </e>
+        <e p="Weapon" t="Include">
+          <e p="WeaponMapperTests.cs" t="Include" />
         </e>
       </e>
     </e>

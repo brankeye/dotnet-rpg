@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using dotnet_rpg.Api.Controllers.Weapon.Dtos;
-using dotnet_rpg.Api.Controllers.Weapon.Mapper;
 using dotnet_rpg.Service.Core.Weapon;
+using dotnet_rpg.Service.Core.Weapon.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,46 +15,38 @@ namespace dotnet_rpg.Api.Controllers.Weapon
     {
         private const string GetByIdRouteName = "get_weapon";
         private readonly IWeaponService _weaponService;
-        private readonly IWeaponMapper _weaponMapper;
 
         public WeaponsController(IWeaponService weaponService) 
         {
             _weaponService = weaponService;
-            _weaponMapper = new WeaponMapper();
         }
 
         [HttpGet]
-        public async Task<ApiResponse<IEnumerable<WeaponResponse>>> GetAll()
+        public async Task<ApiResponse<IEnumerable<WeaponDto>>> GetAll()
         {
-            var result = await _weaponService.GetAllAsync();
-            var data = result.Select(_weaponMapper.Map);
+            var data = await _weaponService.GetAllAsync();
             return ApiResponse.Ok(data);
         }
 
         [HttpGet("{id}", Name = GetByIdRouteName)]
-        public async Task<ApiResponse<WeaponResponse>> GetById(Guid id)
+        public async Task<ApiResponse<WeaponDto>> GetById(Guid id)
         {
-            var result = await _weaponService.GetByIdAsync(id);
-            var data = _weaponMapper.Map(result);
+            var data = await _weaponService.GetByIdAsync(id);
             return ApiResponse.Ok(data);
         }
 
         [HttpPost]
-        public async Task<ApiResponse<WeaponResponse>> Create(CreateWeaponRequest request) 
+        public async Task<ApiResponse<WeaponDto>> Create(CreateWeaponDto request) 
         {
-            var dto = _weaponMapper.Map(request);
-            var result = await _weaponService.CreateAsync(dto);
-            var location = Url.Link(GetByIdRouteName, new { id = result.Id });
-            var data = _weaponMapper.Map(result);
+            var data = await _weaponService.CreateAsync(request);
+            var location = Url.Link(GetByIdRouteName, new { id = data.Id });
             return ApiResponse.Created(location, data);
         }
 
         [HttpPut("{id}")]
-        public async Task<ApiResponse<WeaponResponse>> Update(Guid id, UpdateWeaponRequest request)
+        public async Task<ApiResponse<WeaponDto>> Update(Guid id, UpdateWeaponDto request)
         {
-            var dto = _weaponMapper.Map(request);
-            var result = await _weaponService.UpdateAsync(id, dto);
-            var data = _weaponMapper.Map(result);
+            var data = await _weaponService.UpdateAsync(id, request);
             return ApiResponse.Ok(data);
         }
 

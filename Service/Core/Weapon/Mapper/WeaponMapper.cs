@@ -9,7 +9,7 @@ namespace dotnet_rpg.Service.Core.Weapon.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new WeaponDto
@@ -24,7 +24,7 @@ namespace dotnet_rpg.Service.Core.Weapon.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new Domain.Models.Weapon
@@ -39,7 +39,7 @@ namespace dotnet_rpg.Service.Core.Weapon.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new Domain.Models.Weapon

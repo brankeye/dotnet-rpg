@@ -1,3 +1,4 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using dotnet_rpg.Service.Core.Auth.Dtos;
 
@@ -9,7 +10,7 @@ namespace dotnet_rpg.Service.Core.Auth.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new RegisterDto
@@ -23,7 +24,7 @@ namespace dotnet_rpg.Service.Core.Auth.Mapper
         {
             if (token == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(token));
             }
 
             return new LoginDto
@@ -36,7 +37,17 @@ namespace dotnet_rpg.Service.Core.Auth.Mapper
         {
             if (credentials == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(credentials));
+            }
+            
+            if (passwordHash == null)
+            {
+                throw new ArgumentNullException(nameof(credentials));
+            } 
+            
+            if (passwordSalt == null)
+            {
+                throw new ArgumentNullException(nameof(credentials));
             }
 
             return new Domain.Models.User

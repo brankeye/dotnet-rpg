@@ -170,7 +170,7 @@ namespace dotnet_rpg.Api.Middleware
             return Serialize(errorMessage);
         }
 
-        private string Serialize(object value) 
+        private static string Serialize(object value) 
         {
             var options = new JsonSerializerOptions
             {
@@ -180,9 +180,9 @@ namespace dotnet_rpg.Api.Middleware
             return JsonSerializer.Serialize(value, options);
         }
 
-        private object Deserialize(string value)
+        private static object Deserialize(string value)
         {
-            if (value == null || value == "") {
+            if (string.IsNullOrEmpty(value)) {
                 return null;
             }
  

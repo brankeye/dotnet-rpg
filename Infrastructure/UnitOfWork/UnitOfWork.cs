@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using dotnet_rpg.Infrastructure.Extensions;
 using dotnet_rpg.Infrastructure.Repository.Core.Character;
+using dotnet_rpg.Infrastructure.Repository.Core.Skill;
 using dotnet_rpg.Infrastructure.Repository.Core.User;
 using dotnet_rpg.Infrastructure.Repository.Core.Weapon;
 using dotnet_rpg.Infrastructure.Repository.Factory;
@@ -25,6 +26,8 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
         public ICharacterRepository Characters => _repositoryFactory.GetCharacterRepository();
 
         public IWeaponRepository Weapons => _repositoryFactory.GetWeaponRepository();
+        
+        public ISkillRepository Skills => _repositoryFactory.GetSkillRepository();
 
         public void Commit()
         {

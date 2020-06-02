@@ -1,3 +1,4 @@
+using System;
 using dotnet_rpg.Service.Core.User.Dtos;
 
 namespace dotnet_rpg.Service.Core.User.Mapper
@@ -8,7 +9,7 @@ namespace dotnet_rpg.Service.Core.User.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new UserDto

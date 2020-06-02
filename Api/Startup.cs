@@ -1,4 +1,5 @@
 using System.Text;
+using dotnet_rpg.Api.Context;
 using dotnet_rpg.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -9,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using dotnet_rpg.Api.Middleware;
-using dotnet_rpg.Api.Service;
 using dotnet_rpg.Data;
 using dotnet_rpg.Infrastructure.Repository.Factory;
 using dotnet_rpg.Infrastructure.Repository.Persister;
@@ -18,6 +18,8 @@ using dotnet_rpg.Service.Core.Auth;
 using dotnet_rpg.Service.Core.Auth.Validator;
 using dotnet_rpg.Service.Core.Character;
 using dotnet_rpg.Service.Core.Character.Validator;
+using dotnet_rpg.Service.Core.Skill;
+using dotnet_rpg.Service.Core.Skill.Validator;
 using dotnet_rpg.Service.Core.User;
 using dotnet_rpg.Service.Core.Weapon;
 using dotnet_rpg.Service.Core.Weapon.Validator;
@@ -69,12 +71,14 @@ namespace dotnet_rpg.Api
             services.AddScoped<IAuthValidator, AuthValidator>();
             services.AddScoped<ICharacterValidator, CharacterValidator>();
             services.AddScoped<IWeaponValidator, WeaponValidator>();
+            services.AddScoped<ISkillValidator, SkillValidator>();
             
             services.AddScoped<IServiceContext, ServiceContext>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICharacterService, CharacterService>();
             services.AddScoped<IWeaponService, WeaponService>();
+            services.AddScoped<ISkillService, SkillService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

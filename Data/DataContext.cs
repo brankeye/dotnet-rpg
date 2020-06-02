@@ -11,12 +11,17 @@ namespace dotnet_rpg.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var converter = new EnumToStringConverter<RpgClass>();
-            
             modelBuilder
                 .Entity<Character>()
                 .Property(x => x.Class)
-                .HasConversion(converter);
+                .HasConversion(new EnumToStringConverter<RpgClass>());
+
+            modelBuilder.Entity<CharacterSkill>()
+                .HasKey(x => new {x.CharacterId, x.SkillId});
+
+            modelBuilder.Entity<CharacterSkill>()
+                .HasIndex(x => x.SkillId)
+                .IsUnique();
         }
 
         public DbSet<User> Users { get; set; }
@@ -24,5 +29,9 @@ namespace dotnet_rpg.Data
         public DbSet<Character> Characters { get; set; }
 
         public DbSet<Weapon> Weapons { get; set; }
+        
+        public DbSet<Skill> Skills { get; set; }
+        
+        public DbSet<CharacterSkill> CharacterSkills { get; set; }
     }
 }

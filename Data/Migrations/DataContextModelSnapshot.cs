@@ -57,6 +57,44 @@ namespace dotnet_rpg.Data.Migrations
                     b.ToTable("Characters");
                 });
 
+            modelBuilder.Entity("dotnet_rpg.Domain.Models.CharacterSkill", b =>
+                {
+                    b.Property<Guid>("CharacterId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("SkillId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("CharacterId", "SkillId");
+
+                    b.HasIndex("SkillId")
+                        .IsUnique();
+
+                    b.ToTable("CharacterSkills");
+                });
+
+            modelBuilder.Entity("dotnet_rpg.Domain.Models.Skill", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Damage")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Skills");
+                });
+
             modelBuilder.Entity("dotnet_rpg.Domain.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -110,6 +148,30 @@ namespace dotnet_rpg.Data.Migrations
                     b.HasOne("dotnet_rpg.Domain.Models.Weapon", "Weapon")
                         .WithMany()
                         .HasForeignKey("WeaponId");
+                });
+
+            modelBuilder.Entity("dotnet_rpg.Domain.Models.CharacterSkill", b =>
+                {
+                    b.HasOne("dotnet_rpg.Domain.Models.Character", "Character")
+                        .WithMany("CharacterSkills")
+                        .HasForeignKey("CharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dotnet_rpg.Domain.Models.Skill", "Skill")
+                        .WithMany()
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("dotnet_rpg.Domain.Models.Skill", b =>
+                {
+                    b.HasOne("dotnet_rpg.Domain.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("dotnet_rpg.Domain.Models.Weapon", b =>

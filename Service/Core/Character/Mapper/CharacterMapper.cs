@@ -18,7 +18,7 @@ namespace dotnet_rpg.Service.Core.Character.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new CharacterDto
@@ -30,7 +30,7 @@ namespace dotnet_rpg.Service.Core.Character.Mapper
                 Defense = source.Defense,
                 Intelligence = source.Intelligence,
                 Class = source.Class.ToString(),
-                Weapon = _weaponMapper.Map(source.Weapon)
+                Weapon = source.Weapon != null ? _weaponMapper.Map(source.Weapon) : null,
             };
         }
 
@@ -38,7 +38,7 @@ namespace dotnet_rpg.Service.Core.Character.Mapper
         {
             if (source == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(source));
             }
 
             return new Domain.Models.Character

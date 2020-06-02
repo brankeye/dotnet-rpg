@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using dotnet_rpg.Domain.Enums;
 
 namespace dotnet_rpg.Domain.Models
@@ -26,5 +27,7 @@ namespace dotnet_rpg.Domain.Models
         public Guid? WeaponId { get; set; }
         
         public Weapon Weapon { get; set; }
+        
+        public List<CharacterSkill> CharacterSkills { get; set; }
     }
 }
