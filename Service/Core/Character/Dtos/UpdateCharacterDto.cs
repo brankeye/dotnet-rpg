@@ -1,4 +1,4 @@
-﻿namespace dotnet_rpg.Api.Services.Character.Dtos
+﻿namespace dotnet_rpg.Service.Core.Character.Dtos
 {
     public class UpdateCharacterDto
     {

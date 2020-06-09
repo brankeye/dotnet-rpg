@@ -1,12 +1,12 @@
-﻿using dotnet_rpg.Service.Core.Skill.Dtos;
-using dotnet_rpg.Service.Validation;
+﻿using dotnet_rpg.Service.Contracts.Validation;
+using dotnet_rpg.Service.Core.Skill.Dtos;
 
 namespace dotnet_rpg.Service.Core.Skill.Validator
 {
     public interface ISkillValidator
-        : IValidator<CreateSkillDto>,
-          IValidator<UpdateSkillDto>
     {
+        void ValidateAndThrow(CreateSkillDto entity);
         
+        void ValidateAndThrow(UpdateSkillDto entity);
     }
 }

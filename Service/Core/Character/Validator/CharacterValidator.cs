@@ -1,6 +1,6 @@
 using System;
-using dotnet_rpg.Api.Services.Character.Dtos;
 using dotnet_rpg.Domain.Enums;
+using dotnet_rpg.Service.Contracts.Validation;
 using dotnet_rpg.Service.Core.Character.Dtos;
 using FluentValidation;
 
@@ -8,8 +8,8 @@ namespace dotnet_rpg.Service.Core.Character.Validator
 {
     public class CharacterValidator : ICharacterValidator
     {
-        private readonly Validation.IValidator<CreateCharacterDto> _createCharacterDtoValidator;
-        private readonly Validation.IValidator<UpdateCharacterDto> _updateCharacterDtoValidator;
+        private readonly Contracts.Validation.IValidator<CreateCharacterDto> _createCharacterDtoValidator;
+        private readonly Contracts.Validation.IValidator<UpdateCharacterDto> _updateCharacterDtoValidator;
 
         public CharacterValidator()
         {
@@ -28,7 +28,7 @@ namespace dotnet_rpg.Service.Core.Character.Validator
         }
     }
 
-    public class CreateCharacterDtoValidator : Validation.Validator<CreateCharacterDto>
+    public class CreateCharacterDtoValidator : Validator<CreateCharacterDto>
     {
         public CreateCharacterDtoValidator()
         {
@@ -43,7 +43,7 @@ namespace dotnet_rpg.Service.Core.Character.Validator
         }
     }
     
-    public class UpdateCharacterDtoValidator : Validation.Validator<UpdateCharacterDto>
+    public class UpdateCharacterDtoValidator : Validator<UpdateCharacterDto>
     {
         public UpdateCharacterDtoValidator()
         {

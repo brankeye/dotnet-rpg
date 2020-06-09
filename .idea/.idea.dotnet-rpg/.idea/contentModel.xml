@@ -17,7 +17,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Context" t="Include">
-          <e p="ServiceContext.cs" t="Include" />
+          <e p="AuthContext.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="ApiResponse.cs" t="Include" />
@@ -160,24 +160,34 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Service" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Core" t="Include">
-          <e p="Auth" t="Include">
-            <e p="AuthService.cs" t="Include" />
-            <e p="Dtos" t="Include">
-              <e p="CredentialsDto.cs" t="Include" />
-              <e p="LoginDto.cs" t="Include" />
-              <e p="RegisterDto.cs" t="Include" />
+        <e p="Contracts" t="Include">
+          <e p="CQRS" t="Include">
+            <e p="Command" t="Include">
+              <e p="ICommand.cs" t="Include" />
+              <e p="ICommandHandler.cs" t="Include" />
             </e>
-            <e p="IAuthService.cs" t="Include" />
-            <e p="Mapper" t="Include">
-              <e p="AuthMapper.cs" t="Include" />
-              <e p="IAuthMapper.cs" t="Include" />
+            <e p="Mediator" t="Include">
+              <e p="IMediator.cs" t="Include" />
+              <e p="Mediator.cs" t="Include" />
             </e>
-            <e p="Validator" t="Include">
-              <e p="AuthValidator.cs" t="Include" />
-              <e p="IAuthValidator.cs" t="Include" />
+            <e p="Query" t="Include">
+              <e p="IAuthorizedQuery.cs" t="Include" />
+              <e p="IQuery.cs" t="Include" />
+              <e p="IQueryHandler.cs" t="Include" />
             </e>
           </e>
+          <e p="Mapping" t="Include">
+            <e p="IMapper.cs" t="Include" />
+            <e p="Mapper.cs" t="Include" />
+          </e>
+          <e p="Validation" t="Include">
+            <e p="IValidator.cs" t="Include" />
+            <e p="QueryValidator.cs" t="Include" />
+            <e p="ValidationError.cs" t="Include" />
+            <e p="Validator.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Core" t="Include">
           <e p="Character" t="Include">
             <e p="CharacterService.cs" t="Include" />
             <e p="Dtos" t="Include">
@@ -196,7 +206,6 @@
               <e p="ICharacterValidator.cs" t="Include" />
             </e>
           </e>
-          <e p="IServiceContext.cs" t="Include" />
           <e p="Skill" t="Include">
             <e p="Dtos" t="Include">
               <e p="CreateSkillDto.cs" t="Include" />
@@ -213,17 +222,6 @@
               <e p="ISkillValidator.cs" t="Include" />
               <e p="SkillValidator.cs" t="Include" />
             </e>
-          </e>
-          <e p="User" t="Include">
-            <e p="Dtos" t="Include">
-              <e p="UserDto.cs" t="Include" />
-            </e>
-            <e p="IUserService.cs" t="Include" />
-            <e p="Mapper" t="Include">
-              <e p="IUserMapper.cs" t="Include" />
-              <e p="UserMapper.cs" t="Include" />
-            </e>
-            <e p="UserService.cs" t="Include" />
           </e>
           <e p="Weapon" t="Include">
             <e p="Dtos" t="Include">
@@ -243,6 +241,15 @@
             <e p="WeaponService.cs" t="Include" />
           </e>
         </e>
+        <e p="Decorators" t="Include">
+          <e p="AuthorizedQueryHandlerDecorator.cs" t="Include" />
+          <e p="TransactionCommandHandlerDecorator.cs" t="Include" />
+          <e p="ValidationCommandHandlerDecorator.cs" t="Include" />
+          <e p="ValidationQueryHandlerDecorator.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="ErrorCode.cs" t="Include" />
+        </e>
         <e p="Exceptions" t="Include">
           <e p="ServiceException.cs" t="Include" />
           <e p="ValidationException.cs" t="Include" />
@@ -254,17 +261,54 @@
             </e>
           </e>
         </e>
+        <e p="Operations" t="Include">
+          <e p="Auth" t="Include">
+            <e p="IAuthContext.cs" t="Include" />
+            <e p="Operations" t="Include">
+              <e p="LoginQuery" t="Include">
+                <e p="LoginQuery.cs" t="Include" />
+                <e p="LoginQueryHandler.cs" t="Include" />
+                <e p="LoginQueryResult.cs" t="Include" />
+                <e p="LoginQueryResultMapper.cs" t="Include" />
+                <e p="LoginQueryValidator.cs" t="Include" />
+              </e>
+              <e p="RegisterCommand" t="Include">
+                <e p="RegisterCommand.cs" t="Include" />
+                <e p="RegisterCommandHandler.cs" t="Include" />
+                <e p="RegisterCommandResponse.cs" t="Include" />
+                <e p="RegisterCommandValidator.cs" t="Include" />
+                <e p="RegisterResponseMapper.cs" t="Include" />
+                <e p="UserMapper.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="User" t="Include">
+            <e p="Queries" t="Include">
+              <e p="UserQuery" t="Include">
+                <e p="UserQuery.cs" t="Include" />
+                <e p="UserQueryHandler.cs" t="Include" />
+                <e p="UserQueryResult.cs" t="Include" />
+                <e p="UserQueryResultMapper.cs" t="Include" />
+                <e p="UserQueryValidator.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Service.csproj" t="IncludeRecursive" />
-        <e p="Validation" t="Include">
-          <e p="IValidator.cs" t="Include" />
-          <e p="ValidationError.cs" t="Include" />
-          <e p="Validator.cs" t="Include" />
+        <e p="Utility" t="Include">
+          <e p="AuthUtility" t="Include">
+            <e p="AuthUtility.cs" t="Include" />
+            <e p="CryptographicPassword.cs" t="Include" />
+            <e p="IAuthUtility.cs" t="Include" />
+          </e>
+          <e p="ExceptionUtility" t="Include">
+            <e p="ExceptionUtility.cs" t="Include" />
+            <e p="ServiceError.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Service.Test" t="IncludeRecursive">
-        <e p="Auth" t="Include">
-          <e p="AuthMapperTests.cs" t="Include" />
-        </e>
+        <e p="Auth" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Character" t="Include">
           <e p="CharacterMapperTests.cs" t="Include" />
@@ -277,9 +321,6 @@
           </e>
         </e>
         <e p="Service.Test.csproj" t="IncludeRecursive" />
-        <e p="User" t="Include">
-          <e p="UserMapperTests.cs" t="Include" />
-        </e>
         <e p="Weapon" t="Include">
           <e p="WeaponMapperTests.cs" t="Include" />
         </e>

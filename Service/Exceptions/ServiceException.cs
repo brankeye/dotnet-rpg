@@ -1,4 +1,5 @@
 using System;
+using dotnet_rpg.Service.Enums;
 
 namespace dotnet_rpg.Service.Exceptions
 {
@@ -18,5 +19,7 @@ namespace dotnet_rpg.Service.Exceptions
         {
             
         }
+
+        public ErrorCode ErrorCode => ErrorCode.ServerError;
     }
 }

@@ -1,3 +1,4 @@
+using dotnet_rpg.Service.Contracts.Validation;
 using dotnet_rpg.Service.Core.Skill.Dtos;
 using FluentValidation;
 
@@ -5,8 +6,8 @@ namespace dotnet_rpg.Service.Core.Skill.Validator
 {
     public class SkillValidator : Skill.Validator.ISkillValidator
     {
-        private readonly Validation.IValidator<CreateSkillDto> _createValidator;
-        private readonly Validation.IValidator<UpdateSkillDto> _updateValidator;
+        private readonly Contracts.Validation.IValidator<CreateSkillDto> _createValidator;
+        private readonly Contracts.Validation.IValidator<UpdateSkillDto> _updateValidator;
         
         public SkillValidator()
         {
@@ -25,7 +26,7 @@ namespace dotnet_rpg.Service.Core.Skill.Validator
         }
     }
     
-    public class CreateSkillDtoValidator : Validation.Validator<CreateSkillDto>
+    public class CreateSkillDtoValidator : Validator<CreateSkillDto>
     {
         public CreateSkillDtoValidator()
         {
@@ -38,7 +39,7 @@ namespace dotnet_rpg.Service.Core.Skill.Validator
         }
     }
     
-    public class UpdateSkillDtoValidator : Validation.Validator<UpdateSkillDto>
+    public class UpdateSkillDtoValidator : Validator<UpdateSkillDto>
     {
         public UpdateSkillDtoValidator()
         {

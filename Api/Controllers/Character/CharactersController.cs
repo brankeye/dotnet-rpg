@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using dotnet_rpg.Api.Services.Character.Dtos;
 using dotnet_rpg.Service.Core.Character;
 using dotnet_rpg.Service.Core.Character.Dtos;
 using Microsoft.AspNetCore.Authorization;

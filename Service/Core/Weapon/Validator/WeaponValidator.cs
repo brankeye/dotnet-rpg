@@ -1,3 +1,4 @@
+using dotnet_rpg.Service.Contracts.Validation;
 using dotnet_rpg.Service.Core.Weapon.Dtos;
 using FluentValidation;
 
@@ -5,8 +6,8 @@ namespace dotnet_rpg.Service.Core.Weapon.Validator
 {
     public class WeaponValidator : IWeaponValidator
     {
-        private readonly Validation.IValidator<CreateWeaponDto> _createValidator;
-        private readonly Validation.IValidator<UpdateWeaponDto> _updateValidator;
+        private readonly Contracts.Validation.IValidator<CreateWeaponDto> _createValidator;
+        private readonly Contracts.Validation.IValidator<UpdateWeaponDto> _updateValidator;
         
         public WeaponValidator()
         {
@@ -25,7 +26,7 @@ namespace dotnet_rpg.Service.Core.Weapon.Validator
         }
     }
     
-    public class CreateWeaponDtoValidator : Validation.Validator<CreateWeaponDto>
+    public class CreateWeaponDtoValidator : Validator<CreateWeaponDto>
     {
         public CreateWeaponDtoValidator()
         {
@@ -38,7 +39,7 @@ namespace dotnet_rpg.Service.Core.Weapon.Validator
         }
     }
     
-    public class UpdateWeaponDtoValidator : Validation.Validator<UpdateWeaponDto>
+    public class UpdateWeaponDtoValidator : Validator<UpdateWeaponDto>
     {
         public UpdateWeaponDtoValidator()
         {

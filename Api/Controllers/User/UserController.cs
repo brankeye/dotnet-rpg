@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
-using dotnet_rpg.Service.Core.User;
-using dotnet_rpg.Service.Core.User.Dtos;
+using dotnet_rpg.Service.Contracts.CQRS.Mediator;
+using dotnet_rpg.Service.Operations.User.Queries.UserQuery;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,17 +11,17 @@ namespace dotnet_rpg.Api.Controllers.User
     [Route("user")]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IMediator _mediator;
 
-        public UserController(IUserService userService) 
+        public UserController(IMediator mediator)
         {
-            _userService = userService;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<ApiResponse<UserDto>> Get()
+        public async Task<ApiResponse<UserQueryResult>> Get()
         {
-            var data = await _userService.GetAsync();
+            var data = await _mediator.HandleAsync(new UserQuery());
             return ApiResponse.Ok(data);
         }
     }

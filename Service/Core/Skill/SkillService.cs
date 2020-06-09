@@ -6,22 +6,23 @@ using dotnet_rpg.Infrastructure.UnitOfWork;
 using dotnet_rpg.Service.Core.Skill.Dtos;
 using dotnet_rpg.Service.Core.Skill.Mapper;
 using dotnet_rpg.Service.Core.Skill.Validator;
+using dotnet_rpg.Service.Operations.Auth;
 
 namespace dotnet_rpg.Service.Core.Skill
 {
     public class SkillService : ISkillService
     {
-        private readonly IServiceContext _serviceContext;
+        private readonly IAuthContext _authContext;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISkillValidator _skillValidator;
         private readonly ISkillMapper _skillMapper;
 
         public SkillService(
-            IServiceContext serviceContext, 
+            IAuthContext authContext, 
             IUnitOfWork unitOfWork,
             ISkillValidator skillValidator) 
         {
-            _serviceContext = serviceContext;
+            _authContext = authContext;
             _unitOfWork = unitOfWork;
             _skillValidator = skillValidator;
             _skillMapper = new SkillMapper();
@@ -30,7 +31,7 @@ namespace dotnet_rpg.Service.Core.Skill
         public async Task<IEnumerable<SkillDto>> GetAllAsync() 
         {
             var weapons = await _unitOfWork.Skills.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .ToListAsync();
             return weapons.Select(_skillMapper.Map);
         }
@@ -38,7 +39,7 @@ namespace dotnet_rpg.Service.Core.Skill
         public async Task<SkillDto> GetByIdAsync(Guid id)
         {
             var weapon = await _unitOfWork.Skills.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
             return _skillMapper.Map(weapon);
@@ -47,7 +48,7 @@ namespace dotnet_rpg.Service.Core.Skill
         public async Task<SkillDto> CreateAsync(CreateSkillDto dto) 
         {
             _skillValidator.ValidateAndThrow(dto);
-            var newSkill = _skillMapper.Map(dto, _serviceContext.UserId);
+            var newSkill = _skillMapper.Map(dto, _authContext.UserId);
             var skill = _unitOfWork.Skills.Create(newSkill);
             await _unitOfWork.CommitAsync();
             return _skillMapper.Map(skill);
@@ -58,7 +59,7 @@ namespace dotnet_rpg.Service.Core.Skill
             _skillValidator.ValidateAndThrow(dto);
             
             var skill = await _unitOfWork.Skills.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
 
@@ -72,7 +73,7 @@ namespace dotnet_rpg.Service.Core.Skill
         public async Task DeleteAsync(Guid id) 
         {
             var skill = await _unitOfWork.Skills.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
             _unitOfWork.Skills.Delete(skill);

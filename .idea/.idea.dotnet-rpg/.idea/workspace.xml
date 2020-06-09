@@ -13,44 +13,83 @@
     <list default="true" id="a99d663b-5745-47cb-b78f-c69d528b7a0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-rpg/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Context/ServiceContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Context/AuthContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/User/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/User/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/netcoreapp3.1/Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/netcoreapp3.1/Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Data/obj/Debug/netstandard2.1/Data.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/netstandard2.1/Domain.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/Auth/AuthMapperTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/Service.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/Service.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/User/UserMapperTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.Test.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/Service.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Test/obj/Debug/netcoreapp3.1/Service.Test.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/AuthService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Dtos/CredentialsDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Dtos/LoginDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Dtos/RegisterDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/IAuthService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Mapper/AuthMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Mapper/IAuthMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Validator/AuthValidator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Auth/Validator/IAuthValidator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Character/Dtos/UpdateCharacterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Dtos/UpdateCharacterDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Character/Validator/CharacterValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Validator/CharacterValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/IServiceContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Operations/Auth/IAuthContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Skill/SkillService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Skill/SkillService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Skill/Validator/ISkillValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Skill/Validator/ISkillValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Skill/Validator/SkillValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Skill/Validator/SkillValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/User/Dtos/UserDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/User/IUserService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/User/Mapper/IUserMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/User/Mapper/UserMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/User/UserService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Core/Weapon/WeaponService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Core/Weapon/WeaponService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Exceptions/ServiceException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Exceptions/ServiceException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Service.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Validation/IValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Contracts/Validation/IValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Validation/ValidationError.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Contracts/Validation/ValidationError.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/Validation/Validator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/Contracts/Validation/Validator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/netstandard2.1/Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/netstandard2.1/Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-rpg.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-rpg.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +100,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Service/Utility/AuthUtility/CryptographicPassword.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterResponseMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/UserMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/User/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/User/Dtos/UserDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service.Test/Character/CharacterMapperTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/User/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Models/Skill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/User/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Models/CharacterSkill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3DBE483-6645-4FDB-B51D-FEEB0B5C4997/16C/PropertyBuilder`.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/Skill/ISkillRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,25 +115,45 @@
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/SkillService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/ISkillService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Validator/ISkillValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommandValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Validator/SkillValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Dtos/CreateSkillDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Dtos/UpdateSkillDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Dtos/SkillDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57932A3A-A3A1-4EBA-AFE4-21674A5B5A78/07/e8c3b5bb/SimpleInjectorAspNetCoreBuilderMvcCoreExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Mapper/ISkillMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Skill/Mapper/SkillMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/Skill/WeaponsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryResultMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Mediator/IMediator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Mediator/Mediator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/242AC7ED-2EAA-41F6-B02B-802477E1952E/a2/f57786e8/DefaultValidatorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Enums/ErrorCode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/242AC7ED-2EAA-41F6-B02B-802477E1952E/9b/db282d87/AbstractValidator`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Utility/ExceptionUtility/ExceptionUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service.TestOOOOOLD/Core/Auth/Mapper/AuthMapperTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Utility/AuthUtility/IAuthUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Utility/AuthUtility/AuthUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Query/IQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3DBE483-6645-4FDB-B51D-FEEB0B5C4997/12/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Command/ICommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Dtos/LoginDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Dtos/RegisterDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Dtos/CredentialsDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Utility/ExceptionUtility/ServiceError.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Decorators/AuthorizedQueryHandlerDecorator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Decorators/ValidationQueryHandlerDecorator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Dtos/CreateWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Dtos/UpdateWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Dtos/WeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
@@ -102,8 +161,6 @@
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/EquipWeaponDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/UpdateCharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Validator/AuthValidator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Validator/IAuthValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Validator/WeaponValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Extensions/ExceptionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78CE2EBE-3791-4669-8262-2E8E200ED262/06/d21328ac/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,17 +169,15 @@
     <setting file="file://$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5AED14D4-8F76-4E4F-80EB-584643057B28/25/Exception.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Mapper/IAuthMapper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Validation/IValidator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/Mapper/AuthMapper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/User/Mapper/UserMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/Validation/IValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Query/IQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Exceptions/ServiceException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service.Test/Weapon/WeaponMapperTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Validation/Validator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Validation/ValidationError.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/Validation/Validator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/Validation/ValidationError.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/Auth/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Command/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/DataContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -138,20 +193,26 @@
     <setting file="file://$PROJECT_DIR$/Domain/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/CharacterSkillRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Mapper/ICharacterMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommandResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Persister/RepositoryPersister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Decorators/ValidationCommandHandlerDecorator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AAB685B-C95F-4F30-9F58-DED38D306735/1a/b1921a49/IQueryable`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service.Test/Auth/AuthMapperTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Context/ServiceContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/IServiceContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Context/AuthContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/IAuthContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/Mapping/IMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/58BCABC1-5804-47B3-9E04-76CF7F75F873/6C/IActionResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Decorators/TransactionCommandHandlerDecorator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/ApiResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/Mapping/Mapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryResultMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/CQRS/Query/IAuthorizedQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Exceptions/RepositoryException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Enums/DbStatusCode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service.Test/User/UserMapperTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Query/IRepositoryQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Query/RepositoryQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Service/Contracts/Validation/QueryValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Exceptions/NotFoundException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
@@ -164,62 +225,61 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/Weapon/WeaponRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repository/Core/Character/ICharacterRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Service/Core/User/Mapper/IUserMapper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Service/Exceptions/ValidationException.cs" />
-        <option value="$PROJECT_DIR$/Service/Validation/ValidationError.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/Class1.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/Core/Auth/Mapper/Test.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/Core/Auth/Mapper/AuthMapperTest.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/AuthMapperTests.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Auth/Mapper/AuthMapper.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/Core/Auth/Mapper/AuthMapperTests.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/User/Mapper/UserMapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Utility/AuthUtility/AuthUtility.cs" />
         <option value="$PROJECT_DIR$/Service.Test/Auth/AuthMapperTests.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/User/UserMapperTests.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/MapperTestHelper.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/Character/CharacterMapperTests.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Weapon/Mapper/WeaponMapper.cs" />
-        <option value="$PROJECT_DIR$/Service.Test/Weapon/WeaponMapperTests.cs" />
-        <option value="$PROJECT_DIR$/Domain/Models/CharacterSkill.cs" />
-        <option value="$PROJECT_DIR$/Domain/Models/Character.cs" />
-        <option value="$PROJECT_DIR$/Domain/Models/Skill.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/Skill/ISkillRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/Skill/SkillRepository.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/IWeaponService.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Dtos/CreateSkillDto.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Dtos/SkillDto.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Dtos/UpdateSkillDto.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Mapper/ISkillMapper.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Mapper/SkillMapper.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Validator/IWeaponValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/Mapping/IMapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/Mapping/Mapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Character/Validator/ICharacterValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Core/Weapon/Validator/IWeaponValidator.cs" />
         <option value="$PROJECT_DIR$/Service/Core/Skill/Validator/ISkillValidator.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/Validator/SkillValidator.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/SkillService.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Skill/ISkillService.cs" />
-        <option value="$PROJECT_DIR$/Api/Startup.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/Skill/WeaponsController.cs" />
-        <option value="$PROJECT_DIR$/Data/DataContext.cs" />
         <option value="$PROJECT_DIR$/Api/Middleware/EgressHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Context/ServiceContext.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/IOperationHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/ICommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/IQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/ValidationOperationHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/Command/ICommand.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/Query/IQuery.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Command/ICommand.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/Validation/QueryValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Query/IQuery.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Query/IQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/ValidationCommandHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/ValidationQueryHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQuery.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryResponse.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/TransactionAsyncCommandHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/ValidationAsyncCommandHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommandResponse.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterAsyncCommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Command/IAsyncCommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Command/ICommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/TransactionCommandHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryResult.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterResponseMapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/UserMapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryResult.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/LoginQuery/LoginQueryResultMapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryResultMapper.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/Auth/Operations/RegisterCommand/RegisterCommand.cs" />
+        <option value="$PROJECT_DIR$/Service.Test/User/UserMapperTests.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Command/IAuthorizedCommand.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Query/IAuthorizedQuery.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQuery.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Service/Operations/User/Queries/UserQuery/UserQueryValidator.cs" />
+        <option value="$PROJECT_DIR$/Service/Decorators/AuthorizedQueryHandlerDecorator.cs" />
+        <option value="$PROJECT_DIR$/Api/Startup.cs" />
         <option value="$PROJECT_DIR$/Api/Controllers/User/UserController.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/Weapon/WeaponsController.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Character/ICharacterService.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/Character/CharacterRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/ICharacterSkillRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Factory/IRepositoryFactory.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/IUnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Factory/RepositoryFactory.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository/Core/CharacterSkill/CharacterSkillRepository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork/UnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Character/Dtos/CharacterDto.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Character/Mapper/CharacterMapper.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/Character/CharactersController.cs" />
-        <option value="$PROJECT_DIR$/Service/Core/Character/CharacterService.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/Auth/AuthController.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Mediator/IMediator.cs" />
+        <option value="$PROJECT_DIR$/Service/Contracts/CQRS/Mediator/Mediator.cs" />
       </list>
     </option>
   </component>
@@ -242,7 +302,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Api: dotnet_rpg.Api">
+  <component name="RunManager">
     <configuration name="Api: dotnet_rpg.Api" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Api/Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -290,7 +350,14 @@
       <workItem from="1590808725382" duration="1110000" />
       <workItem from="1590809877881" duration="556000" />
       <workItem from="1590859054552" duration="1070000" />
-      <workItem from="1591035088606" duration="12905000" />
+      <workItem from="1591035088606" duration="20816000" />
+      <workItem from="1591281797770" duration="153000" />
+      <workItem from="1591568731587" duration="9728000" />
+      <workItem from="1591588491873" duration="7264000" />
+      <workItem from="1591623593470" duration="7762000" />
+      <workItem from="1591663620306" duration="7163000" />
+      <workItem from="1591730985730" duration="840000" />
+      <workItem from="1591739702343" duration="2580000" />
     </task>
     <servers />
   </component>
@@ -314,114 +381,114 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="184" y="123" width="1093" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1589833947274" />
-    <state width="516" height="464" key="DebuggerActiveHint" timestamp="1590680077450">
+    <state width="574" height="464" key="DebuggerActiveHint" timestamp="1591740510457">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="516" height="464" key="DebuggerActiveHint/0.23.1440.877@0.23.1440.877" timestamp="1590680077450" />
-    <state width="1396" height="230" key="GridCell.Tab.0.bottom" timestamp="1591136100051">
+    <state width="574" height="464" key="DebuggerActiveHint/0.23.1440.877@0.23.1440.877" timestamp="1591740510457" />
+    <state width="1396" height="230" key="GridCell.Tab.0.bottom" timestamp="1591742223740">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591136100051" />
-    <state width="1396" height="230" key="GridCell.Tab.0.center" timestamp="1591136100050">
+    <state width="1396" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591742223740" />
+    <state width="1396" height="230" key="GridCell.Tab.0.center" timestamp="1591742223739">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1591136100050" />
-    <state width="1396" height="230" key="GridCell.Tab.0.left" timestamp="1591136100050">
+    <state width="1396" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1591742223739" />
+    <state width="1396" height="230" key="GridCell.Tab.0.left" timestamp="1591742223738">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1591136100050" />
-    <state width="1396" height="230" key="GridCell.Tab.0.right" timestamp="1591136100050">
+    <state width="1396" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1591742223738" />
+    <state width="1396" height="230" key="GridCell.Tab.0.right" timestamp="1591742223739">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1591136100050" />
-    <state width="1396" height="312" key="GridCell.Tab.1.bottom" timestamp="1590708678386">
+    <state width="1396" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1591742223739" />
+    <state width="1396" height="312" key="GridCell.Tab.1.bottom" timestamp="1591741096793">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590708678386" />
-    <state width="1396" height="312" key="GridCell.Tab.1.center" timestamp="1590708678386">
+    <state width="1396" height="312" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591741096793" />
+    <state width="1396" height="312" key="GridCell.Tab.1.center" timestamp="1591741096792">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1590708678386" />
-    <state width="1396" height="312" key="GridCell.Tab.1.left" timestamp="1590708678385">
+    <state width="1396" height="312" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1591741096792" />
+    <state width="1396" height="312" key="GridCell.Tab.1.left" timestamp="1591741096791">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1590708678385" />
-    <state width="1396" height="312" key="GridCell.Tab.1.right" timestamp="1590708678386">
+    <state width="1396" height="312" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1591741096791" />
+    <state width="1396" height="312" key="GridCell.Tab.1.right" timestamp="1591741096793">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1590708678386" />
-    <state width="1396" height="312" key="GridCell.Tab.2.bottom" timestamp="1590708678387">
+    <state width="1396" height="312" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1591741096793" />
+    <state width="1396" height="312" key="GridCell.Tab.2.bottom" timestamp="1591741096794">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590708678387" />
-    <state width="1396" height="312" key="GridCell.Tab.2.center" timestamp="1590708678386">
+    <state width="1396" height="312" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591741096794" />
+    <state width="1396" height="312" key="GridCell.Tab.2.center" timestamp="1591741096794">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1590708678386" />
-    <state width="1396" height="312" key="GridCell.Tab.2.left" timestamp="1590708678386">
+    <state width="1396" height="312" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1591741096794" />
+    <state width="1396" height="312" key="GridCell.Tab.2.left" timestamp="1591741096793">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1590708678386" />
-    <state width="1396" height="312" key="GridCell.Tab.2.right" timestamp="1590708678387">
+    <state width="1396" height="312" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1591741096793" />
+    <state width="1396" height="312" key="GridCell.Tab.2.right" timestamp="1591741096794">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1590708678387" />
-    <state width="1396" height="312" key="GridCell.Tab.3.bottom" timestamp="1590708678388">
+    <state width="1396" height="312" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1591741096794" />
+    <state width="1396" height="312" key="GridCell.Tab.3.bottom" timestamp="1591741096796">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.3.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590708678388" />
-    <state width="1396" height="312" key="GridCell.Tab.3.center" timestamp="1590708678387">
+    <state width="1396" height="312" key="GridCell.Tab.3.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591741096796" />
+    <state width="1396" height="312" key="GridCell.Tab.3.center" timestamp="1591741096795">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.3.center/0.23.1440.877@0.23.1440.877" timestamp="1590708678387" />
-    <state width="1396" height="312" key="GridCell.Tab.3.left" timestamp="1590708678387">
+    <state width="1396" height="312" key="GridCell.Tab.3.center/0.23.1440.877@0.23.1440.877" timestamp="1591741096795" />
+    <state width="1396" height="312" key="GridCell.Tab.3.left" timestamp="1591741096795">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.3.left/0.23.1440.877@0.23.1440.877" timestamp="1590708678387" />
-    <state width="1396" height="312" key="GridCell.Tab.3.right" timestamp="1590708678387">
+    <state width="1396" height="312" key="GridCell.Tab.3.left/0.23.1440.877@0.23.1440.877" timestamp="1591741096795" />
+    <state width="1396" height="312" key="GridCell.Tab.3.right" timestamp="1591741096795">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1590708678387" />
-    <state width="1396" height="312" key="GridCell.Tab.4.bottom" timestamp="1590708678388">
+    <state width="1396" height="312" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1591741096795" />
+    <state width="1396" height="312" key="GridCell.Tab.4.bottom" timestamp="1591741096797">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.4.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590708678388" />
-    <state width="1396" height="312" key="GridCell.Tab.4.center" timestamp="1590708678388">
+    <state width="1396" height="312" key="GridCell.Tab.4.bottom/0.23.1440.877@0.23.1440.877" timestamp="1591741096797" />
+    <state width="1396" height="312" key="GridCell.Tab.4.center" timestamp="1591741096796">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.4.center/0.23.1440.877@0.23.1440.877" timestamp="1590708678388" />
-    <state width="1396" height="312" key="GridCell.Tab.4.left" timestamp="1590708678388">
+    <state width="1396" height="312" key="GridCell.Tab.4.center/0.23.1440.877@0.23.1440.877" timestamp="1591741096796" />
+    <state width="1396" height="312" key="GridCell.Tab.4.left" timestamp="1591741096796">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.4.left/0.23.1440.877@0.23.1440.877" timestamp="1590708678388" />
-    <state width="1396" height="312" key="GridCell.Tab.4.right" timestamp="1590708678388">
+    <state width="1396" height="312" key="GridCell.Tab.4.left/0.23.1440.877@0.23.1440.877" timestamp="1591741096796" />
+    <state width="1396" height="312" key="GridCell.Tab.4.right" timestamp="1591741096796">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1396" height="312" key="GridCell.Tab.4.right/0.23.1440.877@0.23.1440.877" timestamp="1590708678388" />
+    <state width="1396" height="312" key="GridCell.Tab.4.right/0.23.1440.877@0.23.1440.877" timestamp="1591741096796" />
     <state x="320" y="200" key="Rider.ProjectTemplateDialog.Size" timestamp="1590806441663">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="200" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877@0.23.1440.877" timestamp="1590806441663" />
-    <state x="451" y="158" key="RiderGenerateDialog" timestamp="1591134355769">
+    <state x="451" y="158" key="RiderGenerateDialog" timestamp="1591741911349">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="451" y="158" key="RiderGenerateDialog/0.23.1440.877@0.23.1440.877" timestamp="1591134355769" />
+    <state x="451" y="158" key="RiderGenerateDialog/0.23.1440.877@0.23.1440.877" timestamp="1591741911349" />
     <state x="251" y="100" key="SettingsEditor" timestamp="1590254509741">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="251" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1590254509741" />
-    <state x="100" y="123" width="1240" height="677" key="VCS.FileHistoryDialog" timestamp="1590698247091">
+    <state x="100" y="123" width="1240" height="677" key="VCS.FileHistoryDialog" timestamp="1591584992362">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="100" y="123" width="1240" height="677" key="VCS.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1590698247091" />
-    <state width="720" height="438" key="XDebugger.FullValuePopup" timestamp="1590697838225">
+    <state x="100" y="123" width="1240" height="677" key="VCS.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1591584992362" />
+    <state width="720" height="438" key="XDebugger.FullValuePopup" timestamp="1591740830432">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="720" height="438" key="XDebugger.FullValuePopup/0.23.1440.877@0.23.1440.877" timestamp="1590697838225" />
-    <state x="338" y="73" width="763" height="777" key="find.popup" timestamp="1590694384147">
+    <state width="720" height="438" key="XDebugger.FullValuePopup/0.23.1440.877@0.23.1440.877" timestamp="1591740830432" />
+    <state x="338" y="73" width="763" height="777" key="find.popup" timestamp="1591157315205">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="338" y="73" width="763" height="777" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1590694384147" />
+    <state x="338" y="73" width="763" height="777" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1591157315205" />
     <state x="383" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1590276384232">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -433,14 +500,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Api/Controllers/Character/Mapper/CharacterMapper.cs</url>
           <line>33</line>
-          <properties documentPath="$PROJECT_DIR$/Api/Controllers/Character/Mapper/CharacterMapper.cs" initialLine="38">
-            <startOffsets>
-              <option value="1025" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1026" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/Api/Controllers/Character/Mapper/CharacterMapper.cs" initialLine="38" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

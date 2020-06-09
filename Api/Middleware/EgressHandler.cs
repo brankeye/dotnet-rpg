@@ -1,28 +1,19 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
-using dotnet_rpg.Infrastructure.Exceptions;
 using System.Text.Json;
-using System.Security.Authentication;
 using System.IO;
-using dotnet_rpg.Infrastructure.Enums;
-using dotnet_rpg.Service.Exceptions;
-using Microsoft.Extensions.Hosting;
+using dotnet_rpg.Service.Utility.ExceptionUtility;
 
 namespace dotnet_rpg.Api.Middleware
 {
-    public class EgressHandler 
+    public class EgressHandler : IMiddleware
     {
-        private readonly RequestDelegate _next;
-
-        public EgressHandler(RequestDelegate next) 
-        {
-            this._next = next;
-        }
-
-        public async Task Invoke(HttpContext context, IWebHostEnvironment env) 
+        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             var currentBody = context.Response.Body;
             var memoryStream = new MemoryStream();
@@ -31,20 +22,11 @@ namespace dotnet_rpg.Api.Middleware
 
             try
             {
-                await _next(context);
-            }
-            catch (RepositoryException ex) {
-                response = HandleExceptionAsync(context, env, ex);
-            }
-            catch (ValidationException ex) {
-                response = HandleExceptionAsync(context, env, ex);
-            }
-            catch (AuthenticationException ex) {
-                response = HandleExceptionAsync(context, env, ex);
+                await next(context);
             }
             catch (Exception ex)
             {
-                response = HandleExceptionAsync(context, env, ex);
+                response = HandleExceptionAsync(context, ex);
             }
 
             context.Response.Body = currentBody;
@@ -62,78 +44,33 @@ namespace dotnet_rpg.Api.Middleware
             }
         }
 
-        private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, Exception exception) 
+        private static string HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            var response = CreateErrorResponse(exception);
+            var errors = ExceptionUtility.GetErrors(exception);
+            var response = CreateErrorResponse(errors);
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
             return response;
         }
 
-        private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, RepositoryException exception) 
-        {
-            var response = CreateErrorResponse(exception, env.IsDevelopment());
-            context.Response.ContentType = "application/json";
-
-            if (exception.Status == DbStatusCode.NotFound)
-            {
-                context.Response.StatusCode = (int) HttpStatusCode.NotFound;
-            }
-            else
-            {
-                context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
-            }
-
-            return response;
-        }
-
-        private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, ValidationException exception)
-        {
-            var response = CreateErrorResponse(exception);
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) HttpStatusCode.BadRequest;
-            return response;
-        }
-
-        private string HandleExceptionAsync(HttpContext context, IWebHostEnvironment env, AuthenticationException exception) 
-        {
-            var response = CreateErrorResponse(exception);
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) HttpStatusCode.Unauthorized;
-            return response;
-        }
-
-        private string CreateServerResponse(object data)
+        private static string CreateServerResponse(object data)
         {
             return Serialize(new ServerResponse(data));
         }
 
-        private string CreateErrorResponse(object data) 
+        private static string CreateErrorResponse(object data) 
         {
             if (data == null) {
-                return CreateErrorResponse("Something went wrong.");
+                var errors = ExceptionUtility.GetErrors();
+                var errorResponse = new ErrorResponse(errors);
+                return Serialize(errorResponse);
             }
 
-            var payload = new {
-                data
-            };
             object[] messages = { data };
             var errorMessage = new {
                 errors = messages
             };
 
-            return Serialize(errorMessage);
-        }
-
-        private string CreateErrorResponse(string message) 
-        {
-            var payload = new {
-                message
-            };
-            object[] messages = { payload };
-            var errorMessage = new {
-                errors = messages
-            };
             return Serialize(errorMessage);
         }
 
@@ -158,14 +95,6 @@ namespace dotnet_rpg.Api.Middleware
             object[] messages = { payload };
             var errorMessage = new {
                 errors = messages
-            };
-            return Serialize(errorMessage);
-        }
-
-        private string CreateErrorResponse(ValidationException exception) 
-        {
-            var errorMessage = new {
-                errors = exception.Errors
             };
             return Serialize(errorMessage);
         }
@@ -203,5 +132,15 @@ namespace dotnet_rpg.Api.Middleware
         }
 
         public object Data { get; set; }
+    }
+
+    public class ErrorResponse
+    {
+        public ErrorResponse(IEnumerable<ServiceError> errors)
+        {
+            Errors = errors;
+        }
+
+        public IEnumerable<object> Errors { get; set; }
     }
 }

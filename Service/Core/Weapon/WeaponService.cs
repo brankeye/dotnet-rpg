@@ -6,22 +6,23 @@ using dotnet_rpg.Infrastructure.UnitOfWork;
 using dotnet_rpg.Service.Core.Weapon.Dtos;
 using dotnet_rpg.Service.Core.Weapon.Mapper;
 using dotnet_rpg.Service.Core.Weapon.Validator;
+using dotnet_rpg.Service.Operations.Auth;
 
 namespace dotnet_rpg.Service.Core.Weapon
 {
     public class WeaponService : IWeaponService
     {
-        private readonly IServiceContext _serviceContext;
+        private readonly IAuthContext _authContext;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWeaponValidator _weaponValidator;
         private readonly IWeaponMapper _weaponMapper;
 
         public WeaponService(
-            IServiceContext serviceContext, 
+            IAuthContext authContext, 
             IUnitOfWork unitOfWork,
             IWeaponValidator weaponValidator) 
         {
-            _serviceContext = serviceContext;
+            _authContext = authContext;
             _unitOfWork = unitOfWork;
             _weaponValidator = weaponValidator;
             _weaponMapper = new WeaponMapper();
@@ -30,7 +31,7 @@ namespace dotnet_rpg.Service.Core.Weapon
         public async Task<IEnumerable<WeaponDto>> GetAllAsync() 
         {
             var weapons = await _unitOfWork.Weapons.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .ToListAsync();
             return weapons.Select(_weaponMapper.Map);
         }
@@ -38,7 +39,7 @@ namespace dotnet_rpg.Service.Core.Weapon
         public async Task<WeaponDto> GetByIdAsync(Guid id)
         {
             var weapon = await _unitOfWork.Weapons.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
             return _weaponMapper.Map(weapon);
@@ -47,7 +48,7 @@ namespace dotnet_rpg.Service.Core.Weapon
         public async Task<WeaponDto> CreateAsync(CreateWeaponDto dto) 
         {
             _weaponValidator.ValidateAndThrow(dto);
-            var newWeapon = _weaponMapper.Map(dto, _serviceContext.UserId);
+            var newWeapon = _weaponMapper.Map(dto, _authContext.UserId);
             var weapon = _unitOfWork.Weapons.Create(newWeapon);
             await _unitOfWork.CommitAsync();
             return _weaponMapper.Map(weapon);
@@ -58,7 +59,7 @@ namespace dotnet_rpg.Service.Core.Weapon
             _weaponValidator.ValidateAndThrow(dto);
             
             var weapon = await _unitOfWork.Weapons.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
 
@@ -72,7 +73,7 @@ namespace dotnet_rpg.Service.Core.Weapon
         public async Task DeleteAsync(Guid id) 
         {
             var weapon = await _unitOfWork.Weapons.Query
-                .Where(x => x.UserId == _serviceContext.UserId)
+                .Where(x => x.UserId == _authContext.UserId)
                 .Where(x => x.Id == id)
                 .SingleAsync();
             _unitOfWork.Weapons.Delete(weapon);

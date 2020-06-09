@@ -1,12 +1,12 @@
-﻿using dotnet_rpg.Service.Core.Weapon.Dtos;
-using dotnet_rpg.Service.Validation;
+﻿using dotnet_rpg.Service.Contracts.Validation;
+using dotnet_rpg.Service.Core.Weapon.Dtos;
 
 namespace dotnet_rpg.Service.Core.Weapon.Validator
 {
     public interface IWeaponValidator
-        : IValidator<CreateWeaponDto>,
-          IValidator<UpdateWeaponDto>
     {
+        void ValidateAndThrow(CreateWeaponDto entity);
         
+        void ValidateAndThrow(UpdateWeaponDto entity);
     }
 }

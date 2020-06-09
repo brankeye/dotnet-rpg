@@ -1,6 +1,11 @@
+using System;
 using System.Threading.Tasks;
-using dotnet_rpg.Service.Core.Auth;
-using dotnet_rpg.Service.Core.Auth.Dtos;
+using dotnet_rpg.Service.Contracts.CQRS.Command;
+using dotnet_rpg.Service.Contracts.CQRS.Mediator;
+using dotnet_rpg.Service.Contracts.CQRS.Query;
+using dotnet_rpg.Service.Operations.Auth.Operations.LoginQuery;
+using dotnet_rpg.Service.Operations.Auth.Operations.RegisterCommand;
+using dotnet_rpg.Service.Operations.User.Queries.UserQuery;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_rpg.Api.Controllers.Auth
@@ -9,25 +14,31 @@ namespace dotnet_rpg.Api.Controllers.Auth
     [Route("auth")]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthService _authService;
+        private readonly IMediator _mediator;
 
-        public AuthController(IAuthService authService)
+        public AuthController(IMediator mediator)
         {
-            _authService = authService;
+            _mediator = mediator;
         }
 
         [HttpPost("login")]
-        public async Task<ApiResponse<LoginDto>> Login(CredentialsDto request)
+        public async Task<ApiResponse<LoginQueryResult>> Login(LoginQuery query)
         {
-            var data = await _authService.LoginAsync(request);
+            var data = await _mediator.HandleAsync(query);
             return ApiResponse.Ok(data);
         }
 
         [HttpPost("register")]
-        public async Task<ApiResponse<RegisterDto>> Register(CredentialsDto request)
+        public async Task<ApiResponse<UserQueryResult>> Register(RegisterCommand command)
         {
-            var data = await _authService.RegisterAsync(request);
-            return ApiResponse.Ok(data);
+            command.UserId = Guid.NewGuid();
+            await _mediator.HandleAsync(command);
+            var userQuery = new UserQuery
+            {
+                UserId = command.UserId
+            };
+            var user = await _mediator.HandleAsync(userQuery);
+            return ApiResponse.Ok(user);
         }
     }
 }

@@ -16,4 +16,8 @@
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Operations\Auth\Operations" />
+    </ItemGroup>
+
 </Project>
