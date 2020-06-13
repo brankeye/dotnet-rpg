@@ -1,5 +1,4 @@
 using System;
-using dotnet_rpg.Service.Enums;
 
 namespace dotnet_rpg.Service.Exceptions
 {

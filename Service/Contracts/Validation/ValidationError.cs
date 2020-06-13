@@ -1,4 +1,4 @@
-using dotnet_rpg.Service.Enums;
+using dotnet_rpg.Service.Exceptions;
 
 namespace dotnet_rpg.Service.Contracts.Validation
 {

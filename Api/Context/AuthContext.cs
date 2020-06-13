@@ -1,7 +1,6 @@
 using System;
 using System.Security.Claims;
-using dotnet_rpg.Service.Core;
-using dotnet_rpg.Service.Operations.Auth;
+using dotnet_rpg.Service.Contracts.Context;
 using Microsoft.AspNetCore.Http;
 
 namespace dotnet_rpg.Api.Context

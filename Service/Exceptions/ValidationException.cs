@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using dotnet_rpg.Service.Contracts.Validation;
-using dotnet_rpg.Service.Enums;
 
 namespace dotnet_rpg.Service.Exceptions
 {

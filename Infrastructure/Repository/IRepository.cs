@@ -6,10 +6,10 @@ namespace dotnet_rpg.Infrastructure.Repository
     {
         IRepositoryQuery<T> Query { get; }
 
-        T Create(T entity);
+        void Create(T entity);
         
-        T Update(T entity);
+        void Update(T entity);
         
-        T Delete(T entity);
+        void Delete(T entity);
     }
 }

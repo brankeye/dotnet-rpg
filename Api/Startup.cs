@@ -15,19 +15,15 @@ using dotnet_rpg.Api.Middleware;
 using dotnet_rpg.Data;
 using dotnet_rpg.Infrastructure.Repository.Factory;
 using dotnet_rpg.Infrastructure.Repository.Persister;
+using dotnet_rpg.Service.Behaviors;
+using dotnet_rpg.Service.Contracts.Context;
 using dotnet_rpg.Service.Contracts.CQRS.Command;
 using dotnet_rpg.Service.Contracts.CQRS.Mediator;
 using dotnet_rpg.Service.Contracts.CQRS.Query;
 using dotnet_rpg.Service.Contracts.Mapping;
 using dotnet_rpg.Service.Contracts.Validation;
-using dotnet_rpg.Service.Core.Character;
-using dotnet_rpg.Service.Core.Character.Validator;
-using dotnet_rpg.Service.Core.Skill;
-using dotnet_rpg.Service.Core.Skill.Validator;
-using dotnet_rpg.Service.Core.Weapon;
-using dotnet_rpg.Service.Core.Weapon.Validator;
-using dotnet_rpg.Service.Decorators;
-using dotnet_rpg.Service.Operations.Auth;
+using dotnet_rpg.Service.Decorators.Commands;
+using dotnet_rpg.Service.Decorators.Queries;
 using dotnet_rpg.Service.Utility.AuthUtility;
 using SimpleInjector;
 
@@ -78,7 +74,8 @@ namespace dotnet_rpg.Api
             });
 
             InitializeContainer();
-            InitializeDecorators();
+            InitializeQueryDecorators();
+            InitializeCommandDecorators();
         }
         
         private void InitializeContainer()
@@ -92,43 +89,45 @@ namespace dotnet_rpg.Api
             _container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
 
             _container.Register<IAuthUtility, AuthUtility>(Lifestyle.Scoped);
-
-            _container.Register<ICharacterValidator, CharacterValidator>(Lifestyle.Scoped);
-            _container.Register<IWeaponValidator, WeaponValidator>(Lifestyle.Scoped);
-            _container.Register<ISkillValidator, SkillValidator>(Lifestyle.Scoped);
-            
             _container.Register<IAuthContext, AuthContext>(Lifestyle.Scoped);
-            _container.Register<ICharacterService, CharacterService>(Lifestyle.Scoped);
-            _container.Register<IWeaponService, WeaponService>(Lifestyle.Scoped);
-            _container.Register<ISkillService, SkillService>(Lifestyle.Scoped);
-
+            
+            _container.Register(typeof(IBehaviorHandler<>), serviceAssembly, Lifestyle.Scoped);
             _container.Register(typeof(IQueryHandler<,>), serviceAssembly, Lifestyle.Scoped);
             _container.Register(typeof(ICommandHandler<>), serviceAssembly, Lifestyle.Scoped);
             _container.Register(typeof(IValidator<>), serviceAssembly, Lifestyle.Scoped);
+            _container.RegisterConditional(typeof(IValidator<>), typeof(NoopValidator<>), c => !c.Handled);
             _container.Register(typeof(IMapper<,>), serviceAssembly, Lifestyle.Scoped);
             
-            _container.RegisterSingleton<IMediator>(() => 
-                new Mediator(type => _container.GetInstance(type)));
+            _container.RegisterSingleton<IOperationMediator>(() => 
+                new OperationMediator(type => _container.GetInstance(type)));
+            _container.RegisterSingleton<IBehaviorMediator>(() => 
+                new BehaviorMediator(type => _container.GetInstance(type)));
         }
-
-        public void InitializeDecorators()
+        
+        private void InitializeQueryDecorators()
         {
             _container.RegisterDecorator(
                 typeof(IQueryHandler<,>), 
-                typeof(AuthorizedQueryHandlerDecorator<,>),
-                c => DecorateByQueryType(c, typeof(IAuthorizedQuery<>)));
+                typeof(BehaviorQueryHandlerDecorator<,>));
             
             _container.RegisterDecorator(
-                typeof(IQueryHandler<,>), 
+                typeof(IQueryHandler<,>),
                 typeof(ValidationQueryHandlerDecorator<,>));
+        }
+
+        private void InitializeCommandDecorators()
+        {
+            _container.RegisterDecorator(
+                typeof(ICommandHandler<>), 
+                typeof(TransactionCommandHandlerDecorator<>));
+            
+            _container.RegisterDecorator(
+                typeof(ICommandHandler<>), 
+                typeof(BehaviorCommandHandlerDecorator<>));
             
             _container.RegisterDecorator(
                 typeof(ICommandHandler<>), 
                 typeof(ValidationCommandHandlerDecorator<>));
-            
-            _container.RegisterDecorator(
-                typeof(ICommandHandler<>), 
-                typeof(TransactionCommandHandlerDecorator<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

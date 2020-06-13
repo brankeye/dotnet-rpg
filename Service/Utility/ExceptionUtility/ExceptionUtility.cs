@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using dotnet_rpg.Infrastructure.Exceptions;
-using dotnet_rpg.Service.Enums;
 using dotnet_rpg.Service.Exceptions;
 
 namespace dotnet_rpg.Service.Utility.ExceptionUtility

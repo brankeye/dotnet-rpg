@@ -22,7 +22,7 @@ namespace dotnet_rpg.Infrastructure.Repository
         
         public IRepositoryQuery<T> Query => new RepositoryQuery<T>(ModifyQuery(_dbSet));
 
-        public T Create(T entity)
+        public void Create(T entity)
         {
             try
             {
@@ -31,9 +31,7 @@ namespace dotnet_rpg.Infrastructure.Repository
                     throw new ArgumentNullException(nameof(entity));
                 }
 
-                var character = _dbSet.Add(entity);
-
-                return character.Entity;
+                _dbSet.Add(entity);
             }
             catch (Exception ex)
             {
@@ -41,7 +39,7 @@ namespace dotnet_rpg.Infrastructure.Repository
             }
         }
 
-        public T Update(T entity)
+        public void Update(T entity)
         {
             try
             {
@@ -50,9 +48,7 @@ namespace dotnet_rpg.Infrastructure.Repository
                     throw new ArgumentNullException(nameof(entity));
                 }
             
-                var result = _dbSet.Update(entity);
-
-                return result.Entity;
+                _dbSet.Update(entity);
             }
             catch (Exception ex)
             {
@@ -60,7 +56,7 @@ namespace dotnet_rpg.Infrastructure.Repository
             }
         }
 
-        public T Delete(T entity)
+        public void Delete(T entity)
         {
             try
             {
@@ -70,8 +66,6 @@ namespace dotnet_rpg.Infrastructure.Repository
                 }
                 
                 _dbSet.Remove(entity);
-
-                return entity;
             }
             catch (Exception ex)
             {

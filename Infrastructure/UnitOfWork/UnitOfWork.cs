@@ -32,30 +32,6 @@ namespace dotnet_rpg.Infrastructure.UnitOfWork
 
         public ICharacterSkillRepository CharacterSkills => _repositoryFactory.GetCharacterSkillRepository();
 
-        public void Commit()
-        {
-            try
-            {
-                _repositoryPersister.Commit();
-            }
-            catch (Exception ex)
-            {
-                throw ex.ToRepositoryException("Failed to commit changes");
-            }
-        }
-
-        public async Task CommitAsync()
-        {
-            try
-            {
-                await _repositoryPersister.CommitAsync();
-            }
-            catch (Exception ex)
-            {
-                throw ex.ToRepositoryException("Failed to commit changes");
-            }
-        }
-
         private bool _disposed = false;
 
         protected virtual void Dispose(bool disposing)

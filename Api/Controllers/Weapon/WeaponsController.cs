@@ -1,8 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using dotnet_rpg.Service.Core.Weapon;
-using dotnet_rpg.Service.Core.Weapon.Dtos;
+using dotnet_rpg.Api.Controllers.Weapon.Dtos;
+using dotnet_rpg.Service.Contracts.CQRS.Mediator;
+using dotnet_rpg.Service.Core.Weapon.CreateWeaponCommand;
+using dotnet_rpg.Service.Core.Weapon.DeleteWeaponCommand;
+using dotnet_rpg.Service.Core.Weapon.GetAllWeaponsQuery;
+using dotnet_rpg.Service.Core.Weapon.GetWeaponQuery;
+using dotnet_rpg.Service.Core.Weapon.UpdateWeaponCommand;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,46 +19,66 @@ namespace dotnet_rpg.Api.Controllers.Weapon
     public class WeaponsController : ControllerBase
     {
         private const string GetByIdRouteName = "get_weapon";
-        private readonly IWeaponService _weaponService;
+        private readonly IOperationMediator _operationMediator;
 
-        public WeaponsController(IWeaponService weaponService) 
+        public WeaponsController(IOperationMediator operationMediator) 
         {
-            _weaponService = weaponService;
+            _operationMediator = operationMediator;
         }
 
         [HttpGet]
-        public async Task<ApiResponse<IEnumerable<WeaponDto>>> GetAll()
+        public async Task<ApiResponse<IEnumerable<GetWeaponQueryResult>>> GetAll()
         {
-            var data = await _weaponService.GetAllAsync();
+            var query = new GetAllWeaponsQuery();
+            var data = await _operationMediator.HandleAsync(query);
             return ApiResponse.Ok(data);
         }
 
         [HttpGet("{id}", Name = GetByIdRouteName)]
-        public async Task<ApiResponse<WeaponDto>> GetById(Guid id)
+        public async Task<ApiResponse<GetWeaponQueryResult>> GetById(Guid id)
         {
-            var data = await _weaponService.GetByIdAsync(id);
+            var query = new GetWeaponQuery
+            {
+                Id = id
+            };
+            var data = await _operationMediator.HandleAsync(query);
             return ApiResponse.Ok(data);
         }
 
         [HttpPost]
-        public async Task<ApiResponse<WeaponDto>> Create(CreateWeaponDto request) 
+        public async Task<ApiResponse<object>> Create(CreateWeaponDto request)
         {
-            var data = await _weaponService.CreateAsync(request);
-            var location = Url.Link(GetByIdRouteName, new { id = data.Id });
-            return ApiResponse.Created(location, data);
+            var command = new CreateWeaponCommand
+            {
+                Name = request.Name,
+                Damage = request.Damage
+            };
+            await _operationMediator.HandleAsync(command);
+            var location = Url.Link(GetByIdRouteName, new { id = command.GeneratedId });
+            return ApiResponse.Created(location, command.GeneratedId);
         }
 
         [HttpPut("{id}")]
-        public async Task<ApiResponse<WeaponDto>> Update(Guid id, UpdateWeaponDto request)
+        public async Task<ApiResponse> Update(Guid id, UpdateWeaponDto request)
         {
-            var data = await _weaponService.UpdateAsync(id, request);
-            return ApiResponse.Ok(data);
+            var command = new UpdateWeaponCommand
+            {
+                Id = id,
+                Name = request.Name,
+                Damage = request.Damage
+            };
+            await _operationMediator.HandleAsync(command);
+            return ApiResponse.Ok();
         }
 
         [HttpDelete("{id}")]
-        public async Task<ApiResponse> Delete(Guid id) 
+        public async Task<ApiResponse> Delete(Guid id)
         {
-            await _weaponService.DeleteAsync(id);
+            var command = new DeleteWeaponCommand
+            {
+                Id = id
+            };
+            await _operationMediator.HandleAsync(command);
             return ApiResponse.Ok();
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,11 @@ namespace dotnet_rpg.Api.Controllers
         public static ApiResponse<T> Created<T>(string location, T data)
         {
             return new ApiResponse<T>(HttpStatusCode.Created, location, data);
+        } 
+        
+        public static ApiResponse<object> Created(string location, Guid id)
+        {
+            return new ApiResponse<object>(HttpStatusCode.Created, location, new { Id = id });
         } 
         
         public virtual async Task ExecuteResultAsync(ActionContext context)

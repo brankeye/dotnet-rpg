@@ -1,20 +1,8 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
-using System;
-using dotnet_rpg.Infrastructure.UnitOfWork;
-using dotnet_rpg.Domain.Enums;
-using dotnet_rpg.Domain.Models;
-using dotnet_rpg.Service.Core.Character.Dtos;
-using dotnet_rpg.Service.Core.Character.Mapper;
-using dotnet_rpg.Service.Core.Character.Validator;
-using dotnet_rpg.Service.Exceptions;
-using dotnet_rpg.Service.Operations.Auth;
-
 namespace dotnet_rpg.Service.Core.Character
 {
-    public class CharacterService : ICharacterService
+    public class CharacterService
     {
+        /*
         private readonly IAuthContext _authContext;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICharacterValidator _characterValidator;
@@ -195,5 +183,6 @@ namespace dotnet_rpg.Service.Core.Character
             character.Name = dto.Name;
             character.Class = (RpgClass) Enum.Parse(typeof(RpgClass), dto.Class);
         }
+        */
     }
 }

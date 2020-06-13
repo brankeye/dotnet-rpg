@@ -1,11 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using dotnet_rpg.Service.Contracts.CQRS.Command;
+using dotnet_rpg.Api.Controllers.Auth.Dto;
 using dotnet_rpg.Service.Contracts.CQRS.Mediator;
-using dotnet_rpg.Service.Contracts.CQRS.Query;
-using dotnet_rpg.Service.Operations.Auth.Operations.LoginQuery;
-using dotnet_rpg.Service.Operations.Auth.Operations.RegisterCommand;
-using dotnet_rpg.Service.Operations.User.Queries.UserQuery;
+using dotnet_rpg.Service.Core.Auth.LoginQuery;
+using dotnet_rpg.Service.Core.Auth.RegisterCommand;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_rpg.Api.Controllers.Auth
@@ -14,31 +12,33 @@ namespace dotnet_rpg.Api.Controllers.Auth
     [Route("auth")]
     public class AuthController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        private readonly IOperationMediator _operationMediator;
 
-        public AuthController(IMediator mediator)
+        public AuthController(IOperationMediator operationMediator)
         {
-            _mediator = mediator;
+            _operationMediator = operationMediator;
         }
 
         [HttpPost("login")]
-        public async Task<ApiResponse<LoginQueryResult>> Login(LoginQuery query)
+        public async Task<ApiResponse<LoginQueryResult>> Login(LoginRequest request)
         {
-            var data = await _mediator.HandleAsync(query);
+            var data = await _operationMediator.HandleAsync(new LoginQuery
+            {
+                Username = request.Username,
+                Password = request.Password
+            });
             return ApiResponse.Ok(data);
         }
 
         [HttpPost("register")]
-        public async Task<ApiResponse<UserQueryResult>> Register(RegisterCommand command)
+        public async Task<ApiResponse> Register(RegisterRequest request)
         {
-            command.UserId = Guid.NewGuid();
-            await _mediator.HandleAsync(command);
-            var userQuery = new UserQuery
+            await _operationMediator.HandleAsync(new RegisterCommand
             {
-                UserId = command.UserId
-            };
-            var user = await _mediator.HandleAsync(userQuery);
-            return ApiResponse.Ok(user);
+                Username = request.Username,
+                Password = request.Password
+            });
+            return ApiResponse.Ok();
         }
     }
 }
